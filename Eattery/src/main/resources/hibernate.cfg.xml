@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- JDBC SET UP -->
+		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@testserver.cagr8fb730kj.us-east-2.rds.amazonaws.com:1521:ORCL</property>
+		<property name="hibernate.connection.username">Thetraveller</property>
+		<property name="hibernate.connection.password">Kobolds7</property>
+		
+		<!-- Hibernate Set Up -->
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		
+		<property name="show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="use_sql_comments">true</property>
+		
+		<property name="hibernate.id.new_generator_mappings">false</property>
+		
+		<!-- XML Mappings -->
+		<!-- <mapping resource="HoneyPot.hbm.xml"/> -->
+		
+		<!-- Annotation mappings -->
+		<mapping class="com.revature.beans.Employee"/>
+	</session-factory>
+</hibernate-configuration>
