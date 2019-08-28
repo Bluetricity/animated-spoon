@@ -1,21 +1,29 @@
 package com.revature.driver;
 
 import org.hibernate.Transaction;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 
 import com.revature.beans.Employee;
+import com.revature.data.hibernate.EmployeeOracle;
 import com.revature.util.HibernateUtil;
 
+@Component
 public class Driver {
-	private static HibernateUtil hu = HibernateUtil.getInstance();
+	
 	private static Logger log = Logger.getLogger(Driver.class);
 	
 	public static void main(String[] args) {
-		insertion();
+		Employee e = new Employee();
+		e.setName("Bob");
+		e.setUsername("Builder");
+		e.setPassword("Can");
+		e.setTitle("Janitor");
 		
-		hu.getSessionFactory().close();
+		EmployeeOracle EH = new EmployeeOracle();
+		EH.addEmployee(e);
 	}
 
 	private static void insertion() {
@@ -25,18 +33,18 @@ public class Driver {
 		e.setPassword("Can");
 		e.setTitle("Janitor");
 		
-		Session s = hu.getSession();
-		Transaction tx = null;
-		try {
-			tx = s.beginTransaction();
-			s.save(e);
-			tx.commit();
-		} catch (Exception E) {
-			tx.rollback();
-			E.printStackTrace();
-		} finally {
-			s.close();
-		}
+//		Session s = hu.getSession();
+//		Transaction tx = null;
+//		try {
+//			tx = s.beginTransaction();
+//			s.save(e);
+//			tx.commit();
+//		} catch (Exception E) {
+//			tx.rollback();
+//			E.printStackTrace();
+//		} finally {
+//			s.close();
+//		}
 	}
 	
 	
