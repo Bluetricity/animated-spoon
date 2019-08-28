@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Transactions {
+public class ItemTransaction {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="bob")
 	@SequenceGenerator(name="bob", sequenceName="transaction_seq", allocationSize=1)
@@ -23,4 +23,40 @@ public class Transactions {
 	@JoinColumn(name="CID")
 	Customers CID;
 	String PAYMENT_TYPE;
+	
+	public ItemTransaction() {
+		super();
+	}
+
+	public ItemTransaction(Integer tID, Customers cID, String pAYMENT_TYPE) {
+		super();
+		TID = tID;
+		CID = cID;
+		PAYMENT_TYPE = pAYMENT_TYPE;
+	}
+	
+	public Integer getTID() {
+		return TID;
+	}
+	public void setTID(Integer tID) {
+		TID = tID;
+	}
+	public Customers getCID() {
+		return CID;
+	}
+	public void setCID(Customers cID) {
+		CID = cID;
+	}
+	public String getPAYMENT_TYPE() {
+		return PAYMENT_TYPE;
+	}
+	public void setPAYMENT_TYPE(String pAYMENT_TYPE) {
+		PAYMENT_TYPE = pAYMENT_TYPE;
+	}
+	
+	@Override
+	public String toString() {
+		return "ItemTransaction [TID=" + TID + ", CID=" + CID + ", PAYMENT_TYPE=" + PAYMENT_TYPE + "]";
+	}
+	
 }
