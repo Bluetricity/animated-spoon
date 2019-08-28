@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Menu Items</title>
+
+</head>
+
+<body>
+    <h1>Here is your order.</h1>
+    <table id="order" class="table">
+        <tr>
+            <th>Meal Name</th>
+            <th>Price</th>
+        </tr>
+    </table>
+    <div class="formgroup">
+        <label for="b_location">Choose your delivery location.</label>
+        <select class="form-control" id="b_location"></select>
+        <ul id="locationSelect"></ul>
+    </div>
+    <div class="formgroup">
+        <label for="b_payment">Enter your payment information:</label>
+        <input calss="form-control simple-order" type="text" id="b_payment"/>
+    </div>
+    <button type="submit" class="btn btn-primary" id="submitbtn">Pay</button>
+    <button type="submit" class="btn btn-danger" id="backbtn">Cancel</button>
+</body>
