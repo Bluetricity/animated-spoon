@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Table
 public class Locations {
 	
-	//Should this be a ManyToMany relationship, but not sure how to do this without a join table. :/
+	Integer LID;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	Customers CID;
 	String Address;
@@ -27,12 +27,20 @@ public class Locations {
 		super();
 	}
 	
-	public Locations(Customers cID, String address) {
+	public Locations(Integer lID, Customers cID, String address) {
 		super();
+		LID = lID;
 		CID = cID;
 		Address = address;
 	}
 	
+	public Integer getLID() {
+		return LID;
+	}
+
+	public void setLID(Integer lID) {
+		LID = lID;
+	}
 	public Customers getCID() {
 		return CID;
 	}

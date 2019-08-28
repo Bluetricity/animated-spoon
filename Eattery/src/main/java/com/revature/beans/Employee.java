@@ -5,11 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table
+
 public class Employee {
 	@Id
 	@Column(name="EID")
@@ -35,10 +37,10 @@ public class Employee {
 		this.title = title;
 	}
 	
-	public int getId() {
+	public int getEID() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setEID(int id) {
 		this.id = id;
 	}
 	public String getUsername() {

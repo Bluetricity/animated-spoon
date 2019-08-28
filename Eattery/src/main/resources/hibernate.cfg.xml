@@ -21,6 +21,12 @@
 		<!-- <mapping resource="HoneyPot.hbm.xml"/> -->
 		
 		<!-- Annotation mappings -->
+		<mapping class="com.revature.beans.Customers"/>
 		<mapping class="com.revature.beans.Employee"/>
+		<mapping class="com.revature.beans.Locations"/>
+		<mapping class="com.revature.beans.Menu"/>
+		<mapping class="com.revature.beans.Stock"/>
+		<mapping class="com.revature.beans.Transactions"/>
+		
 	</session-factory>
 </hibernate-configuration>
