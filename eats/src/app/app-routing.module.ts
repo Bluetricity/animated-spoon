@@ -11,7 +11,7 @@ import { DeliveryStatusComponent } from './delivery-status/delivery-status.compo
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {

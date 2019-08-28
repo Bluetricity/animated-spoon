@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,11 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuItemsComponent } from './menu-items/menu-items.component';
 import { OrderComponent } from './order/order.component';
 import { DeliveryStatusComponent } from './delivery-status/delivery-status.component';
+import { UrlService } from './shared/url.service';
+import { UserService } from './shared/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ManagerComponent } from './manager/manager.component';
+import { HomeComponent } from './core/home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +27,19 @@ import { DeliveryStatusComponent } from './delivery-status/delivery-status.compo
     MenuItemsComponent,
     OrderComponent,
     DeliveryStatusComponent
+    ManagerComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    UrlService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
