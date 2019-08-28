@@ -1,19 +1,25 @@
 package com.revature.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table
 public class Locations {
-	//@ManyToOne(fetch=FetchType.EAGER)
+	
+	//Should this be a ManyToMany relationship, but not sure how to do this without a join table. :/
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	Customers CID;
 	String Address;
 	
