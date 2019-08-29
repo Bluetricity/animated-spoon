@@ -22,12 +22,23 @@
     color: coral!important;
 }
 
+.btn {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
 .btn-primary {
     color: #fff;
     font-size: unset;
     font-weight: 800;
     background-color: coral!important;
     border-color: coral!important;
+}
+
+button,
+input {
+    overflow: visible;
+    margin-left: 1rem;
 }
 
 .nav-item {
@@ -49,5 +60,5 @@ p {
 }
 
 body {
-    /* background-color: bisque!important; */
+    margin: auto;
 }
