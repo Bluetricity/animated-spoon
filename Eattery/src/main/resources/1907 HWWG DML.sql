@@ -117,3 +117,5 @@ insert into transactionitems(tid, mid, quanity)
 values (1, 1, 1);
 insert into transactionitems(tid, mid, quanity)
 values (2, 2, 1);
+
+commit work;

@@ -1,0 +1,28 @@
+.formgroup {
+    /* height: 70%; */
+    width: 70%;
+    margin: auto;
+    /* text-align: center; */
+}
+
+body {
+    text-align: center!important;
+    /* width: 70%; */
+    margin: auto!important;
+}
+
+.orders {
+    /* height: 70%; */
+    width: 70%;
+    /* text-align: center; */
+}
+
+p {
+    font-weight: bold;
+}
+
+button,
+input {
+    overflow: visible;
+    margin-left: 1rem;
+}

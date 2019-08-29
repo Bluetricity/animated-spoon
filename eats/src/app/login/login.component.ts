@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Currentuser } from '../shared/currentuser';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +8,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public loggedUser: Currentuser;
+  public username: string;
+  public password: string;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.login(null, null).subscribe(
+      resp => {
+        this.loggedUser = resp;
+      }
+    );
   }
 
+  login() {
+    this.userService.login(this.username, this.password).subscribe(
+      resp => {
+        this.loggedUser = resp;
+      }
+    );
+  }
+
+  logout() {
+    this.userService.logout().subscribe(
+      resp => {
+        this.loggedUser = null;
+      }
+    );
+  }
 }
