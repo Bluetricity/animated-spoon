@@ -11,7 +11,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-
 public class Employee {
 	@Id
 	@Column(name="EID")
