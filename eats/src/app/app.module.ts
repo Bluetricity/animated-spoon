@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ManagerComponent } from './manager/manager.component';
 import { HomeComponent } from './core/home/home.component';
 import { AccountInfoComponent } from './account-info/account-info.component';
+import { StockComponent } from './stock/stock.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AccountInfoComponent } from './account-info/account-info.component';
     DeliveryStatusComponent,
     ManagerComponent,
     HomeComponent,
-    AccountInfoComponent
+    AccountInfoComponent,
+    StockComponent
   ],
   imports: [
     BrowserModule,

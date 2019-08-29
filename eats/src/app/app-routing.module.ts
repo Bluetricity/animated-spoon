@@ -8,6 +8,7 @@ import { OrderComponent } from './order/order.component';
 import { DeliveryStatusComponent } from './delivery-status/delivery-status.component';
 import { HomeComponent } from './core/home/home.component';
 import { ManagerComponent } from './manager/manager.component';
+import { StockComponent } from './stock/stock.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,17 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
+  
+  {
+    path: '',
+    redirectTo: '/stock',
+    pathMatch: 'full'
+  },
+  {
+    path: 'stock',
+    component: StockComponent
+  },
+  
   {
     path: 'create-account',
     component: CreateAccountComponent
