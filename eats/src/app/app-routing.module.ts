@@ -7,6 +7,7 @@ import { MenuItemsComponent } from './menu-items/menu-items.component';
 import { OrderComponent } from './order/order.component';
 import { DeliveryStatusComponent } from './delivery-status/delivery-status.component';
 import { HomeComponent } from './core/home/home.component';
+import { ManagerComponent } from './manager/manager.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'manager',
+    component: ManagerComponent
   },
   {
     path: 'login',
