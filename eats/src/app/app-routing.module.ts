@@ -2,17 +2,21 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { MenuComponent} from './menu/menu.component';
+import { MenuComponent } from './menu/menu.component';
 import { MenuItemsComponent } from './menu-items/menu-items.component';
 import { OrderComponent } from './order/order.component';
-import { DeliveryStatusComponent } from './delivery-status/delivery-status.component'; 
-
+import { DeliveryStatusComponent } from './delivery-status/delivery-status.component';
+import { HomeComponent } from './core/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'login',

@@ -26,7 +26,7 @@ import { HomeComponent } from './core/home/home.component';
     MenuComponent,
     MenuItemsComponent,
     OrderComponent,
-    DeliveryStatusComponent
+    DeliveryStatusComponent,
     ManagerComponent,
     HomeComponent
   ],

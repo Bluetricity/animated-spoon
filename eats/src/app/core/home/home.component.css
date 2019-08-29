@@ -1,0 +1,12 @@
+body {
+    background-image: url("/src/assets/hh_main.jpg")!important;
+    background-size: cover;
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
