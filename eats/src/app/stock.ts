@@ -1,5 +1,5 @@
-export class Stock {
-    stock_id: number;
-    ingredient: string;
-    quantity: number;
+export class Stock{
+    stock_id: 1;
+    ingredient: 'chicken';
+    quantity: 50
 }
