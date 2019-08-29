@@ -16,6 +16,7 @@ import { UserService } from './shared/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ManagerComponent } from './manager/manager.component';
 import { HomeComponent } from './core/home/home.component';
+import { AccountInfoComponent } from './account-info/account-info.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomeComponent } from './core/home/home.component';
     OrderComponent,
     DeliveryStatusComponent,
     ManagerComponent,
-    HomeComponent
+    HomeComponent,
+    AccountInfoComponent
   ],
   imports: [
     BrowserModule,
