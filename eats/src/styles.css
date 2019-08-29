@@ -14,6 +14,12 @@
     font-family: cursive!important;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+    font-family: cursive;
+    font-weight: 400;
+}
+
 .bg-primary {
     background-color: paleturquoise!important;
 }
