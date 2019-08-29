@@ -26,7 +26,7 @@
 		<mapping class="com.revature.beans.Locations"/>
 		<mapping class="com.revature.beans.Menu"/>
 		<mapping class="com.revature.beans.Stock"/>
-		<mapping class="com.revature.beans.Transactions"/>
+		<mapping class="com.revature.beans.ItemTransaction"/> 
 		
 	</session-factory>
 </hibernate-configuration>

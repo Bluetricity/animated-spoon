@@ -12,6 +12,7 @@ drop sequence EMPLOYEE_SEQ;
 drop sequence MENU_SEQ;
 drop sequence STOCK_SEQ;
 drop sequence TRANSACTION_SEQ;
+drop sequence LOCATION_SEQ;
 
 create table Employee (
     EID number(20) primary key,
@@ -43,11 +44,12 @@ create table Customers (
     CID number(20) primary key,
     Username varchar2(20) UNIQUE,
     Password varchar2(20) not null,
-    Name number(20) not null,
+    Name varchar2(20) not null,
     ContactInfo varchar2(30) not null
 );
 
 create table Locations (
+	LID number(20) primary key,
     CID number(20) not null,
     Address varchar2(60) not null,
     constraint fk_address_user foreign key (CID) references Customers(CID)
@@ -72,4 +74,5 @@ create sequence stock_seq;
 create sequence menu_seq;
 create sequence customer_seq;
 create sequence transaction_seq;
+create sequence location_seq;
 
