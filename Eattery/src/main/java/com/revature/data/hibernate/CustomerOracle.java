@@ -35,9 +35,9 @@ public class CustomerOracle implements CustomerDAO{
 	}
 
 	@Override
-	public Customers getCustomer(Customers em) {
+	public Customers getCustomer(int em) {
 		Session s = hu.getSession();
-		Customers ret = s.get(Customers.class, em.getCID());
+		Customers ret = s.get(Customers.class, em);
 		s.close();
 		return ret;
 	}
@@ -74,6 +74,12 @@ public class CustomerOracle implements CustomerDAO{
 		} finally {
 			s.close();
 		}
+	}
+
+	@Override
+	public Customers getCustomer(Customers em) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
