@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Stock } from '../stock';
+import { Stock } from '../shared/stock';
+
+import { Observable } from 'rxjs';
+import sampleData from '../data.json';
+
 
 @Component({
   selector: 'app-inventory',
@@ -8,14 +12,17 @@ import { Stock } from '../stock';
 })
 export class InventoryComponent implements OnInit {
 
-  @Input() stock: Stock;
+  poptable: Observable<any[]>;
+  columns: string[];
+  test: string[];
+
+  //@Input() stock: Stock;
+
+  Inv: any = sampleData
 
   constructor() { }
 
   ngOnInit() {
-    this.stock.stock_id=1;
-    this.stock.ingredient='chicken';
-    this.stock.quantity=50;
   }
 
 }
