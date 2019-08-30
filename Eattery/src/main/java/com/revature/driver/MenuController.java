@@ -4,6 +4,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,18 +19,17 @@ import com.revature.data.hibernate.MenuOracle;
 import com.revature.data.hibernate.EmployeeDAO;
 
 @RestController
-@RequestMapping(value="/location")
+@RequestMapping(value="/menu")
 public class MenuController {
 
 	@Autowired
 	private MenuOracle CO;
 
-	public ApplicationContext ac;
 	
 	@GetMapping(value="{id}")
 	public Menu getMenu (@PathVariable Integer id) {
-		Menu in = (Menu) ac.getBean("Menus");
-		return CO.getMenu (in);
+//		Menu in = (Menu) ac.getBean("Menus");
+		return null;//CO.getMenu (in);
 
 	}
 	
