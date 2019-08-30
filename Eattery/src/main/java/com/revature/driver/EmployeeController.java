@@ -27,7 +27,7 @@ public class EmployeeController {
 	@GetMapping(value="{id}")
 	public Employee getCustomer(@PathVariable Employee id) {
 		return EO.getEmployee(id);
-
+ 
 	}
 	
 	//Currently not working

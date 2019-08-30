@@ -3,6 +3,8 @@ package com.revature.driver;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Customers;
 import com.revature.beans.Employee;
+import com.revature.beans.Locations;
 import com.revature.data.hibernate.CustomerOracle;
 import com.revature.data.hibernate.EmployeeDAO;
 
@@ -22,11 +25,18 @@ public class CustomerController {
 	@Autowired
 	private CustomerOracle CO;
 
+	//public ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 	
 	@GetMapping(value="{id}")
 	public Customers getCustomer(@PathVariable Integer id) {
+		//Customers in = (Customers) ac.getBean("Customers");
+		//in.setCID(id);
+		//return CO.getLocation (in);
+		//System.out.println(in);
+	
+		
 		return CO.getCustomer(id);
-
+		//return null;
 	}
 	
 	//Currently not working

@@ -18,13 +18,13 @@ import com.revature.data.hibernate.EmployeeDAO;
 import com.revature.data.hibernate.TransactionItemsOracle;
 
 @RestController
-@RequestMapping(value="/location")
+@RequestMapping(value="/transaction")
 public class TransactionController {
 
 	@Autowired
 	private TransactionItemsOracle CO;
 
-	public ApplicationContext ac;
+//	public ApplicationContext ac;
 	
 //	@GetMapping(value="{id}")
 //	public ItemTransaction getTransaction (@PathVariable Integer id) {
