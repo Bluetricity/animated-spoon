@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CreateAccountService } from '../create-account.service';
+import { NgFormSelectorWarning } from '@angular/forms';
 
 @Component({
   selector: 'app-create-account',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent implements OnInit {
+  public username: string;
+  public password: string;
+  public name: string;
+  public contactInfo: string;
+  public location: string;
 
-  constructor() { }
+  constructor(private createService: CreateAccountService) { }
 
   ngOnInit() {
   }
-
+  submit(){
+    this.createService.create(this.username, this.password, this.name, this.contactInfo, this.location);
+  }
 }
