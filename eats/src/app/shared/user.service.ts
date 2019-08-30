@@ -21,7 +21,7 @@ export class UserService {
   login(username: string, password: string): Observable<Currentuser> {
     if ( username && password ) {
       // we are attempting to log in
-      const body = `user=${username}&pass=${password}`;
+      const body = `username=${username}&password=${password}`;
       // We have to tell our app that we're sending form data, so add the headers
       return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
         map( resp => {
