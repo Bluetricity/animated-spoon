@@ -35,9 +35,9 @@ public class EmployeeOracle implements EmployeeDAO{
 	}
 
 	@Override
-	public Employee getEmployee(Employee em) {
+	public Employee getEmployee(Integer em) {
 		Session s = hu.getSession();
-		Employee ret = s.get(Employee.class, em.getEID());
+		Employee ret = s.get(Employee.class, em);
 		s.close();
 		return ret;
 	}
