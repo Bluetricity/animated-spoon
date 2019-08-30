@@ -20,6 +20,7 @@
 /RemoteSystemsTempFiles/
 /External Files/
 */.properties
+*/.MF
 Servers
 # Log file
 *.log
