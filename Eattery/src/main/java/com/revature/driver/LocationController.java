@@ -24,12 +24,11 @@ public class LocationController {
 	@Autowired
 	private LocationOracle CO;
 
-	public ApplicationContext ac;
 	
 	@GetMapping(value="{id}")
 	public Locations getLocation (@PathVariable Integer id) {
-		Locations in = (Locations) ac.getBean("Locations");
-		return CO.getLocation (in);
+		//Locations in = (Locations) ac.getBean("Locations");
+		return null;// CO.getLocation (in);
 
 	}
 	
