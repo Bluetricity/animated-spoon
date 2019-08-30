@@ -1,20 +1,25 @@
 <div>
     <h1 style="text-align: center">Stock will go here</h1>
+    <div class="container">
     <table class="table" id="tbl">
 
         <br>
         <tr>
+            <TH>ID</TH>
             <th>Ingredient</th>
             <th>Quantity</th>
             <th>Add</th>
         </tr>
         <tr *ngFor="let i of Inv">
+            <td>{{i.id}}</td>
             <td>{{i.ingredient}}</td>
             <td>{{i.quantity}}</td>
-            <td><button type="submit" class=" btn btn-info" id="testbtn">Add to inventory</button></td>
+            <td><button type="submit" class=" btn btn-info" id="testbtn">Add more to stock</button></td>
         </tr>
     </table>
-    <button type="submit" class="btn btn-danger" id="backbtn">Back</button>
-    <button type="submit" class="btn btn-success" id="addbtn">Add</button>
-
+    <button type="submit" class="btn btn-success" id="addbtn">Add new stock item</button>
+    <div class="float-right">
+        <button type="submit" class="btn btn-danger" id="backbtn">Back</button>
+    </div>
+    </div>
 </div>
