@@ -8,10 +8,10 @@
             <th>Quantity</th>
             <th>Add</th>
         </tr>
-        <tr>
-            <td>ingredient goes here</td>
-            <td>Quantity</td>
-            <td>add</td>
+        <tr *ngFor="let i of Inv">
+            <td>{{i.ingredient}}</td>
+            <td>{{i.quantity}}</td>
+            <td><button type="submit" class=" btn btn-info" id="testbtn">Add to inventory</button></td>
         </tr>
     </table>
     <button type="submit" class="btn btn-danger" id="backbtn">Back</button>
