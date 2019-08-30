@@ -24,7 +24,7 @@ public class Customers {
 	String name;
 	String contactinfo;
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="CID")
-	Set<Locations> Locations;
+	Set<Locations> locations;
 
 	public Customers() {
 		super();

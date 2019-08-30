@@ -16,41 +16,33 @@ import com.revature.data.hibernate.CustomerOracle;
 import com.revature.data.hibernate.EmployeeDAO;
 
 @RestController
-@RequestMapping(value="/genres")
-public class GenreController {
-	@Autowired
-	private EmployeeDAO gd; 
+@RequestMapping(value="/customer")
+public class CustomerController {
+
 	@Autowired
 	private CustomerOracle CO;
+
 	
-	
-//	@GetMapping
-//	public Set<Employee> getAll(){
-//		return gd.getEmployee();
-//	}
-	
-//	@GetMapping("{steve}")
-//	public Employee getEmployee(@PathVariable("steve") Integer bob) {
-//		return gd.getEmployee();
-//	}
-	
-	@GetMapping
-	public Customers testsEmployee() {
-		Customers a = CO.getCustomer(1);
-		System.out.println(a);
-		
-		return a;
-		//Integer i = gd.addEmployee(g);
-		//return gd.getEmployee(g);
+	@GetMapping(value="{id}")
+	public Customers getCustomer(@PathVariable Integer id) {
+		return CO.getCustomer(id);
+
 	}
 	
+	//Currently not working
 	@PostMapping
-	public Employee addEmployee(@RequestBody Employee g) {
+	public Customers addCustomer(@RequestBody Customers g) {
 		System.out.println(g);
 		
-		return null;
-		//Integer i = gd.addEmployee(g);
-		//return gd.getEmployee(g);
+		return g;
+
+	}
+	@PostMapping(value="/string")
+	public String addCustomer(@RequestBody String g) {
+		System.out.println(g);
+		
+		return g;
+
 	}
 
 }
