@@ -18,6 +18,7 @@ import { ManagerComponent } from './manager/manager.component';
 import { HomeComponent } from './core/home/home.component';
 import { AccountInfoComponent } from './account-info/account-info.component';
 import { StockComponent } from './stock/stock.component';
+import { InventoryComponent } from './inventory/inventory.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { StockComponent } from './stock/stock.component';
     ManagerComponent,
     HomeComponent,
     AccountInfoComponent,
-    StockComponent
+    StockComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,

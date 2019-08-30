@@ -13,22 +13,7 @@
 </head>
 
 <body>
-    <table class="table" id="tbl">
-        <h1 style="text-align: center">Stock will go here</h1>
-        <br>
-        <tr>
-            <th>Ingredient</th>
-            <th>Quantity</th>
-            <th>Add</th>
-        </tr>
-        <tr *ngFor="let s of stock" appHighlight>
-            <td>{{s.stock.stock_id}}</td>
-            <td>{{s.stock.ingredient}}</td>
-            <td>{{s.stock.quantity}}</td>
-        </tr>
-    </table>
-    <button type="submit" class="btn btn-danger" id="backbtn">Back</button>
-    <button type="submit" class="btn btn-success" id="addbtn">Add</button>
+    <app-inventory></app-inventory>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

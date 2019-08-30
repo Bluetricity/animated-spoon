@@ -1,0 +1,11 @@
+
+[{
+    "id": 1,
+    "ingredient": "chicken",
+    "quantity": 50
+},
+{
+    "id": 2,
+    "ingredient": "potato",
+    "quantity": 50
+}]
