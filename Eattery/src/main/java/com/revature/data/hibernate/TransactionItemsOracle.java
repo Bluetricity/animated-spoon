@@ -15,7 +15,7 @@ import com.revature.util.HibernateUtil;
 import com.revature.util.LogUtil;
 
 @Component
-public class TransactionItems implements TransactionDAO{
+public class TransactionItemsOracle implements TransactionDAO{
 	@Autowired
 	private HibernateUtil hu;
 	
@@ -30,7 +30,7 @@ public class TransactionItems implements TransactionDAO{
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
-			LogUtil.logException(e, TransactionItems.class);
+			LogUtil.logException(e, TransactionItemsOracle.class);
 		} finally {
 			s.close();
 		}
@@ -65,7 +65,7 @@ public class TransactionItems implements TransactionDAO{
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
-			LogUtil.logException(e, TransactionItems.class);
+			LogUtil.logException(e, TransactionItemsOracle.class);
 		} finally {
 			s.close();
 		}
@@ -82,7 +82,7 @@ public class TransactionItems implements TransactionDAO{
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
-			LogUtil.logException(e, TransactionItems.class);
+			LogUtil.logException(e, TransactionItemsOracle.class);
 		} finally {
 			s.close();
 		}
