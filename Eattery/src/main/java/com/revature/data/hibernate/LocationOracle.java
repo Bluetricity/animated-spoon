@@ -19,13 +19,13 @@ public class LocationOracle implements LocationDAO{
 	private HibernateUtil hu;
 	
 	@Override
-	public int addLocation(Locations Locations) {
+	public int addLocation(Locations loc) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(Locations);
+			i = (Integer) s.save(loc);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -38,9 +38,9 @@ public class LocationOracle implements LocationDAO{
 	}
 
 	@Override
-	public Locations getLocation(Locations em) {
+	public Locations getLocation(Integer loc) {  
 		Session s = hu.getSession();
-		Locations ret = s.get(Locations.class, em.getLID());
+		Locations ret = s.get(Locations.class, loc);
 		s.close();
 		return ret;
 	}
@@ -56,12 +56,12 @@ public class LocationOracle implements LocationDAO{
 	}
 
 	@Override
-	public void deleteLocation(Locations em) {
+	public void deleteLocation(Locations loc) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(em.getLID());
+			s.delete(loc.getLID());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -73,12 +73,12 @@ public class LocationOracle implements LocationDAO{
 	} 
 
 	@Override
-	public void updateLocation(Locations em) {
+	public void updateLocation(Locations loc) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(em.getLID());
+			s.update(loc.getLID());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

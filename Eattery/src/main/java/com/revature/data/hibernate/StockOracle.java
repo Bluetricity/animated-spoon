@@ -1,8 +1,13 @@
 package com.revature.data.hibernate;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,13 +21,13 @@ public class StockOracle implements StockDAO{
 	private HibernateUtil hu;
 	
 	@Override
-	public int addStock(Stock Stock) {
+	public int addStock(Stock st) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(Stock);
+			i = (Integer) s.save(st);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -35,20 +40,30 @@ public class StockOracle implements StockDAO{
 	}
 
 	@Override
-	public Stock getStock(Stock em) {
+	public Set<Stock> getStock() {
 		Session s = hu.getSession();
-		Stock ret = s.get(Stock.class, em.getSID());
+		String query = "from Stock";
+		Query<Stock> q = s.createQuery(query, Stock.class);
+		List<Stock> ret = q.list();
+		s.close();
+		return new HashSet<Stock>(ret);
+	}
+	
+	@Override
+	public Stock getStock(Integer st) {
+		Session s = hu.getSession();
+		Stock ret = s.get(Stock.class, st);
 		s.close();
 		return ret;
 	}
 
 	@Override
-	public void deleteStock(Stock em) {
+	public void deleteStock(Stock st) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(em.getSID());
+			s.delete(st.getSID());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -60,12 +75,12 @@ public class StockOracle implements StockDAO{
 	} 
 
 	@Override
-	public void updateStock(Stock em) {
+	public void updateStock(Stock st) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(em.getSID());
+			s.update(st.getSID());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -75,6 +90,8 @@ public class StockOracle implements StockDAO{
 			s.close();
 		}
 	}
+
+
 	
 	
 }
