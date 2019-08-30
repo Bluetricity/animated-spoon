@@ -3,13 +3,12 @@ package com.revature.data.hibernate;
 import com.revature.beans.Customers;
 
 public interface CustomerDAO {
-	public int addCustomer(Customers Customer);
+	public int addCustomer(Customers cus);
 	
-	public Customers getCustomer(Customers em);
+	public Customers getCustomer(Integer cus);
 	
-	public void deleteCustomer(Customers em);
+	public void deleteCustomer(Customers cus);
 	
-	public void updateCustomer(Customers em);
+	public void updateCustomer(Customers cus);
 
-	Customers getCustomer(int em);
 }

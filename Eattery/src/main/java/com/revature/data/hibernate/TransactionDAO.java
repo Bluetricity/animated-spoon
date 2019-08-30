@@ -5,13 +5,13 @@ import java.util.Set;
 import com.revature.beans.ItemTransaction;
 
 public interface TransactionDAO {
-	public int addItemTransaction(ItemTransaction ItemTransaction);
+	public int addItemTransaction(ItemTransaction IT);
 	
-	public ItemTransaction getItemTransaction(ItemTransaction em);
+	public ItemTransaction getItemTransaction(Integer IT);
 	
-	public Set<ItemTransaction> getItemTransactionbyTransaction (ItemTransaction in);
+	public Set<ItemTransaction> getItemTransactionbyTransaction (ItemTransaction IT);
 	
-	public void deleteItemTransaction(ItemTransaction em);
+	public void deleteItemTransaction(ItemTransaction IT);
 	
-	public void updateItemTransaction(ItemTransaction em);   
+	public void updateItemTransaction(ItemTransaction IT);   
 }
