@@ -20,13 +20,13 @@ public class TransactionItemsOracle implements TransactionDAO{
 	private HibernateUtil hu;
 	
 	@Override
-	public int addItemTransaction(ItemTransaction ItemTransaction) {
+	public int addItemTransaction(ItemTransaction IT) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(ItemTransaction);
+			i = (Integer) s.save(IT);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -39,28 +39,28 @@ public class TransactionItemsOracle implements TransactionDAO{
 	}
 
 	@Override
-	public ItemTransaction getItemTransaction(ItemTransaction em) {
+	public ItemTransaction getItemTransaction(Integer IT) {
 		Session s = hu.getSession();
-		ItemTransaction ret = s.get(ItemTransaction.class, em.getTID());
+		ItemTransaction ret = s.get(ItemTransaction.class, IT);
 		s.close();
 		return ret;
 	}
 
 	@Override
-	public Set<ItemTransaction> getItemTransactionbyTransaction(ItemTransaction in) {
+	public Set<ItemTransaction> getItemTransactionbyTransaction(ItemTransaction IT) {
 		Session s = hu.getSession();
-		Set<ItemTransaction> ret = (Set<ItemTransaction>) s.get(Locations.class, in.getTID());
+		Set<ItemTransaction> ret = (Set<ItemTransaction>) s.get(Locations.class, IT.getTID());
 		s.close();
 		return ret;
 	}
 	
 	@Override
-	public void deleteItemTransaction(ItemTransaction em) {
+	public void deleteItemTransaction(ItemTransaction IT) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(em.getTID());
+			s.delete(IT.getTID());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -72,12 +72,12 @@ public class TransactionItemsOracle implements TransactionDAO{
 	} 
 
 	@Override
-	public void updateItemTransaction(ItemTransaction em) { 
+	public void updateItemTransaction(ItemTransaction IT) { 
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(em.getTID());
+			s.update(IT.getTID());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

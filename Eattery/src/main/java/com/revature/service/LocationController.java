@@ -1,4 +1,4 @@
-package com.revature.driver;
+package com.revature.service;
 
 import java.util.Set;
 
@@ -12,36 +12,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import com.revature.beans.Locations;
 import com.revature.beans.Employee;
-import com.revature.beans.Stock;
-import com.revature.data.hibernate.StockOracle;
+import com.revature.data.hibernate.LocationOracle;
 import com.revature.data.hibernate.EmployeeDAO;
 
 @RestController
-@RequestMapping(value="/stock")
-public class StockController {
+@RequestMapping(value="/location")
+public class LocationController {
 
 	@Autowired
-	private StockOracle CO;
+	private LocationOracle CO;
 
 	
 	@GetMapping(value="{id}")
-	public Stock getStock (@PathVariable Integer id) {
-		//Stock in = (Stock) ac.getBean("Stocks");
-		return null;//CO.getStock (id);
+	public Locations getLocation (@PathVariable Integer id) {
+		//Locations in = (Locations) ac.getBean("Locations");
+		return null;// CO.getLocation (in);
 
 	}
 	
 	//Currently not working
 	@PostMapping
-	public Stock addStock (@RequestBody Stock g) {
+	public Locations addLocation (@RequestBody Locations g) {
 		System.out.println(g);
 		
 		return g;
 
 	}
 	@PostMapping(value="/string")
-	public String addStock (@RequestBody String g) {
+	public String addLocation (@RequestBody String g) {
 		System.out.println(g);
 		
 		return g;

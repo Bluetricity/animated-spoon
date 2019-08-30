@@ -20,13 +20,13 @@ public class MenuOracle implements MenuDAO{
 	private HibernateUtil hu;
 	
 	@Override
-	public int addMenu(Menu Menu) {
+	public int addMenu(Menu menu) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(Menu);
+			i = (Integer) s.save(menu);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -39,9 +39,9 @@ public class MenuOracle implements MenuDAO{
 	}
 	
 	@Override
-	public Menu getMenu(Menu em) {
+	public Menu getMenu(Integer menu) {
 		Session s = hu.getSession();
-		Menu ret = s.get(Menu.class, em.getMID());
+		Menu ret = s.get(Menu.class, menu);
 		s.close();
 		return ret;
 	}
@@ -66,12 +66,12 @@ public class MenuOracle implements MenuDAO{
 	
 
 	@Override
-	public void deleteMenu(Menu em) {
+	public void deleteMenu(Menu menu) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(em.getMID());
+			s.delete(menu.getMID());
 			t.commit();
 		} catch(Exception e) { 
 			if(t != null)
@@ -83,12 +83,12 @@ public class MenuOracle implements MenuDAO{
 	} 
 
 	@Override
-	public void updateMenu(Menu em) {
+	public void updateMenu(Menu menu) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(em.getMID());
+			s.update(menu.getMID());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

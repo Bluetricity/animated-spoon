@@ -16,13 +16,13 @@ public class CustomerOracle implements CustomerDAO{
 	private HibernateUtil hu;
 	
 	@Override
-	public int addCustomer(Customers Customers) {
+	public int addCustomer(Customers cus) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(Customers);
+			i = (Integer) s.save(cus);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -35,20 +35,20 @@ public class CustomerOracle implements CustomerDAO{
 	}
 
 	@Override
-	public Customers getCustomer(int em) {
+	public Customers getCustomer(Integer cus) {
 		Session s = hu.getSession();
-		Customers ret = s.get(Customers.class, em);
+		Customers ret = s.get(Customers.class, cus);
 		s.close();
 		return ret;
 	}
 
 	@Override
-	public void deleteCustomer(Customers em) {
+	public void deleteCustomer(Customers cus) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(em.getCID());
+			s.delete(cus.getCID());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -60,12 +60,12 @@ public class CustomerOracle implements CustomerDAO{
 	} 
 
 	@Override
-	public void updateCustomer(Customers em) {
+	public void updateCustomer(Customers cus) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(em.getCID());
+			s.update(cus.getCID());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -75,12 +75,5 @@ public class CustomerOracle implements CustomerDAO{
 			s.close();
 		}
 	}
-
-	@Override
-	public Customers getCustomer(Customers em) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 	
 }

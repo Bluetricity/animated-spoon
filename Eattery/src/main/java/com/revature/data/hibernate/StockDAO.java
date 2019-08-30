@@ -1,13 +1,17 @@
 package com.revature.data.hibernate;
 
+import java.util.Set;
+
 import com.revature.beans.Stock;
 
 public interface StockDAO {
-	public int addStock(Stock Stock);
+	public int addStock(Stock st);
 	
-	public Stock getStock(Stock em);
+	public Set<Stock> getStock();
 	
-	public void deleteStock(Stock em);
+	public Stock getStock(Integer st);
 	
-	public void updateStock(Stock em); 
+	public void deleteStock(Stock st);
+	
+	public void updateStock(Stock st); 
 }
