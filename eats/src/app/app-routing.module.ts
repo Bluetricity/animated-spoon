@@ -10,6 +10,7 @@ import { HomeComponent } from './core/home/home.component';
 import { ManagerComponent } from './manager/manager.component';
 import { StockComponent } from './stock/stock.component';
 import {AccountInfoComponent } from './account-info/account-info.component'
+import { NewStockComponent } from './new-stock/new-stock.component';
 
 const routes: Routes = [
   {
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path: 'account-info',
     component: AccountInfoComponent
+  },
+  {
+    path: 'new-stock',
+    component: NewStockComponent
   }
 ];
 

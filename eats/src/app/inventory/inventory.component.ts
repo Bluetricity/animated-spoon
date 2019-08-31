@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Stock } from '../shared/stock';
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 import sampleData from '../data.json';
@@ -20,9 +21,14 @@ export class InventoryComponent implements OnInit {
 
   Inv: any = sampleData
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
+  backToHome(){
+    this.router.navigate(['home']);
+  }
+  addNewItem(){
+    this.router.navigate(['new-stock']);
+  }
 }
