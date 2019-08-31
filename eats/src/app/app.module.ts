@@ -19,6 +19,7 @@ import { HomeComponent } from './core/home/home.component';
 import { AccountInfoComponent } from './account-info/account-info.component';
 import { StockComponent } from './stock/stock.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { NewStockComponent } from './new-stock/new-stock.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { InventoryComponent } from './inventory/inventory.component';
     HomeComponent,
     AccountInfoComponent,
     StockComponent,
-    InventoryComponent
+    InventoryComponent,
+    NewStockComponent
   ],
   imports: [
     BrowserModule,
