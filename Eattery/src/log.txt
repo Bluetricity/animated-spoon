@@ -1294,3 +1294,33 @@ public com.revature.beans.Stock com.revature.service.StockController.addStock(co
 2019-08-30 20:20:09 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Fri Aug 30 20:20:00 EDT 2019]; root of context hierarchy
 2019-08-30 20:20:09 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 9272 ms
 2019-08-30 20:22:52 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Fri Aug 30 20:20:00 EDT 2019]; root of context hierarchy
+2019-08-30 21:23:45 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-08-30 21:23:46 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Fri Aug 30 21:23:46 EDT 2019]; root of context hierarchy
+2019-08-30 21:23:46 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public com.revature.beans.Locations com.revature.service.LocationController.getLocation(java.lang.Integer)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-08-30 21:23:51 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-08-30 21:23:54 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Fri Aug 30 21:23:46 EDT 2019]; root of context hierarchy
+2019-08-30 21:23:54 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Fri Aug 30 21:23:46 EDT 2019]; root of context hierarchy
+2019-08-30 21:23:55 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 9548 ms
+2019-08-30 21:24:03 WARN  PageNotFound:1176 - No mapping found for HTTP request with URI [/Eattery/login] in DispatcherServlet with name 'DispatcherServlet'
+2019-08-30 21:24:11 WARN  PageNotFound:1176 - No mapping found for HTTP request with URI [/Eattery/login] in DispatcherServlet with name 'DispatcherServlet'
+2019-08-30 21:24:45 WARN  PageNotFound:1176 - No mapping found for HTTP request with URI [/Eattery/login] in DispatcherServlet with name 'DispatcherServlet'
+2019-08-30 21:24:47 WARN  PageNotFound:1176 - No mapping found for HTTP request with URI [/Eattery/login] in DispatcherServlet with name 'DispatcherServlet'
+2019-08-30 21:25:12 WARN  PageNotFound:1176 - No mapping found for HTTP request with URI [/Eattery/login] in DispatcherServlet with name 'DispatcherServlet'
+2019-08-30 21:26:28 WARN  PageNotFound:1176 - No mapping found for HTTP request with URI [/Eattery/login] in DispatcherServlet with name 'DispatcherServlet'
