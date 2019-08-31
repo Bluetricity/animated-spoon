@@ -21,8 +21,8 @@ export class CreateAccountComponent implements OnInit {
   ngOnInit() {
   }
   submit(){
-    this.createService.create(this.username, this.password, this.name, this.contactInfo, this.location);
-    this.returnTo();
+    this.createService.create(this.username, this.password, this.name, this.contactInfo);
+    this.router.navigate(['account-info']);
   }
   returnTo(){
     this.router.navigate(['home']);
