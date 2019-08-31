@@ -19,7 +19,7 @@
 */target/
 /RemoteSystemsTempFiles/
 /External Files/
-*/.properties
+*/pom.properties
 */.MF
 Servers
 # Log file
