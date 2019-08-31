@@ -17,30 +17,30 @@
 
     <div class="container">
         <div class="formgroup">
-            <label for="b_Username">Username:</label>
-            <input class="form-control simple-create" type="text" id="b_Username"/>
+            <label for="username">Username:</label>
+            <input class="form-control simple-create" type="text" id="username" [(ngModel)] = "username"/>
             <br>
         </div>
         <div class="formgroup">
-            <label for="b_Password">Password:</label>
-            <input class="form-control simple-create" type="text" id="b_Password"/>
+            <label for="password">Password:</label>
+            <input class="form-control simple-create" type="text" id="password" [(ngModel)] = "password"/>
             <br>
         </div>
         <div class="formgroup">
-            <label for="b_Name">Name:</label>
-            <input class="form-control simple-create" type="text" id="b_Name"/>
+            <label for="name">Name:</label>
+            <input class="form-control simple-create" type="text" id="name" [(ngModel)] = "name"/>
             <br>
         </div>
         <div class="formgroup">
-            <label for="b_ContactInfo">Contact Info:</label>
-            <input class="form-control simple-create" type="text" id="b_ContactInfo"/>
+            <label for="contactInfo">Contact Info:</label>
+            <input class="form-control simple-create" type="text" id="contactInfo" [(ngModel)] = "contactInfo"/>
             <br>
         </div>
         <div class="formgroup">
-            <label for="b_location">Location:</label>
-            <input class="form-control simple-create" type="text" id="b_location"/>
+            <label for="location">Location:</label>
+            <input class="form-control simple-create" type="text" id="location" [(ngModel)] = "location"/>
         </div>
-        <button type="submit" class="btn btn-primary" id="submitbtn">Submit</button>
-        <button type="submit" class="btn btn-danger" id="backbtn">Cancel</button>
+        <button class="btn btn-primary" (click) = submit()>Submit</button>
+        <button class="btn btn-danger" (click) = returnTo()>Cancel</button>
     </div>
 </body>
