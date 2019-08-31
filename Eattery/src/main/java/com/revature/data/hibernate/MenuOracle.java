@@ -1,10 +1,13 @@
 package com.revature.data.hibernate;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -48,20 +51,30 @@ public class MenuOracle implements MenuDAO{
 	
 	@Override
 	public Set<Menu> getMenubyIngredient(Stock st) {
-		//TODO Broken: use with care
+		//Uncertain if this is going to work, hope and pray with me.
 		Session s = hu.getSession();
-		Set<Menu> ret = (Set<Menu>) s.get(Locations.class, st.getSID());
+		
+		String query = "from Menu a inner join Stock_Menu b on a.MID = b.MID inner join Stock c on b.SID = c.SID where QUANTITY_STORED = :in";
+		Query<Menu> q = s.createQuery(query, Menu.class);
+		q.setParameter("in", st.getQuantity());
+		List<Menu> ret = q.getResultList();
 		s.close();
-		return ret;
+		
+		return new HashSet<Menu>(ret);
 	}
 
 	@Override
 	public Set<Menu> getMenubyQuantity(Stock st) {
 		//TODO Broken: use with care
 		Session s = hu.getSession();
-		Set<Menu> ret = (Set<Menu>) s.get(Locations.class, st.getSID());
+		
+		String query = "from Menu a inner join Stock_Menu b on a.MID = b.MID inner join Stock c on b.SID = c.SID where QUANTITY_STORED = :in";
+		Query<Menu> q = s.createQuery(query, Menu.class);
+		q.setParameter("in", st.getQuantity());
+		List<Menu> ret = q.getResultList();
 		s.close();
-		return ret;
+		
+		return new HashSet<Menu>(ret);
 	}
 	
 

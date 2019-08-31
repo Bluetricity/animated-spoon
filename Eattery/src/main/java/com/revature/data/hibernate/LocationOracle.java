@@ -1,10 +1,13 @@
 package com.revature.data.hibernate;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -47,12 +50,16 @@ public class LocationOracle implements LocationDAO{
 	
 	@Override
 	public Set<Locations> getLocationbyCustomer(Customers c) {
-		//TODO, Uncertain if this is valid Hibernate code
 		
 		Session s = hu.getSession();
-		Set<Locations> ret = (Set<Locations>) s.get(Locations.class, c.getCID());
+		
+		String query = "from Locations where CID = :Id";
+		Query<Locations> q = s.createQuery(query, Locations.class);
+		q.setParameter("Id", c.getCID());
+		List<Locations> ret = q.getResultList();
 		s.close();
-		return ret;
+		
+		return new HashSet<Locations>(ret);
 	}
 
 	@Override
