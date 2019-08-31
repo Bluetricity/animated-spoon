@@ -9,6 +9,7 @@ import { DeliveryStatusComponent } from './delivery-status/delivery-status.compo
 import { HomeComponent } from './core/home/home.component';
 import { ManagerComponent } from './manager/manager.component';
 import { StockComponent } from './stock/stock.component';
+import {AccountInfoComponent } from './account-info/account-info.component'
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'delivery-status',
     component: DeliveryStatusComponent
+  },
+  {
+    path: 'account-info',
+    component: AccountInfoComponent
   }
 ];
 
