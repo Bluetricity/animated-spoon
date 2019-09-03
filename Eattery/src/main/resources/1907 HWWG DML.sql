@@ -16,12 +16,12 @@ insert into employee(eid, username, password, empname, title)
 values (employee_seq.nextval, 'manager', 'pass', 'manager', 'Manager');
 
 --location
-insert into locations(cid, address)
-values(1, '123 main st.');
-insert into locations(cid, address)
-values(1, '321 address street');
-insert into locations(cid, address)
-values(2, '231 street street');
+insert into locations(lid, cid, address)
+values(LOCATION_SEQ.nextval, 1, '123 main st.');
+insert into locations(lid, cid, address)
+values(LOCATION_SEQ.nextval, 1, '321 address street');
+insert into locations(lid, cid, address)
+values(LOCATION_SEQ.nextval, 2, '231 street street');
 
 --menu
 insert into menu(mid, mealname, price)
@@ -108,9 +108,9 @@ values (8,11,20);
 
 --transaction
 insert into transaction (tid, cid, payment_type)
-values(transaction_seq, 1, 'card');
+values(transaction_seq.nextval, 1, 'card');
 insert into transaction (tid, cid, payment_type)
-values(transaction_seq,2, 'cash');
+values(transaction_seq.nextval,2, 'cash');
 
 --transactionitems
 insert into transactionitems(tid, mid, quanity)
