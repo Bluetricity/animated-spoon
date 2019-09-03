@@ -10,18 +10,31 @@ import { map } from 'rxjs/operators';
 })
 export class AddStockService {
 
-  private appUrl = this.caUrl.getUrl + '/stock/';
-  private headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  // private appUrl = this.caUrl.getUrl + '/http://localhost:4200/Eattery/stock';
+  private appUrl = this.caUrl.getUrl() + '/stock/';
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
+  
+
   create(ingredient: string, quantity: number): Observable<Stock> {
-    const body = `ingredient=${ingredient}&quantity=${quantity}`;
-    return this.http.post(this.appUrl, body, { headers: this.headers, withCredentials: true }).pipe(
+    const obj = {ingredient:ingredient, quantity:quantity};
+    const body = JSON.stringify(obj);
+    return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
       map(resp => {
         const newStock: Stock = resp as Stock;
         return newStock;
       })
     );
+    // return this.http.post<Stock>(this.appUrl, body, { headers: new HttpHeaders({
+    //   'Content-Type': 'application/json'
+    //   }) 
+    // }).pipe(
+    //   map(resp => {
+    //     const newStock: Stock = resp as Stock;
+    //     return newStock;
+    //   })
+    // );
   }
 }
