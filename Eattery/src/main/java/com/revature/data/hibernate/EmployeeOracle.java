@@ -3,9 +3,11 @@ package com.revature.data.hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.revature.beans.Customers;
 import com.revature.beans.Employee;
 import com.revature.util.HibernateUtil;
 import com.revature.util.LogUtil;
@@ -34,6 +36,21 @@ public class EmployeeOracle implements EmployeeDAO{
 
 	}
 
+	@Override
+	public Employee getEmployeebyUNandPW(Employee em) {
+		Session s = hu.getSession();
+		
+		String query = "from Employee where username = :name and password = :password";
+		Query<Employee> q = s.createQuery(query, Employee.class);
+		q.setParameter("name", em.getName());
+		q.setParameter("password", em.getPassword());
+		
+		em = q.uniqueResult();
+
+		return em;
+	}
+	
+	
 	@Override
 	public Employee getEmployee(Integer em) {
 		Session s = hu.getSession();

@@ -13,6 +13,8 @@
 </head>
 
 <body>
+    <h1 style="text-align: center">Add new stock here</h1>
+    <br>
     <div class="container">
         <div class="formgroup">
             <label for="Ingredient">Ingredient</label>
@@ -21,7 +23,7 @@
         </div>
         <div class="formgroup">
             <label for="Quantity">Quantity</label>
-            <input class="form-control simple-create" type="number" id="quantity" [(ngModel)]="ingredient" />
+            <input class="form-control simple-create" type="number" id="quantity" [(ngModel)]="quantity" />
             <br>
         </div>
         <button class="btn btn-success" (click)=addStock()>Submit</button>

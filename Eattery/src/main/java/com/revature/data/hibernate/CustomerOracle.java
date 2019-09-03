@@ -1,12 +1,17 @@
 package com.revature.data.hibernate;
 
+import java.util.HashSet;
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.revature.beans.Customers;
+import com.revature.beans.Stock;
 import com.revature.util.HibernateUtil;
 import com.revature.util.LogUtil;
 
@@ -34,6 +39,21 @@ public class CustomerOracle implements CustomerDAO{
 
 	}
 
+	@Override
+	public Customers getCustomerbyUNandPW(Customers cus) {
+		Session s = hu.getSession();
+		
+		String query = "from Customer where username = :name and password = :password";
+		Query<Customers> q = s.createQuery(query, Customers.class);
+		q.setParameter("name", cus.getName());
+		q.setParameter("password", cus.getPassword());
+		
+		cus = q.uniqueResult();
+
+		return cus;
+	}
+	
+	
 	@Override
 	public Customers getCustomer(Integer cus) {
 		Session s = hu.getSession();
@@ -75,5 +95,8 @@ public class CustomerOracle implements CustomerDAO{
 			s.close();
 		}
 	}
-	
+
+
+
+
 }

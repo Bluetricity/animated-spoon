@@ -1,19 +1,19 @@
 --Customers
 insert into customers(cid, username, password, name, contactinfo)
-values (1, 'cust1', 'pass', 'Steve Stevens', '123-456-7890');
+values (customer_seq.nextval, 'cust1', 'pass', 'Steve Stevens', '123-456-7890');
 
 insert into customers(cid, username, password, name, contactinfo)
-values (2,'test2', 'pass', 'customer', '7894561230');
+values (customer_seq.nextval,'test2', 'pass', 'customer', '7894561230');
 
 --Employee (one stocker, one cook, one delivery driver, one manager)
 insert into employee(eid, username, password, empname, title)
-values (1, 'stocker', 'pass', 'Generic Stocker', 'Stocker');
+values (employee_seq.nextval, 'stocker', 'pass', 'Generic Stocker', 'Stocker');
 insert into employee(eid, username, password, empname, title)
-values (2, 'chef', 'pass', 'the chef', 'Cook');
+values (employee_seq.nextval, 'chef', 'pass', 'the chef', 'Cook');
 insert into employee(eid, username, password, empname, title)
-values (3, 'delivery', 'pass', 'Delivery Driver', 'Delivery Driver');
+values (employee_seq.nextval, 'delivery', 'pass', 'Delivery Driver', 'Delivery Driver');
 insert into employee(eid, username, password, empname, title)
-values (4, 'manager', 'pass', 'manager', 'Manager');
+values (employee_seq.nextval, 'manager', 'pass', 'manager', 'Manager');
 
 --location
 insert into locations(cid, address)
@@ -25,51 +25,51 @@ values(2, '231 street street');
 
 --menu
 insert into menu(mid, mealname, price)
-values(1, 'chicken tenders', 6.99);
+values(menu_seq.nextval, 'chicken tenders', 6.99);
 insert into menu(mid, mealname, price)
-values(2, 'french fries', 3.99);
+values(menu_seq.nextval, 'french fries', 3.99);
 insert into menu(mid, mealname, price)
-values(3, 'salad', 5.99);
+values(menu_seq.nextval, 'salad', 5.99);
 insert into menu(mid, mealname, price)
-values(4, 'hamburger', 8.99);
+values(menu_seq.nextval, 'hamburger', 8.99);
 insert into menu(mid, mealname, price)
-values(5, 'cheeseburger', 8.99);
+values(menu_seq.nextval, 'cheeseburger', 8.99);
 insert into menu(mid, mealname, price)
-values(6, 'chicken wings', 7.99);
+values(menu_seq.nextval, 'chicken wings', 7.99);
 insert into menu(mid, mealname, price)
-values(7, 'steak', 15.99);
+values(menu_seq.nextval, 'steak', 15.99);
 insert into menu(mid, mealname, price)
-values(8, 'mashed potatoes', 4.99);
+values(menu_seq.nextval, 'mashed potatoes', 4.99);
 insert into menu(mid, mealname, price)
-values(9, 'mac and cheese', 6.99);
+values(menu_seq.nextval, 'mac and cheese', 6.99);
 insert into menu(mid, mealname, price)
-values(10, 'fish', 10.99);
+values(menu_seq.nextval, 'fish', 10.99);
 insert into menu(mid, mealname, price)
-values(11, 'lobster', 15.99);
+values(menu_seq.nextval, 'lobster', 15.99);
 
 --stock
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values (1, 'chicken', 50);
+values (stock_seq.nextval, 'chicken', 50);
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values (2, 'lettuce', 80);
+values (stock_seq.nextval, 'lettuce', 80);
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values (3, 'macaroni', 30);
+values (stock_seq.nextval, 'macaroni', 30);
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values (4, 'cheese', 60);
+values (stock_seq.nextval, 'cheese', 60);
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values (5, 'beef', 80);
+values (stock_seq.nextval, 'beef', 80);
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values (6, 'potato', 100);
+values (stock_seq.nextval, 'potato', 100);
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values (7, 'fish', 30);
+values (stock_seq.nextval, 'fish', 30);
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values (8, 'lobster', 20);
+values (stock_seq.nextval, 'lobster', 20);
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values (9, 'tomato', 50);
+values (stock_seq.nextval, 'tomato', 50);
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values(10, 'onion', 50);
+values(stock_seq.nextval, 'onion', 50);
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
-values(11, 'bread', 70);
+values(stock_seq.nextval, 'bread', 70);
 
 --stock_menu
 --chicken tenders
@@ -108,9 +108,9 @@ values (8,11,20);
 
 --transaction
 insert into transaction (tid, cid, payment_type)
-values(1, 1, 'card');
+values(transaction_seq, 1, 'card');
 insert into transaction (tid, cid, payment_type)
-values(2,2, 'cash');
+values(transaction_seq,2, 'cash');
 
 --transactionitems
 insert into transactionitems(tid, mid, quanity)
