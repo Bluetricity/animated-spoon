@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Customers;
+import com.revature.beans.Employee;
+import com.revature.beans.User;
+import com.revature.data.hibernate.CustomerOracle;
+import com.revature.data.hibernate.EmployeeOracle;
+import com.revature.data.hibernate.CustomerDAO;
+import com.revature.data.hibernate.EmployeeDAO;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
@@ -25,12 +31,21 @@ public class LoginController {
 	EmployeeController EC;
 	
 	@PostMapping()
-	public Customers getCustomer(String username, String password, HttpSession session) {		
-		CC.addCustomer();
+	public User login(String username, String password, HttpSession session) {
+		User currentUser = new User();
+		Customers cus = new Customers();
+		Employee emp = new Employee();
+		CustomerDAO cd = new CustomerOracle();
+		EmployeeDAO dd = new EmployeeOracle();
 		
-		EC
+		cus.setUsername(username);
+		cus.setPassword(password);
+		emp.setUsername(username);
+		emp.setPassword(password);
+		currentUser.setCust(cd.getCustomerbyUNandPW(cus));
+		currentUser.setEmp(dd.getEmployeebyUNandPW(emp));
 		
-		return 
+		return currentUser;
 		
 	}
 }
