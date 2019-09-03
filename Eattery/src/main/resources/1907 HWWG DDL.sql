@@ -39,8 +39,7 @@ create table Stock_Menu (
     MID number(20),
     amount number(15),
     constraint fk_Stock_Menu foreign key (MID) references Menu(MID),
-    constraint fk_Menu_Stock foreign key (SID) references Stock(SID),
-    
+    constraint fk_Menu_Stock foreign key (SID) references Stock(SID)
 );
 
 create table Customers (

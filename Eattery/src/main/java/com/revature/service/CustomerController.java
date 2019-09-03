@@ -50,10 +50,5 @@ public class CustomerController {
 		return g;
 
 	}
-	
-	public Customers login(String UN, String PW) {
-		Customers in = (Customers)
-		return 
-	}
 
 }
