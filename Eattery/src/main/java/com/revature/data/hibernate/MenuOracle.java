@@ -68,6 +68,13 @@ public class MenuOracle implements MenuDAO{
 		//TODO Broken: use with care
 		Session s = hu.getSession();
 		
+		
+//		SELECT MID FROM (SELECT MID, COUNT(MID) as ReadyIngedients  
+//				FROM (SELECT * FROM STOCK_MENU NAWTURAL JOIN STOCK 
+//				WHERE AMOUNT <= QUANTITY_STORED) GROUP BY MID) Natural join 
+//				(SELECT MID, COUNT(MID) AS NumofIngedients FROM Stock_Menu GROUP BY MID)
+//				Where ReadyIngedients = NumofIngedients;
+		
 		String query = "from Menu a inner join Stock_Menu b on a.MID = b.MID inner join Stock c on b.SID = c.SID where QUANTITY_STORED = :in";
 		Query<Menu> q = s.createQuery(query, Menu.class);
 		q.setParameter("in", st.getQuantity());

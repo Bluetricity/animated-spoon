@@ -8,13 +8,22 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CreateAccountService {
-  private appUrl = this.caUrl.getUrl + '/customer';
+  private appUrl = this.caUrl.getUrl() + '/customer';
   private headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
 
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
   create(username: string, password: string, name: string, contactInfo: string){
     const body = `username=${username}&password=${password}&name=${name}&contactinfo=${contactInfo}`;
-    return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true})
+
+    console.log(this.appUrl);
+    
+    console.log(body);
+    console.log(this.headers);
+    console.log(this.http); 
+
+    return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true});
+
+    
   }
 }

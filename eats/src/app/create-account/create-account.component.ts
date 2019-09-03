@@ -22,7 +22,7 @@ export class CreateAccountComponent implements OnInit {
   }
   submit(){
     this.createService.create(this.username, this.password, this.name, this.contactInfo);
-    this.router.navigate(['account-info']);
+    //this.router.navigate(['account-info']);
   }
   returnTo(){
     this.router.navigate(['home']);
