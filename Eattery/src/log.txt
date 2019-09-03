@@ -1698,3 +1698,4 @@ public com.revature.beans.Stock com.revature.service.StockController.addStock(co
 2019-09-03 09:04:27 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
 2019-09-03 09:04:27 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
 2019-09-03 09:17:37 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-03 12:38:32 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Tue Sep 03 09:03:58 EDT 2019]; root of context hierarchy

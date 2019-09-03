@@ -43,7 +43,7 @@ public class StockController {
 	@PostMapping
 	public Stock addStock (@RequestBody Stock g) {
 		System.out.println(g);
-		
+		CO.addStock(g);
 		return g;
 
 	}
