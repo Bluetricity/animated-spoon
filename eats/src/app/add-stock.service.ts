@@ -11,8 +11,8 @@ import { map } from 'rxjs/operators';
 export class AddStockService {
 
   // private appUrl = this.caUrl.getUrl + '/http://localhost:4200/Eattery/stock';
-  private appUrl = this.caUrl.getUrl() + '/new-stock/';
-  private headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  private appUrl = this.caUrl.getUrl() + '/stock/';
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
