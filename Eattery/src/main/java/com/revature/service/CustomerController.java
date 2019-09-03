@@ -39,6 +39,7 @@ public class CustomerController {
 	@PostMapping
 	public Customers addCustomer(@RequestBody Customers g) {
 		System.out.println(g);
+		CO.addCustomer(g);
 		
 		return g;
 
@@ -49,11 +50,6 @@ public class CustomerController {
 		
 		return g;
 
-	}
-	
-	public Customers login(String UN, String PW) {
-		Customers in = (Customers)
-		return 
 	}
 
 }
