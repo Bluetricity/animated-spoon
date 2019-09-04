@@ -24,23 +24,21 @@ export class LoginComponent implements OnInit {
     );
   }
 
+
   login() {
-    this.userService.login(this.username, this.password).subscribe(
-      resp => {
-        this.loggedUser = resp;
-        console.log(this.loggedUser.cust.name);
-      }
-    );
-    this.loggedUser = this.session.get('User');
-    console.log('!!!');
-    
+    if (this.username !== null && this.password !== null) {
+      this.userService.login(this.username, this.password).subscribe(
+        resp => {
+          this.loggedUser = resp;
+          console.log(this.loggedUser.cust.name);
+          console.log(this.loggedUser.emp.name);
+        }
+      );
+      this.loggedUser = this.session.get('User');
+    }
   }
 
   logout() {
     this.userService.logout();
-      // resp => {
-      //   this.loggedUser = null;
-      // }
-    // );
   }
 }
