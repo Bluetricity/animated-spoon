@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Add New Menu Item</title>
+</head>
+
+<body>
+    <h1 style="text-align: center">Add new Menu Item here</h1>
+    <br>
+    <div class="container">
+        <div class="formgroup">
+            <label for="MenuItem">Menu Item</label>
+            <input class="form-control simple-create" type="text" id="MenuItem" [(ngModel)]="mealname" />
+            <br>
+        </div>
+        <div class="formgroup">
+                <label for="MenuItem">Description</label>
+                <input class="form-control simple-create" type="text" id="Description" [(ngModel)]="desc" />
+                <br>
+            </div>
+        <div class="formgroup">
+            <label for="Quantity">Price</label>
+            <input class="form-control simple-create" type="number" id="price" [(ngModel)]="price" />
+            <br>
+        </div>
+        <button class="btn btn-success" (click)=addMenuItem()>Submit</button>
+        <div class="float-right">
+            <button class="btn btn-danger" (click)=goBack()>Go Back</button>
+        </div>
+    </div>
+</body>
+
+</html>
