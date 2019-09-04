@@ -1884,3 +1884,12 @@ public com.revature.beans.Stock com.revature.service.StockController.addStock(co
 2019-09-03 19:38:31 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
 2019-09-03 19:38:36 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
 2019-09-03 19:58:44 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-03 19:59:32 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-03 20:00:10 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-03 20:00:14 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-03 20:00:52 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-03 20:00:55 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-03 20:01:20 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-03 20:01:23 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-03 20:01:38 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-03 20:01:43 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
