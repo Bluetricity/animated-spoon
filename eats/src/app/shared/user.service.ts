@@ -52,6 +52,7 @@ export class UserService {
 
   logout()  {
     this.session.remove('User');
+    window.location.reload();
   }
   getCustomer(): Customer {
     return this.customer;
@@ -60,15 +61,15 @@ export class UserService {
     return this.employee;
   }
   isEmployee(): boolean {
-    if(this.session.get('User')){
-      const cUser : Currentuser = JSON.parse(this.session.get('User'));
+    if (this.session.get('User')) {
+      const cUser: Currentuser = JSON.parse(this.session.get('User'));
       return (cUser.emp !== undefined && cUser.emp !== null);
     }
     return (this.employee !== undefined && this.employee !== null);
   }
   isCustomer(): boolean {
-    if(this.session.get('User')){
-      const cUser : Currentuser = JSON.parse(this.session.get('User'));
+    if (this.session.get('User')) {
+      const cUser: Currentuser = JSON.parse(this.session.get('User'));
       return (cUser.cust !== undefined && cUser.cust !== null);
     }
     return (this.customer !== undefined && this.customer !== null);

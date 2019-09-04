@@ -1,4 +1,4 @@
-<ng-container *ngIf="!loggedUser; else display">
+<ng-container *ngIf="!loggedUser">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             Username:
@@ -21,9 +21,9 @@
                 <span>Welcome {{loggedUser.emp.name}}!</span>
             </div>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <button class="btn btn-danger" (click)="logout()">Logout</button>
-        </li>
+        </li> -->
     </ul>
 </ng-template>
 <ng-template #customer>

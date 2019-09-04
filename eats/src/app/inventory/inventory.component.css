@@ -1,13 +1,28 @@
-.my-custom-scrollbar {
-    position: relative;
-    height: 600px;
-    overflow: auto;
-}
-.table-wrapper-scroll-y {
-    display: block;
-}
-
-.fixed-header{
-    position: sticky; 
-    top: 0;
-}
+    .my-custom-scrollbar {
+        position: relative;
+        height: fit-content;
+        overflow: auto;
+    }
+    
+    .table-wrapper-scroll-y {
+        display: block;
+    }
+    
+    .addstock {
+        text-align: center;
+    }
+    
+    .btn-danger {
+        float: right;
+        margin-right: 20rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    
+    .table td,
+    .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        text-align: center;
+    }
