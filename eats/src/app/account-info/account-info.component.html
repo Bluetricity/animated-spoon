@@ -18,7 +18,7 @@
     <p>Name:</p><p id="name" [(ngModel)]="name"></p>
     <p>User Name:</p><p id="username" [(ngModel)]="username"></p>
     <p>Password:</p><p id="password" [(ngModel)]="password"></p>
-    <p>Contact Information</p><p id="contactinfo" [(ngModel)]="contactinfo"></p>
+    <p>Contact Information</p><p id="contactinfo" [(ngModel)]="contactInfo"></p>
     <table id="location" class="table">
         <tr>
             <th>Location</th>
@@ -26,10 +26,10 @@
     </table>
     <div class="formgroup">
         <label for="b_location">Enter a new delivery location.</label>
-        <input class="form-control simple-account" type="text" id="location" [(ngModel)] ="location"/>
+        <input class="form-control simple-account" type="text" id="newLocation" [(ngModel)] ="newLocation"/>
     </div>
     <div>
-        <button type="submit" class="btn btn-primary" id="submitbtn">Submit</button>
-        <button type="submit" class="btn btn-danger" id="backbtn">Cancel</button>
+        <button type="submit" class="btn btn-primary" (click) = submit()>Submit</button>
+        <button type="submit" class="btn btn-danger" (clicl) = returnTo()>Cancel</button>
     </div>
 </body>

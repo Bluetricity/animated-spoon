@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.revature.beans.Locations;
-import com.revature.beans.Employee;
+import com.revature.beans.Customers;
 import com.revature.data.hibernate.LocationOracle;
 import com.revature.data.hibernate.EmployeeDAO;
 
@@ -26,9 +26,11 @@ public class LocationController {
 
 	
 	@GetMapping(value="{id}")
-	public Locations getLocation (@PathVariable Integer id) {
+	public Set<Locations> getLocationbyCustomer(@PathVariable Integer id) {
+		Customers cust = new Customers();
+		cust.setCID(id);
 		//Locations in = (Locations) ac.getBean("Locations");
-		return null;// CO.getLocation (in);
+		return CO.getLocationbyCustomer(cust);// CO.getLocation (in);
 
 	}
 	
