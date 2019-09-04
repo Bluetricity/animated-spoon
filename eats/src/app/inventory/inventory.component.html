@@ -5,19 +5,27 @@
 
             <br>
             <tr>
-                <TH>ID</TH>
+                <!-- <TH>ID</TH> -->
                 <th>Ingredient</th>
                 <th>Quantity</th>
                 <th>Add</th>
             </tr>
-            <tr *ngFor="let i of Inv">
+            <!-- <tr *ngFor="let i of Inv">
                 <td>{{i.id}}</td>
                 <td>{{i.ingredient}}</td>
                 <td>{{i.quantity}}</td>
                 <td><button type="submit" class=" btn btn-info" id="testbtn">Add more to stock</button></td>
+            </tr> -->
+            <tr *ngFor="let s of stocks">
+                <!-- <td>{{s.id}}</td> -->
+                <td>{{s.ingredient}}</td>
+                <td>{{s.quantity}}</td>
+                <td><button type="submit" class=" btn btn-info" id="testbtn">Add more to stock</button></td>
+
             </tr>
         </table>
         <button type="submit" class="btn btn-success" id="addbtn" (click)=addNewItem()>Add new stock item</button>
+        <!-- <button type="submit" class="btn btn-success" id="addbtn" (click)=getItem()>Testing get</button> -->
         <div class="float-right">
             <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
         </div>
