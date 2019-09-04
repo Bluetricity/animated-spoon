@@ -32,7 +32,7 @@ export class UserService {
             this.employee = user.emp;
             this.customer = user.cust;
           }
-          this.session.set('User', user);
+          this.session.set('User', JSON.stringify(user));
           return user;
         })
       );
@@ -60,9 +60,17 @@ export class UserService {
     return this.employee;
   }
   isEmployee(): boolean {
+    if(this.session.get('User')){
+      const cUser : Currentuser = JSON.parse(this.session.get('User'));
+      return (cUser.emp !== undefined && cUser.emp !== null);
+    }
     return (this.employee !== undefined && this.employee !== null);
   }
   isCustomer(): boolean {
+    if(this.session.get('User')){
+      const cUser : Currentuser = JSON.parse(this.session.get('User'));
+      return (cUser.cust !== undefined && cUser.cust !== null);
+    }
     return (this.customer !== undefined && this.customer !== null);
   }
 

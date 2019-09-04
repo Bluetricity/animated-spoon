@@ -3,6 +3,7 @@ import { CustomerService } from '../customer.service';
 import { NgFormSelectorWarning } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Currentuser } from '../shared/currentuser';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-create-account',
@@ -17,7 +18,8 @@ export class CreateAccountComponent implements OnInit {
   public loggedUser: Currentuser;
 
   constructor(private createService: CustomerService,
-    private router: Router) { }
+    private router: Router,
+    private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -26,8 +28,9 @@ export class CreateAccountComponent implements OnInit {
       this.createService.create(this.username.trim(), this.password.trim(), this.name.trim(), this.contactInfo.trim()).subscribe(
         resp =>{
           this.loggedUser = resp;
+          this.userService.login(this.username, this.password);
+          this.router.navigate(['account-info']);
         });
-      this.router.navigate(['account-info']);
     }
   }
   returnTo(){
