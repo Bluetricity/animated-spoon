@@ -13,10 +13,10 @@ export class StockComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.stock=new Stock();
-    this.stock.stock_id=1;
-    this.stock.ingredient="chicken";
-    this.stock.quantity=50;
+    this.stock = new Stock();
+    this.stock.stock_id = 1;
+    this.stock.ingredient = 'chicken';
+    this.stock.quantity = 50;
   }
 
 }
