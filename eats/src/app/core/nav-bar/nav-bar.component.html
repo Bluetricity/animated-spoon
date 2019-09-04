@@ -23,7 +23,7 @@
             <li *ngIf="isCustomer()||isEmployee()">
                 <button class="btn btn-danger" (click)="logout()">Logout</button>
             </li>
-            <li *ngIf="!isCustomer&&!isEmployee" class="nav-item">
+            <li *ngIf="!isCustomer()&&!isEmployee()" class="nav-item">
                 <button class="btn btn-primary" (click)=createAccount()>Create Account</button>
             </li>
         </ul>

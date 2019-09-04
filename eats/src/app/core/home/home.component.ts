@@ -12,7 +12,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-  createAccount() {
-    this.router.navigate(['create-account']);
-  }
 }
