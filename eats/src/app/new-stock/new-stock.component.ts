@@ -19,12 +19,17 @@ export class NewStockComponent implements OnInit {
   ngOnInit() {
   }
   addStock(){
-    this.createService.create(this.ingredient,this.quantity).subscribe(
-      resp =>{
-        this.newStock = resp;
-      }
-    );
-   // this.router.navigate(['stock']);
+    if(this.ingredient == null || this.quantity == null){
+      window.alert("reeee");
+    }
+    else{
+      this.createService.create(this.ingredient,this.quantity).subscribe(
+        resp =>{
+          this.newStock = resp;
+        }
+      );
+    // this.router.navigate(['stock']);
+    }
   }
   goBack(){
     this.router.navigate(['stock']);
