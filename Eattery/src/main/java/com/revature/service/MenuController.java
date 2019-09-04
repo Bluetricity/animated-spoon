@@ -27,14 +27,6 @@ public class MenuController {
 
 	@Autowired
 	private MenuOracle CO;
-
-	
-	@GetMapping
-	public Set<Menu> getMenu(){
-		
-		
-		return CO.getMenubyAvailQuantity();
-	}
 	
 	@GetMapping(value="{id}")
 	public Menu getMenu (@PathVariable Integer id) {
@@ -43,9 +35,16 @@ public class MenuController {
 
 	}
 	
-	@GetMapping
-	public Set<Menu> getMenu(){
+	@GetMapping(value="/all")
+	public Set<Menu> getMenuEmp(){
 		return CO.getMenu();
+	}
+	
+	@GetMapping
+	public Set<Menu> getMenuCust(){
+		
+		
+		return CO.getMenubyAvailQuantity();
 	}
 	
 	//Currently not working
