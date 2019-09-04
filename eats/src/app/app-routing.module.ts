@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { MenuComponent } from './menu/menu.component';
+import { EmployeeMenuComponent } from './employee-menu-items/employee-menu-items.component';
 import { MenuItemsComponent } from './menu-items/menu-items.component';
 import { OrderComponent } from './order/order.component';
 import { DeliveryStatusComponent } from './delivery-status/delivery-status.component';
@@ -45,8 +45,8 @@ const routes: Routes = [
     component: CreateAccountComponent
   },
   {
-    path: 'menu',
-    component: MenuComponent
+    path: 'employee-menu-items',
+    component: EmployeeMenuComponent
     /* add later */
   },
   {
