@@ -1,5 +1,12 @@
 <div>
-    <h1 style="text-align: center">Stock will go here</h1>
+    <h1 style="text-align: center">Manage Galactic Ingredients</h1>
+    <br>
+    <div class="addstock">
+        <button type="submit" class="btn btn-success" id="addstock" (click)=addNewItem()>Add new stock item</button>
+        <!-- <button type="submit" class="btn btn-success" id="addbtn" (click)=getItem()>Testing get</button> -->
+
+        <!-- <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button> -->
+    </div>
     <div class="container">
         <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <table class="table" id="tbl">
@@ -7,9 +14,9 @@
                 <br>
                 <tr>
                     <!-- <TH>ID</TH> -->
-                    <th>Ingredient</th>
-                    <th>Quantity</th>
-                    <th>Add</th>
+                    <th>Ingredient Name</th>
+                    <th>Ingredient Quantity</th>
+                    <th>Increase Ingredient Quantity</th>
                 </tr>
                 <!-- <tr *ngFor="let i of Inv">
                 <td>{{i.id}}</td>
@@ -21,15 +28,12 @@
                     <!-- <td>{{s.id}}</td> -->
                     <td>{{s.ingredient}}</td>
                     <td>{{s.quantity}}</td>
-                    <td><button type="submit" class=" btn btn-info" id="testbtn">Add more to stock</button></td>
+                    <td><button type="submit" class=" btn btn-info" id="testbtn">Update Stock</button></td>
 
                 </tr>
             </table>
         </div>
-        <button type="submit" class="btn btn-success" id="addbtn" (click)=addNewItem()>Add new stock item</button>
-        <!-- <button type="submit" class="btn btn-success" id="addbtn" (click)=getItem()>Testing get</button> -->
-        <div class="float-right">
-            <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
-        </div>
+
     </div>
+    <br>
 </div>

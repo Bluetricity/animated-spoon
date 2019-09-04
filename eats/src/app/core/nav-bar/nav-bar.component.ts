@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/user.service';
+import { HomeComponent } from 'src/app/core/home/home.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -21,6 +22,10 @@ export class NavBarComponent implements OnInit {
 
   isCustomer(): boolean {
     return this.userService.isCustomer();
+  }
+
+  logout() {
+    return this.userService.logout();
   }
 
 }

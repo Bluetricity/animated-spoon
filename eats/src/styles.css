@@ -15,9 +15,9 @@
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: black;
-    font-family: cursive;
-    font-weight: 400;
+    color: black!important;
+    font-family: cursive!important;
+    font-weight: 400!important;
 }
 
 .bg-primary {
@@ -31,6 +31,11 @@
 .btn {
     margin-right: 1rem;
     margin-left: 1rem;
+}
+
+.btn-success {
+    background-color: coral!important;
+    border-color: coral!important;
 }
 
 .btn-primary {
@@ -67,4 +72,12 @@ p {
 
 body {
     margin: auto;
+}
+
+.table td,
+.table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
 }
