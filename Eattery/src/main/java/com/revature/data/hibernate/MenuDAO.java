@@ -12,7 +12,7 @@ public interface MenuDAO {
 	
 	public Set<Menu> getMenubyIngredient(Stock st);
 	
-	public Set<Menu> getMenubyQuantity(Stock st);
+	public Set<Menu> getMenubyAvailQuantity();
 	
 	public void deleteMenu(Menu menu);
 	

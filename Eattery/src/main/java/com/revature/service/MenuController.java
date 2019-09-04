@@ -1,5 +1,6 @@
 package com.revature.service;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,13 @@ public class MenuController {
 	private MenuOracle CO;
 
 	
+	@GetMapping
+	public Set<Menu> getMenu(){
+		
+		
+		return CO.getMenubyAvailQuantity();
+	}
+	
 	@GetMapping(value="{id}")
 	public Menu getMenu (@PathVariable Integer id) {
 //		Menu in = (Menu) ac.getBean("Menus");
@@ -50,5 +58,7 @@ public class MenuController {
 		return g;
 
 	}
+	
+	
 
 }
