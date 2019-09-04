@@ -37,6 +37,6 @@ export class NewMenuComponent implements OnInit {
     }
   }
   goBack(){
-    this.router.navigate(['stock']);
+    this.router.navigate(['employee-menu-items']);
   }
 }

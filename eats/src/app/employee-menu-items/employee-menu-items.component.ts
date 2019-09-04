@@ -6,11 +6,11 @@ import { MenuServiceService } from '../menu-service.service';
 
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'app-employee-menu-items',
+  templateUrl: './employee-menu-items.component.html',
+  styleUrls: ['./employee-menu-items.component.css']
 })
-export class MenuComponent implements OnInit {
+export class EmployeeMenuComponent implements OnInit {
 
   poptable: Observable<any[]>;
   columns: string[];
