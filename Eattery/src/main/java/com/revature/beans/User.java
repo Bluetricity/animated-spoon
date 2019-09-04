@@ -4,23 +4,23 @@ import com.revature.beans.Customers;
 import com.revature.beans.Employee;
 
 public class User {
-	private Customers cust;
-	private Employee emp;
+	private Customers customer;
+	private Employee employee;
 	
 	public User() {
 		super();
 	}
 	public Customers getCust() {
-		return cust;
+		return customer;
 	}
 	public void setCust(Customers cust) {
-		this.cust = cust;
+		this.customer = cust;
 	}
 	public Employee getEmp() {
-		return emp;
+		return employee;
 	}
 	public void setEmp(Employee emp) {
-		this.emp = emp;
+		this.employee = emp;
 	}
 
 }

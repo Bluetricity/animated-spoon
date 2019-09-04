@@ -31,7 +31,6 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  
   {
     path: '',
     redirectTo: '/stock',
@@ -41,7 +40,6 @@ const routes: Routes = [
     path: 'stock',
     component: StockComponent
   },
-  
   {
     path: 'create-account',
     component: CreateAccountComponent
@@ -49,7 +47,7 @@ const routes: Routes = [
   {
     path: 'menu',
     component: MenuComponent
-    /**add later */
+    /* add later */
   },
   {
     path: 'menu-items',

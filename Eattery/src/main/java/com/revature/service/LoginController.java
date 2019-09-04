@@ -30,20 +30,31 @@ public class LoginController {
 	@Autowired
 	EmployeeController EC;
 	
+	@Autowired
+	CustomerDAO cd;
+	
+	@Autowired
+	EmployeeDAO ed;
+	
+	//HttpSession session
+	
 	@PostMapping()
-	public User login(String username, String password, HttpSession session) {
+	public User login(String username, String password) {
+		System.out.println(username);
+		System.out.println(password);
 		User currentUser = new User();
 		Customers cus = new Customers();
 		Employee emp = new Employee();
-		CustomerDAO cd = new CustomerOracle();
-		EmployeeDAO dd = new EmployeeOracle();
 		
 		cus.setUsername(username);
 		cus.setPassword(password);
 		emp.setUsername(username);
 		emp.setPassword(password);
+		
 		currentUser.setCust(cd.getCustomerbyUNandPW(cus));
-		currentUser.setEmp(dd.getEmployeebyUNandPW(emp));
+		currentUser.setEmp(ed.getEmployeebyUNandPW(emp));
+		System.out.println(currentUser.getCust());
+		System.out.println(currentUser.getEmp());
 		
 		return currentUser;
 		

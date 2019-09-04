@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateAccountService } from '../create-account.service';
+import { CustomerService } from '../customer.service';
 import { NgFormSelectorWarning } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Currentuser } from '../shared/currentuser';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-create-account',
@@ -16,17 +17,21 @@ export class CreateAccountComponent implements OnInit {
   public contactInfo: string;
   public loggedUser: Currentuser;
 
-  constructor(private createService: CreateAccountService,
-    private router: Router) { }
+  constructor(private createService: CustomerService,
+    private router: Router,
+    private userService: UserService) { }
 
   ngOnInit() {
   }
   submit(){
-    this.createService.create(this.username, this.password, this.name, this.contactInfo).subscribe(
-      resp =>{
-        this.loggedUser = resp;
-      });
-    this.router.navigate(['account-info']);
+    if(this.username !== null && this.password !== null && this.name !== null && this.contactInfo !== null){
+      this.createService.create(this.username.trim(), this.password.trim(), this.name.trim(), this.contactInfo.trim()).subscribe(
+        resp =>{
+          this.loggedUser = resp;
+          this.userService.login(this.username, this.password);
+          this.router.navigate(['account-info']);
+        });
+    }
   }
   returnTo(){
     this.router.navigate(['home']);
