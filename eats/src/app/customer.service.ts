@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class CreateAccountService {
+export class CustomerService {
   private appUrl = this.caUrl.getUrl() + '/customer/';
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
 
