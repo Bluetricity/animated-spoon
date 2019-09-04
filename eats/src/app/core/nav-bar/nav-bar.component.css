@@ -12,6 +12,14 @@
     font-family: cursive!important;
 }
 
+.ca {
+    color: #fff;
+    font-size: unset;
+    font-weight: 800;
+    background-color: coral!important;
+    border-color: coral!important;
+}
+
 .bg-primary {
     background-color: paleturquoise!important;
 }
