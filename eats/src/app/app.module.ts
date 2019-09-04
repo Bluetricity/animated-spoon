@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { MenuComponent } from './menu/menu.component';
+import { EmployeeMenuComponent } from './employee-menu-items/employee-menu-items.component';
 import { MenuItemsComponent } from './menu-items/menu-items.component';
 import { OrderComponent } from './order/order.component';
 import { DeliveryStatusComponent } from './delivery-status/delivery-status.component';
@@ -29,7 +29,7 @@ import { NewMenuComponent } from './new-menu/new-menu.component';
     LoginComponent,
     NavBarComponent,
     CreateAccountComponent,
-    MenuComponent,
+    EmployeeMenuComponent,
     MenuItemsComponent,
     OrderComponent,
     DeliveryStatusComponent,
