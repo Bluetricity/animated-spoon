@@ -52,6 +52,7 @@ export class UserService {
 
   logout()  {
     this.session.remove('User');
+    window.location.reload();
   }
   getCustomer(): Customer {
     return this.customer;
