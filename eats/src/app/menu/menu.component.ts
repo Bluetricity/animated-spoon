@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Menu } from '../shared/menu';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { MenuServiceService } from '../menu-service.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +12,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  poptable: Observable<any[]>;
+  columns: string[];
+  test: string[];
+
+  public mealname: string;
+  public desc: string;
+  public price: number;
+  public getMenu: Menu;
+  public currMenu: Menu[];
+
+  constructor(private createService: MenuServiceService,
+    private router: Router) { }
 
   ngOnInit() {
+    this.createService.getMenu().subscribe((data: Menu[]) => {
+      this.currMenu = data;
+    });
   }
-
+  backToHome(){
+    this.router.navigate(['home']);
+  }
+  addNewMenuItem(){
+    this.router.navigate(['new-menu']);
+  }
 }

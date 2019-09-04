@@ -2,7 +2,12 @@
     position: relative;
     height: 600px;
     overflow: auto;
-    }
-    .table-wrapper-scroll-y {
+}
+.table-wrapper-scroll-y {
     display: block;
-    }
+}
+
+.fixed-header{
+    position: sticky; 
+    top: 0;
+}

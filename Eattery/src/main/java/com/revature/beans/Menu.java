@@ -15,19 +15,24 @@ public class Menu {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="bob")
 	@SequenceGenerator(name="bob", sequenceName="menu_seq", allocationSize=1)
 	Integer MID;
+	@Column(name="MEALNAME")
 	String mealname;
+	@Column(name="PRICE")
 	Double price;
+	@Column(name="DESCRIPTION")
+	String desc;
 	
 	public Menu() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Menu(Integer mID, String mealname, Double price) {
+	public Menu(Integer mID, String mealname, Double price, String desc) {
 		super();
 		MID = mID;
 		this.mealname = mealname;
 		this.price = price;
+		this.desc = desc;
 	}
 	
 	public Integer getMID() {
@@ -48,10 +53,16 @@ public class Menu {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 
 	@Override
 	public String toString() {
-		return "Menu [MID=" + MID + ", mealname=" + mealname + ", price=" + price + "]";
+		return "Menu [MID=" + MID + ", mealname=" + mealname + ", price=" + price + ", desc="+ desc +"]";
 	}
 	
 	

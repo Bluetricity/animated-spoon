@@ -20,6 +20,7 @@ import { AccountInfoComponent } from './account-info/account-info.component';
 import { StockComponent } from './stock/stock.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { NewStockComponent } from './new-stock/new-stock.component';
+import { NewMenuComponent } from './new-menu/new-menu.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NewStockComponent } from './new-stock/new-stock.component';
     AccountInfoComponent,
     StockComponent,
     InventoryComponent,
-    NewStockComponent
+    NewStockComponent,
+    NewMenuComponent
   ],
   imports: [
     BrowserModule,
