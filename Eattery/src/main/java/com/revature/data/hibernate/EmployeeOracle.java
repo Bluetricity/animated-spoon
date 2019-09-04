@@ -42,7 +42,7 @@ public class EmployeeOracle implements EmployeeDAO{
 		
 		String query = "from Employee where username = :name and password = :password";
 		Query<Employee> q = s.createQuery(query, Employee.class);
-		q.setParameter("name", em.getName());
+		q.setParameter("name", em.getUsername());
 		q.setParameter("password", em.getPassword());
 		
 		em = q.uniqueResult();
