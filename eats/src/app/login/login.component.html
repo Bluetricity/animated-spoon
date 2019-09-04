@@ -18,8 +18,8 @@
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <div *ngIf="loggedUser.employee; else customer">
-                <span>Welcome {{loggedUser.employee.title}}!
-            {{loggedUser.employee.first + " " + loggedUser.employee.last}}</span>
+                <span>Welcome {{loggedUser.emp.title}}!
+            {{loggedUser.emp.name}}</span>
             </div>
         </li>
         <li class="nav-item">
@@ -29,6 +29,6 @@
 </ng-template>
 <ng-template #customer>
     <div>
-        <span>Welcome Customer! {{loggedUser.customer.first + " " + loggedUser.customer.last}}</span>
+        <span>Welcome Customer! {{loggedUser.cust.name}}</span>
     </div>
 </ng-template>
