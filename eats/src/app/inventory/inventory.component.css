@@ -1,4 +1,4 @@
-.my-custom-scrollbar {
+    .my-custom-scrollbar {
     position: relative;
     height: fit-content;
     overflow: auto;
@@ -25,4 +25,7 @@
     vertical-align: top;
     border-top: 1px solid #dee2e6;
     text-align: center;
-}
+    .fixed-header {
+        position: sticky;
+        top: 0;
+    }

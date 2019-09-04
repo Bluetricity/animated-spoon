@@ -35,11 +35,16 @@ public class MenuController {
 
 	}
 	
+	@GetMapping
+	public Set<Menu> getMenu(){
+		return CO.getMenu();
+	}
+	
 	//Currently not working
 	@PostMapping
 	public Menu addMenu (@RequestBody Menu g) {
 		System.out.println(g);
-		
+		CO.addMenu(g);
 		return g;
 
 	}

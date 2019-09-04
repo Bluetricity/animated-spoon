@@ -14,6 +14,8 @@ public interface MenuDAO {
 	
 	public Set<Menu> getMenubyQuantity(Stock st);
 	
+	public Set<Menu> getMenu();
+	
 	public void deleteMenu(Menu menu);
 	
 	public void updateMenu(Menu menu);

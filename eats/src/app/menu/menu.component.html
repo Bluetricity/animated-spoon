@@ -7,15 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Menu Select</title>
 </head>
 
 <body>
     <h1>Which Star System Beckons You Today?</h1>
-    <p>
-        Different menus listed here.
-    </p>
+    <div class="conttainer">
+        <table class="table">
+            <br>
+            <tr>
+                <th>Menu Item</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Add to cart</th>
+            </tr>
+            <tr *ngFor="let m of currMenu">
+                <td>{{m.mealname}}</td>
+                <td>{{m.desc}}</td>
+                <td>{{m.price}}</td>
+                <td><button type="submit" class=" btn btn-info" id="testbtn">Add to cart</button></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <!---->
+    <button type="submit" class=" btn btn-success" id="cartbtn">Continue to cart</button>
+    <button type="submit" class=" btn btn-info" id="addMenubtn" (click)="addNewMenuItem()">Add new Menu Item</button>
+    <div class="float-right">
+            <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
+        </div>
     <!-- Come back to later if possible-->
 </body>

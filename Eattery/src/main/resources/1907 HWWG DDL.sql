@@ -31,7 +31,8 @@ create table Stock (
 create table Menu (
     MID number(20) primary key,
     MealName varchar2(40),
-    Price number(15)
+    Price number(15),
+    Description varchar2(100)
 );
 
 create table Stock_Menu (
