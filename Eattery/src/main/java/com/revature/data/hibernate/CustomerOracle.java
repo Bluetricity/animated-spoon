@@ -43,13 +43,14 @@ public class CustomerOracle implements CustomerDAO{
 	public Customers getCustomerbyUNandPW(Customers cus) {
 		Session s = hu.getSession();
 		
-		String query = "from Customer where username = :name and password = :password";
+		String query = "from Customers where username = :name and password = :password";
 		Query<Customers> q = s.createQuery(query, Customers.class);
-		q.setParameter("name", cus.getName());
+		q.setParameter("name", cus.getUsername());
 		q.setParameter("password", cus.getPassword());
 		
 		cus = q.uniqueResult();
-
+		s.close();
+		
 		return cus;
 	}
 	
