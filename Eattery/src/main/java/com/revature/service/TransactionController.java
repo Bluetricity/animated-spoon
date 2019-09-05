@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.revature.beans.Employee;
 import com.revature.beans.ItemTransaction;
@@ -60,5 +60,9 @@ public class TransactionController {
 		return g;
 
 	}
-
+//	@PutMapping(value="{id}")
+//	public ItemTransaction updateTransaction{
+//		
+//	}
+	
 }
