@@ -11,6 +11,8 @@ public interface TransactionDAO {
 	
 	public Set<ItemTransaction> getItemTransactionbyTransaction (ItemTransaction IT);
 	
+	public Set<ItemTransaction> getAllTransactions();
+	
 	public void deleteItemTransaction(ItemTransaction IT);
 	
 	public void updateItemTransaction(ItemTransaction IT);   

@@ -20,6 +20,7 @@ public class Stock {
 	@Column(name="QUANTITY_STORED")
 	Double quantity;
 	
+	
 	public Stock() {
 		super();
 	}
@@ -49,6 +50,7 @@ public class Stock {
 	public void setQuantity(Double quantity) {
 		this.quantity = quantity;
 	}
+	
 
 	@Override
 	public String toString() {
