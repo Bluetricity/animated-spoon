@@ -108,11 +108,11 @@ values (8,11,20);
 
 --transaction
 -- 0 = pending, 1 = accepted, 2 = rejected
-insert into transaction (tid, cid, payment_type, status)
+insert into itemtransaction (tid, cid, payment_type, status)
 values(transaction_seq.nextval, 1, 'card', 0);
-insert into transaction (tid, cid, payment_type, status)
+insert into itemtransaction (tid, cid, payment_type, status)
 values(transaction_seq.nextval,2, 'cash', 1);
-insert into transaction (tid, cid, payment_type, status)
+insert into itemtransaction (tid, cid, payment_type, status)
 values(transaction_seq.nextval, 1, 'cash', 2);
 
 --transactionitems
