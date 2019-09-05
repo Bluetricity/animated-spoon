@@ -53,9 +53,9 @@ public class LocationOracle implements LocationDAO{
 		
 		Session s = hu.getSession();
 		
-		String query = "from Locations where CID = :Id";
+		String query = "from Locations where cid = :Id";
 		Query<Locations> q = s.createQuery(query, Locations.class);
-		q.setParameter("Id", c.getCID());
+		q.setParameter("Id", c);
 		List<Locations> ret = q.getResultList();
 		s.close();
 		

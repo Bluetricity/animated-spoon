@@ -23,8 +23,8 @@ public class Locations {
 	@SequenceGenerator(name="bob", sequenceName="location_seq", allocationSize=1)
 	Integer LID;
 	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinColumn(name="CID")
-	Customers CID;
+	@JoinColumn(name="cid")
+	Customers cid;
 	String Address;
 	
 	public Locations() {
@@ -34,7 +34,7 @@ public class Locations {
 	public Locations(Integer lID, Customers cID, String address) {
 		super();
 		LID = lID;
-		CID = cID;
+		cid = cID;
 		Address = address;
 	}
 	
@@ -46,10 +46,10 @@ public class Locations {
 		LID = lID;
 	}
 	public Customers getCID() {
-		return CID;
+		return cid;
 	}
 	public void setCID(Customers cID) {
-		CID = cID;
+		cid = cID;
 	}
 	public String getAddress() {
 		return Address;
@@ -60,7 +60,7 @@ public class Locations {
 
 	@Override
 	public String toString() {
-		return "Locations [CID=" + CID + ", Address=" + Address + "]";
+		return "Locations [CID=" + cid + ", Address=" + Address + "]";
 	}
 	
 	

@@ -107,10 +107,13 @@ insert into stock_menu(sid, mid, amount)
 values (8,11,20);
 
 --transaction
-insert into transaction (tid, cid, payment_type)
-values(transaction_seq.nextval, 1, 'card');
-insert into transaction (tid, cid, payment_type)
-values(transaction_seq.nextval,2, 'cash');
+-- 0 = pending, 1 = accepted, 2 = rejected
+insert into itemtransaction (tid, cid, payment_type, status)
+values(transaction_seq.nextval, 1, 'card', 0);
+insert into itemtransaction (tid, cid, payment_type, status)
+values(transaction_seq.nextval,2, 'cash', 1);
+insert into itemtransaction (tid, cid, payment_type, status)
+values(transaction_seq.nextval, 1, 'cash', 2);
 
 --transactionitems
 insert into transactionitems(tid, mid, quanity)
