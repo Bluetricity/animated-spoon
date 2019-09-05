@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Menu } from '../shared/menu';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { MenuServiceService } from '../menu-service.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-menu-items',
@@ -7,9 +12,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuItemsComponent implements OnInit {
 
-  constructor() { }
+  poptable: Observable<any[]>;
+  columns: string[];
+  test: string[];
+
+  public mealname: string;
+  public desc: string;
+  public price: number;
+  public getMenu: Menu;
+  public currMenu: Menu[];
+  createService: any;
+  
+  constructor(private cart: CartService, private menu: MenuServiceService) { }
 
   ngOnInit() {
+    this.menu.getMenuCust().subscribe((data: Menu[]) => {
+     
+      this.currMenu = data;
+      this.currMenu.sort(function(a,b) {return a.mid - b.mid});
+    });
+
+    console.log(this.currMenu);
+    
+
   }
 
+  addtoCart($event:any){
+    let mid: number = $event.target.value;
+    console.log(mid);
+    let ann: Menu = this.currMenu[mid-1];
+    
+    console.log(ann);
+    
+    this.cart.addtoCart(ann);
+
+    this.cart.displayCart();
+  }
 }

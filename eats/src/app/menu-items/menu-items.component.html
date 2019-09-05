@@ -27,9 +27,9 @@
                 </tr>
                 <tr *ngFor="let m of currMenu">
                     <td>{{m.mealname}}</td>
-                    <td>{{m.desc}}</td>
+                    <td>{{m.desc}}</td> 
                     <td>${{m.price}}</td>
-                    <td><button type="submit" class=" btn btn-info" id="testbtn">Add to cart</button></td>
+                    <td><button type="submit" class="btn btn-primary" (click) = addtoCart($event) [value]=m.mid>Submit</button></td>
                 </tr>
             </table>
         </div>
@@ -37,9 +37,7 @@
     <br>
     <!---->
     <button type="submit" class=" btn btn-success" id="cartbtn">Continue to cart</button>
-    <div style="text-align: center">
-        <button type="submit" class=" btn btn-primary" id="addMenubtn" (click)="addNewMenuItem()">Add new Menu Item</button>
-    </div>
+    
     <div class="float-right">
         <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
     </div>

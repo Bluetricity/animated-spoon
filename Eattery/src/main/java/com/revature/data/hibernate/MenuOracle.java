@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.Set;
 
 import org.hibernate.HibernateException;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -64,20 +66,17 @@ public class MenuOracle implements MenuDAO{
 	}
 
 	@Override
-	public Set<Menu> getMenubyQuantity(Stock st) {
-		//TODO Broken: use with care
+	public Set<Menu> getMenubyAvailQuantity() {
 		Session s = hu.getSession();
-		
-		
-//		SELECT MID FROM (SELECT MID, COUNT(MID) as ReadyIngedients  
-//				FROM (SELECT * FROM STOCK_MENU NAWTURAL JOIN STOCK 
-//				WHERE AMOUNT <= QUANTITY_STORED) GROUP BY MID) Natural join 
-//				(SELECT MID, COUNT(MID) AS NumofIngedients FROM Stock_Menu GROUP BY MID)
-//				Where ReadyIngedients = NumofIngedients;
-		
-		String query = "from Menu a inner join Stock_Menu b on a.MID = b.MID inner join Stock c on b.SID = c.SID where QUANTITY_STORED = :in";
-		Query<Menu> q = s.createQuery(query, Menu.class);
-		q.setParameter("in", st.getQuantity());
+		 
+		//This query looks inside every menu item and then checks the amount of 
+		//ingredients needed and checks to see if there's proper quantity for every 
+		String query = "SELECT * FROM (SELECT MID, COUNT(MID) as ReadyIngedients " + 
+				"FROM (SELECT * FROM STOCK_MENU NATURAL JOIN STOCK " + 
+				"WHERE AMOUNT <= QUANTITY_STORED) GROUP BY MID) Natural join " + 
+				"(SELECT MID, COUNT(MID) AS NumofIngedients FROM Stock_Menu GROUP BY MID) " +
+				"NATURAL JOIN MENU Where ReadyIngedients = NumofIngedients";
+		NativeQuery<Menu> q = s.createNativeQuery(query, Menu.class);
 		List<Menu> ret = q.getResultList();
 		s.close();
 		
