@@ -35,11 +35,21 @@ public class TransactionController {
 //
 //	}
 	
+	@GetMapping
+	public Set<ItemTransaction> getAllTransactions(){
+		return CO.getAllTransactions();
+	}
+	
+	@GetMapping(value="{id}")
+	public ItemTransaction getStock(@PathVariable Integer id) {
+		return CO.getItemTransaction(id);
+	}
+	
 	//Currently not working
 	@PostMapping
 	public ItemTransaction addTransaction (@RequestBody ItemTransaction g) {
 		System.out.println(g);
-		
+		CO.addItemTransaction(g);
 		return g;
 
 	}

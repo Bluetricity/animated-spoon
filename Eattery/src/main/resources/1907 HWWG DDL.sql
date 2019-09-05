@@ -1,5 +1,5 @@
 drop table TRANSACTIONITEMS cascade constraints;
-drop table TRANSACTION cascade constraints;
+drop table ITEMTRANSACTION cascade constraints;
 drop table LOCATIONS cascade constraints;
 drop table CUSTOMERS cascade constraints;
 drop table STOCK_MENU cascade constraints; 
@@ -58,7 +58,7 @@ create table Locations (
     constraint fk_address_user foreign key (CID) references Customers(CID)
 );
 
-create table Transaction (
+create table ItemTransaction (
     TID number(20) primary key,
     CID number(20) not null,
     Payment_type varchar2(30) not null,
@@ -69,7 +69,7 @@ create table TransactionItems (
     TID number(20) not null, 
     MID number(20) not null,
     Quanity number(5,2),
-    constraint fk_item_transaction foreign key (TID) references Transaction(TID),
+    constraint fk_item_transaction foreign key (TID) references ItemTransaction(TID),
     constraint fk_item_menuitem foreign key (MID) references Menu(MID)
 );
 

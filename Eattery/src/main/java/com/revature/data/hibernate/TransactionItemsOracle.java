@@ -1,10 +1,13 @@
 package com.revature.data.hibernate;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -86,6 +89,16 @@ public class TransactionItemsOracle implements TransactionDAO{
 		} finally {
 			s.close();
 		}
+	}
+
+	@Override
+	public Set<ItemTransaction> getAllTransactions() {
+		Session s = hu.getSession();
+		String query = "from ItemTransaction";
+		Query<ItemTransaction> q = s.createQuery(query, ItemTransaction.class);
+		List<ItemTransaction> ret = q.list();
+		s.close();
+		return new HashSet<ItemTransaction>(ret);
 	}
 
 	
