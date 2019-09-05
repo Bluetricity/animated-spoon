@@ -3,6 +3,7 @@ import { Menu } from '../shared/menu';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MenuServiceService } from '../menu-service.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-menu-items',
@@ -22,12 +23,29 @@ export class MenuItemsComponent implements OnInit {
   public currMenu: Menu[];
   createService: any;
   
-  constructor(private whatever: MenuServiceService) { }
+  constructor(private cart: CartService, private menu: MenuServiceService) { }
 
   ngOnInit() {
-    this.whatever.getMenu().subscribe((data: Menu[]) => {
+    this.menu.getMenuCust().subscribe((data: Menu[]) => {
+     
       this.currMenu = data;
+      this.currMenu.sort(function(a,b) {return a.mid - b.mid});
     });
+
+    console.log(this.currMenu);
+    
+
   }
 
+  addtoCart($event:any){
+    let mid: number = $event.target.value;
+    console.log(mid);
+    let ann: Menu = this.currMenu[mid-1];
+    
+    console.log(ann);
+    
+    this.cart.addtoCart(ann);
+
+    this.cart.displayCart();
+  }
 }

@@ -28,6 +28,11 @@ public class MenuController {
 	@Autowired
 	private MenuOracle CO;
 	
+	@GetMapping
+	public Set<Menu> getMenuCust(){	
+		return CO.getMenubyAvailQuantity();
+	}
+	
 	@GetMapping(value="{id}")
 	public Menu getMenu (@PathVariable Integer id) {
 //		Menu in = (Menu) ac.getBean("Menus");
@@ -40,14 +45,6 @@ public class MenuController {
 		return CO.getMenu();
 	}
 	
-	@GetMapping
-	public Set<Menu> getMenuCust(){
-		
-		
-		return CO.getMenubyAvailQuantity();
-	}
-	
-	//Currently not working
 	@PostMapping
 	public Menu addMenu (@RequestBody Menu g) {
 		System.out.println(g);

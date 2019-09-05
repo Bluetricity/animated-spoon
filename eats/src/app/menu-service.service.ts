@@ -9,13 +9,19 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class MenuServiceService {
-  private appUrl = this.caUrl.getUrl() + '/menu/';
+  private appUrl = this.caUrl.getUrl() + '/menu';
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
-  getMenu(): Observable<Menu[]>{
+  getMenuCust(): Observable<Menu[]>{
     return this.http.get(this.appUrl, {withCredentials: true}).pipe(
+      map( resp => resp as Menu[])
+    );
+  }
+
+  getMenuEmp(): Observable<Menu[]>{
+    return this.http.get(this.appUrl + '/all', {withCredentials: true}).pipe(
       map( resp => resp as Menu[])
     );
   }
