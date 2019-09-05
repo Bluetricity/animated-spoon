@@ -14,14 +14,14 @@ export class MenuServiceService {
 
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
-  getMenu(): Observable<Menu[]>{
+  getMenu(): Observable<Menu[]> {
     return this.http.get(this.appUrl, {withCredentials: true}).pipe(
       map( resp => resp as Menu[])
     );
   }
 
-  addMenu(mealname: string, price: number, desc: string): Observable<Menu>{
-    const obj={mealname:mealname, price:price, desc:desc};
+  addMenu(mealname: string, price: number, desc: string): Observable<Menu> {
+    const obj = {mealname, price, desc};
     const body = JSON.stringify(obj);
     return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
       map(resp => {
@@ -30,4 +30,9 @@ export class MenuServiceService {
       })
     );
   }
+
+  // removeMenu(): void {
+  //   const obj = Menu[].menuId.splice()
+  // }
+
 }

@@ -1,5 +1,5 @@
 export class Menu {
-    menu_id: number;
+    menuId: number;
     mealname: string;
     price: number;
     desc: string;

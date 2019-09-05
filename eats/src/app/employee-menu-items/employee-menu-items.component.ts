@@ -23,17 +23,21 @@ export class EmployeeMenuComponent implements OnInit {
   public currMenu: Menu[];
 
   constructor(private createService: MenuServiceService,
-    private router: Router) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.createService.getMenu().subscribe((data: Menu[]) => {
       this.currMenu = data;
     });
   }
-  backToHome(){
+  backToHome() {
     this.router.navigate(['home']);
   }
-  addNewMenuItem(){
+  addNewMenuItem() {
     this.router.navigate(['new-menu']);
+  }
+
+  removeMenuItem() {
+    this.mealname
   }
 }

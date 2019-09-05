@@ -15,7 +15,7 @@ export class GetStockService {
 
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
-  make(): Observable<Stock[]>{
+  make(): Observable<Stock[]> {
     return this.http.get(this.appUrl, {withCredentials: true}).pipe(
       map( resp => resp as Stock[])
     );
