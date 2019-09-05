@@ -22,6 +22,7 @@ import { StockComponent } from './stock/stock.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { NewStockComponent } from './new-stock/new-stock.component';
 import { NewMenuComponent } from './new-menu/new-menu.component';
+import { EditMenuComponent } from './edit-menu/edit-menu.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { NewMenuComponent } from './new-menu/new-menu.component';
     StockComponent,
     InventoryComponent,
     NewStockComponent,
-    NewMenuComponent
+    NewMenuComponent,
+    EditMenuComponent
   ],
   imports: [
     BrowserModule,
