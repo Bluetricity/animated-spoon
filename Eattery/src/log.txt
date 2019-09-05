@@ -2467,3 +2467,5 @@ public com.revature.beans.Stock com.revature.service.StockController.addStock(co
 2019-09-04 14:32:02 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
 2019-09-04 14:40:50 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
 2019-09-04 14:41:51 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-04 16:02:49 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-04 16:13:08 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Wed Sep 04 14:29:32 EDT 2019]; root of context hierarchy
