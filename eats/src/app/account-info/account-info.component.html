@@ -15,21 +15,28 @@
 
 <body>
     <h1>Here is your accout information.</h1>
-    <p>Name:</p><p id="name" [(ngModel)]="name"></p>
-    <p>User Name:</p><p id="username" [(ngModel)]="username"></p>
-    <p>Password:</p><p id="password" [(ngModel)]="password"></p>
-    <p>Contact Information</p><p id="contactinfo" [(ngModel)]="contactInfo"></p>
-    <table id="location" class="table">
-        <tr>
-            <th>Location</th>
-        </tr>
-    </table>
+    <p>Name: {{loggedUser.cust.name}}</p>
+    <p>User Name: {{loggedUser.cust.username}}</p>
+    <p>Password: {{loggedUser.cust.password}}</p>
+    <p>Contact Information: {{loggedUser.cust.contactinfo}}</p>
+    <div class="conttainer">
+        <div class = "table-wrapper-scroll-y my-custom-scrollbar fixed-header">
+            <table id="location" class="table">
+                <tr>
+                    <th>Location</th>
+                </tr>
+                <tr *ngFor="let l of Locations">
+                    <td>{{l.address}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
     <div class="formgroup">
         <label for="b_location">Enter a new delivery location.</label>
         <input class="form-control simple-account" type="text" id="newLocation" [(ngModel)] ="newLocation"/>
     </div>
     <div>
         <button type="submit" class="btn btn-primary" (click) = submit()>Submit</button>
-        <button type="submit" class="btn btn-danger" (clicl) = returnTo()>Cancel</button>
+        <button type="submit" class="btn btn-danger" (click) = returnTo()>Cancel</button>
     </div>
 </body>
