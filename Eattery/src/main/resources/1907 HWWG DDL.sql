@@ -48,7 +48,11 @@ create table Customers (
     Username varchar2(20) UNIQUE,
     Password varchar2(20) not null,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     Name varchar2(20) not null,
+=======
+    Name varchar2 not null,
+>>>>>>> Stashed changes
 =======
     Name varchar2 not null,
 >>>>>>> Stashed changes
