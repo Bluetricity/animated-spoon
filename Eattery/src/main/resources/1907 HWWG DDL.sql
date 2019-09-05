@@ -62,7 +62,7 @@ create table Transaction (
     TID number(20) primary key,
     CID number(20) not null,
     Payment_type varchar2(30) not null,
-    Status number(20) not null
+    Status number(1,0) not null
 );
 
 create table TransactionItems (
