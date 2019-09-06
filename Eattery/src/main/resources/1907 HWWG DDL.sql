@@ -6,6 +6,7 @@ drop table STOCK_MENU cascade constraints;
 drop table MENU cascade constraints;
 drop table STOCK cascade constraints;
 drop table EMPLOYEE cascade constraints;
+drop table MENU_TYPE cascade constraints;
 
 drop sequence CUSTOMER_SEQ;
 drop sequence EMPLOYEE_SEQ;
@@ -13,6 +14,7 @@ drop sequence MENU_SEQ;
 drop sequence STOCK_SEQ;
 drop sequence TRANSACTION_SEQ;
 drop sequence LOCATION_SEQ;
+drop sequence MENU_TYPE_SEQ;
 
 create table Employee (
     EID number(20) primary key,
@@ -28,11 +30,18 @@ create table Stock (
     Quantity_Stored number(10,2)
 );
 
+create table Menu_Type (
+    MTID number(20) primary key,
+    Menu_name varchar2(30) not null
+);
+
 create table Menu (
     MID number(20) primary key,
+    MTID number(20) not null,
     MealName varchar2(40),
     Price number(15),
-    Description varchar2(100)
+    Description varchar2(100),
+    constraint fk_Menu_type foreign key (MTID) references Menu_Type(MTID)
 );
 
 create table Stock_Menu (
@@ -79,4 +88,5 @@ create sequence menu_seq;
 create sequence customer_seq;
 create sequence transaction_seq;
 create sequence location_seq;
+create sequence menu_type_seq;
 
