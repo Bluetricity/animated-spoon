@@ -75,12 +75,12 @@ public class TransactionItemsOracle implements TransactionDAO{
 	} 
 
 	@Override
-	public void updateItemTransaction(ItemTransaction IT) { 
+	public ItemTransaction updateItemTransaction(ItemTransaction IT) { 
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(IT.getTID());
+			s.update(IT);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -89,6 +89,7 @@ public class TransactionItemsOracle implements TransactionDAO{
 		} finally {
 			s.close();
 		}
+		return IT;
 	}
 
 	@Override

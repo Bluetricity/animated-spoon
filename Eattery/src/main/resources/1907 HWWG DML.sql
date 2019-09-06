@@ -23,29 +23,40 @@ values(LOCATION_SEQ.nextval, 1, '321 address street');
 insert into locations(lid, cid, address)
 values(LOCATION_SEQ.nextval, 2, '231 street street');
 
+--menu type
+insert into menu_type(mtid, menu_name)
+values(menu_type_seq.nextval, 'Base');
+insert into menu_type(mtid, menu_name)
+values(menu_type_seq.nextval, 'Spring');
+insert into menu_type(mtid, menu_name)
+values(menu_type_seq.nextval, 'Summer');
+insert into menu_type(mtid, menu_name)
+values(menu_type_seq.nextval, 'Fall');
+insert into menu_type(mtid, menu_name)
+values(menu_type_seq.nextval, 'Winter');
 --menu
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'chicken tenders', 6.99, 'spend those saved up goodboy points on these out of this world tendies');
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'french fries', 3.99, 'imagine regular fries, but french. oui');
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'salad', 5.99, 'it`s healthy tho');
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'hamburger', 8.99, 'see cheeseburger, just without the cheese');
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'cheeseburger', 8.99, 'see hamburger, but with cheese');
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'chicken wings', 7.99, 'this is a lie. there`s actually more than just wings lol');
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'steak', 15.99, 'steak. it`s pretty good tbh');
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'mashed potatoes', 4.99, 'potatoes, but mashed');
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'mac and cheese', 6.99, 'poor mac and his friend cheese. we knew them well');
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'fish', 10.99, 'lol idk what kind');
-insert into menu(mid, mealname, price, description)
-values(menu_seq.nextval, 'lobster', 15.99, 'bruh');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'chicken tenders', 6.99, 'spend those saved up goodboy points on these out of this world tendies');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'french fries', 3.99, 'imagine regular fries, but french. oui');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'salad', 5.99, 'it`s healthy tho');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'hamburger', 8.99, 'see cheeseburger, just without the cheese');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'cheeseburger', 8.99, 'see hamburger, but with cheese');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'chicken wings', 7.99, 'this is a lie. there`s actually more than just wings lol');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'steak', 15.99, 'steak. it`s pretty good tbh');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'mashed potatoes', 4.99, 'potatoes, but mashed');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'mac and cheese', 6.99, 'poor mac and his friend cheese. we knew them well');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'fish', 10.99, 'lol idk what kind');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 1, 'lobster', 15.99, 'bruh');
 
 --stock
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)
