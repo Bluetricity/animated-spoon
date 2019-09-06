@@ -27,6 +27,7 @@
 		<mapping class="com.revature.beans.Menu"/>
 		<mapping class="com.revature.beans.Stock"/>
 		<mapping class="com.revature.beans.ItemTransaction"/> 
+		<mapping class="com.revature.beans.Menu_Type"/>
 		
 	</session-factory>
 </hibernate-configuration>
