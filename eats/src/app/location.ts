@@ -1,5 +1,7 @@
+import { Customer } from './shared/customer';
+
 export class Location {
     LID: number;
-    CID: number;
+    CID: Customer;
     Address: string;
 }

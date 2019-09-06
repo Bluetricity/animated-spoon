@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {Currentuser} from '../shared/currentuser';
 import {LocationService} from '../location.service'
 import {Location} from '../location';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,46 +13,40 @@ import {Location} from '../location';
   styleUrls: ['./account-info.component.css']
 })
 export class AccountInfoComponent implements OnInit {
-  public username: string;
-  public password: string;
-  public name: string;
-  public contactInfo: string;
+  poptable: Observable<any[]>;
+  columns: string[];
+  test: string[];
+
   public newLocation: string;
-  private cId: number
+  public loggedUser: Currentuser;
+  public Locations: Location[];
+  public addedLocation: Location;
+
   constructor(private locationService: LocationService,
     public session: SessionStorageService,
     private router: Router) { }
 
   ngOnInit() {
-    const user : Currentuser = JSON.parse(this.session.get('User'));
-    this.name = user.cust.name;
-    this.username = user.cust.username;
-    this.password = user.cust.password;
-    this.contactInfo = user.cust.contactinfo;
-    this.cId = user.cust.cid;
-    this.locationService.getCustomerLocation(user.cust.cid).subscribe(
+    console.log("Starting");
+    this.loggedUser = JSON.parse(this.session.get('User'));
+    console.log(this.loggedUser);
+    console.log(this.loggedUser.cust.cid);
+    this.locationService.getCustomerLocation(this.loggedUser.cust.cid).subscribe(
       (resp : Location[]) => {
-        let locationList : Location[] = resp;
-          locationList.forEach(location => {
-            var table = document.getElementById("location");
-            var tr = document.createElement("tr");
-            this.addTableDef(tr, location.Address);
-            table.appendChild(tr);
-        });
+        console.log(resp);
+        this.Locations = resp;
       }
     );
     
   }
 
-  addTableDef(tr, value){
-    let td = document.createElement("td");
-    td.innerHTML = value;
-    tr.appendChild(td);
-  }
-
   submit(){
-    this.locationService.addNewLocation(this.cId, this.newLocation).subscribe(resp => resp as Location);
-    this.returnTo();
+    console.log("Clicked");
+    this.locationService.addNewLocation(this.loggedUser.cust, this.newLocation).subscribe((resp: Location) => {
+      this.addedLocation = resp;
+    });
+    console.log("added" + this.loggedUser.cust + this.newLocation);
+    //this.returnTo();
   }
 
   returnTo(){

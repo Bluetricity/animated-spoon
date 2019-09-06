@@ -16,14 +16,15 @@ import java.util.Set;
 @Table
 public class Customers {
 	@Id
+	@Column(name="CID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="bob")
 	@SequenceGenerator(name="bob", sequenceName="customer_seq", allocationSize=1)
-	Integer CID;
+	Integer cid;
 	String username;
 	String password;
 	String name;
 	String contactinfo;
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="CID")
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="cid")
 	Set<Locations> locations;
 
 	public Customers() {
@@ -33,7 +34,7 @@ public class Customers {
 
 	public Customers(Integer cID, String username, String password, String name, String contactinfo) {
 		super();
-		CID = cID;
+		cid = cID;
 		this.username = username;
 		this.password = password;
 		this.name = name;
@@ -41,10 +42,10 @@ public class Customers {
 	}
 	
 	public Integer getCID() {
-		return CID;
+		return cid;
 	}
 	public void setCID(Integer cID) {
-		CID = cID;
+		cid = cID;
 	}
 	public String getUsername() {
 		return username;
@@ -73,7 +74,7 @@ public class Customers {
 	
 	@Override
 	public String toString() {
-		return "Customers [CID=" + CID + ", username=" + username + ", password=" + password + ", name=" + name
+		return "Customers [CID=" + cid + ", username=" + username + ", password=" + password + ", name=" + name
 				+ ", contactinfo=" + contactinfo + "]";
 	}
 	

@@ -20,7 +20,10 @@ public class ItemTransaction {
 	@ManyToOne (fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="CID")
 	Customers CID;
+	@Column(name="PAYMENT_TYPE")
 	String PAYMENT_TYPE;
+	@Column(name="STATUS")
+	Integer status;
 	
 	public ItemTransaction() {
 		super();
@@ -51,10 +54,17 @@ public class ItemTransaction {
 	public void setPAYMENT_TYPE(String pAYMENT_TYPE) {
 		PAYMENT_TYPE = pAYMENT_TYPE;
 	}
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 	
 	@Override
 	public String toString() {
-		return "ItemTransaction [TID=" + TID + ", CID=" + CID + ", PAYMENT_TYPE=" + PAYMENT_TYPE + "]";
+		return "ItemTransaction [TID=" + TID + ", CID=" + CID + ", PAYMENT_TYPE="
+				 + PAYMENT_TYPE + ", STATUS="+status+"]";
 	}
 	
 }

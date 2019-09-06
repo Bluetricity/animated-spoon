@@ -26,7 +26,7 @@ export class EmployeeMenuComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.createService.getMenu().subscribe((data: Menu[]) => {
+    this.createService.getMenuEmp().subscribe((data: Menu[]) => {
       this.currMenu = data;
     });
   }

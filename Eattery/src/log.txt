@@ -2467,3 +2467,765 @@ public com.revature.beans.Stock com.revature.service.StockController.addStock(co
 2019-09-04 14:32:02 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
 2019-09-04 14:40:50 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
 2019-09-04 14:41:51 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-04 16:02:49 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-04 16:13:08 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Wed Sep 04 14:29:32 EDT 2019]; root of context hierarchy
+2019-09-05 10:28:56 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:28:56 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:28:56 EDT 2019]; root of context hierarchy
+2019-09-05 10:28:56 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:29:01 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:29:01 WARN  XmlWebApplicationContext:550 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'transactionController' method 
+public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+to {[/transaction],methods=[GET]}: There is already 'transactionController' bean method
+public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions() mapped.
+2019-09-05 10:29:01 ERROR DispatcherServlet:502 - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'transactionController' method 
+public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+to {[/transaction],methods=[GET]}: There is already 'transactionController' bean method
+public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:756)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:171)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1122)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1077)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:971)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4868)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5177)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'transactionController' method 
+public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+to {[/transaction],methods=[GET]}: There is already 'transactionController' bean method
+public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:577)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:541)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:264)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:250)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:214)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1626)
+	... 49 more
+2019-09-05 10:30:19 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:30:19 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:30:19 EDT 2019]; root of context hierarchy
+2019-09-05 10:30:19 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:30:24 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:30:25 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:30:25 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:30:25 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:30:27 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:30:19 EDT 2019]; root of context hierarchy
+2019-09-05 10:30:27 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:30:19 EDT 2019]; root of context hierarchy
+2019-09-05 10:30:28 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 9156 ms
+2019-09-05 10:30:49 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 10:30:50 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 10:30:50 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 10:30:51 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 10:30:53 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 10:30:53 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 10:30:53 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 10:30:53 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 10:30:53 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 10:30:56 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 10:31:01 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:31:01 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:31:01 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:31:01 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:31:01 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:31:07 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 10:32:30 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:30:19 EDT 2019]; root of context hierarchy
+2019-09-05 10:32:57 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:32:57 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:32:57 EDT 2019]; root of context hierarchy
+2019-09-05 10:32:57 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:33:02 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:33:05 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:32:57 EDT 2019]; root of context hierarchy
+2019-09-05 10:33:05 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:32:57 EDT 2019]; root of context hierarchy
+2019-09-05 10:33:06 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 9025 ms
+2019-09-05 10:33:14 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 10:33:15 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 10:33:15 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 10:33:16 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 10:33:17 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 10:33:18 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 10:33:18 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 10:33:18 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 10:33:18 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 10:33:21 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 10:33:25 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:33:25 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:33:25 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:33:25 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:33:25 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:33:31 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 10:38:14 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:32:57 EDT 2019]; root of context hierarchy
+2019-09-05 10:38:57 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:38:58 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:38:58 EDT 2019]; root of context hierarchy
+2019-09-05 10:38:58 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:39:03 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:39:05 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:38:58 EDT 2019]; root of context hierarchy
+2019-09-05 10:39:06 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:38:58 EDT 2019]; root of context hierarchy
+2019-09-05 10:39:06 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 9142 ms
+2019-09-05 10:39:22 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 10:39:23 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 10:39:23 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 10:39:24 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 10:39:25 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 10:39:26 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 10:39:26 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 10:39:26 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 10:39:26 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 10:39:29 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 10:39:34 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:39:34 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:39:34 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:39:34 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:39:34 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:39:39 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 10:43:36 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:38:58 EDT 2019]; root of context hierarchy
+2019-09-05 10:44:03 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:44:03 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:44:03 EDT 2019]; root of context hierarchy
+2019-09-05 10:44:04 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:44:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:44:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:44:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:44:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:44:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:44:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:44:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:44:11 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:44:03 EDT 2019]; root of context hierarchy
+2019-09-05 10:44:11 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:44:03 EDT 2019]; root of context hierarchy
+2019-09-05 10:44:12 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 8883 ms
+2019-09-05 10:44:22 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 10:44:23 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 10:44:23 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 10:44:24 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 10:44:26 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 10:44:26 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 10:44:26 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 10:44:26 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 10:44:26 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 10:44:29 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 10:44:34 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:44:34 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:44:34 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:44:34 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:44:34 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:44:39 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 10:44:41 WARN  SqlExceptionHelper:129 - SQL Error: 942, SQLState: 42000
+2019-09-05 10:44:41 ERROR SqlExceptionHelper:131 - ORA-00942: table or view does not exist
+
+2019-09-05 10:46:54 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:44:03 EDT 2019]; root of context hierarchy
+2019-09-05 10:47:03 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:47:03 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:47:03 EDT 2019]; root of context hierarchy
+2019-09-05 10:47:04 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:47:08 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:47:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:47:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:47:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:47:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:47:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:47:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:47:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:47:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:47:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:47:11 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:47:03 EDT 2019]; root of context hierarchy
+2019-09-05 10:47:11 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:47:03 EDT 2019]; root of context hierarchy
+2019-09-05 10:47:12 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 8740 ms
+2019-09-05 10:48:15 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:47:03 EDT 2019]; root of context hierarchy
+2019-09-05 10:48:43 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:48:43 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:48:43 EDT 2019]; root of context hierarchy
+2019-09-05 10:48:43 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:48:48 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:48:50 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:48:43 EDT 2019]; root of context hierarchy
+2019-09-05 10:48:51 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:48:43 EDT 2019]; root of context hierarchy
+2019-09-05 10:48:52 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 8905 ms
+2019-09-05 10:50:52 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 10:50:53 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 10:50:53 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 10:50:55 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 10:50:56 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 10:50:56 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 10:50:56 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 10:50:56 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 10:50:56 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 10:50:59 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 10:51:04 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:51:04 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:51:04 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:51:04 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:51:04 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:51:09 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 10:51:11 WARN  SqlExceptionHelper:129 - SQL Error: 942, SQLState: 42000
+2019-09-05 10:51:11 ERROR SqlExceptionHelper:131 - ORA-00942: table or view does not exist
+
+2019-09-05 10:51:33 WARN  SqlExceptionHelper:129 - SQL Error: 942, SQLState: 42000
+2019-09-05 10:51:33 ERROR SqlExceptionHelper:131 - ORA-00942: table or view does not exist
+
+2019-09-05 10:51:35 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:48:43 EDT 2019]; root of context hierarchy
+2019-09-05 10:51:45 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:51:45 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:51:45 EDT 2019]; root of context hierarchy
+2019-09-05 10:51:46 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:51:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:51:52 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:51:45 EDT 2019]; root of context hierarchy
+2019-09-05 10:51:53 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:51:45 EDT 2019]; root of context hierarchy
+2019-09-05 10:51:54 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 8633 ms
+2019-09-05 10:52:04 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 10:52:05 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 10:52:05 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 10:52:06 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 10:52:07 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 10:52:08 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 10:52:08 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 10:52:08 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 10:52:08 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 10:52:10 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 10:52:14 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:52:14 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:52:14 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:52:14 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:52:14 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:52:20 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 10:56:09 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:51:45 EDT 2019]; root of context hierarchy
+2019-09-05 10:56:48 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:56:49 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:56:49 EDT 2019]; root of context hierarchy
+2019-09-05 10:56:49 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:56:54 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:56:56 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:56:49 EDT 2019]; root of context hierarchy
+2019-09-05 10:56:57 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:56:49 EDT 2019]; root of context hierarchy
+2019-09-05 10:56:57 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 8959 ms
+2019-09-05 10:57:04 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 10:57:05 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 10:57:05 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 10:57:06 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 10:57:08 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 10:57:08 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 10:57:08 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 10:57:08 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 10:57:08 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 10:57:11 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 10:57:16 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:57:16 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:57:16 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:57:16 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:57:16 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:57:22 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 10:57:22 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:56:49 EDT 2019]; root of context hierarchy
+2019-09-05 10:57:33 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:57:33 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:57:33 EDT 2019]; root of context hierarchy
+2019-09-05 10:57:34 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:57:38 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:57:40 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:57:33 EDT 2019]; root of context hierarchy
+2019-09-05 10:57:41 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:57:33 EDT 2019]; root of context hierarchy
+2019-09-05 10:57:42 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 8518 ms
+2019-09-05 10:57:46 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:57:33 EDT 2019]; root of context hierarchy
+2019-09-05 10:58:38 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:58:38 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:58:38 EDT 2019]; root of context hierarchy
+2019-09-05 10:58:39 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:58:44 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:58:46 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:58:38 EDT 2019]; root of context hierarchy
+2019-09-05 10:58:46 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:58:38 EDT 2019]; root of context hierarchy
+2019-09-05 10:58:47 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 9095 ms
+2019-09-05 10:58:52 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 10:58:53 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 10:58:53 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 10:58:54 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 10:58:55 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 10:58:56 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 10:58:56 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 10:58:56 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 10:58:56 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 10:58:59 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 10:59:04 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:59:04 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:59:04 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:59:04 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:59:04 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 10:59:09 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 10:59:35 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:58:38 EDT 2019]; root of context hierarchy
+2019-09-05 10:59:45 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 10:59:45 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:59:45 EDT 2019]; root of context hierarchy
+2019-09-05 10:59:46 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 10:59:50 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 10:59:52 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:59:45 EDT 2019]; root of context hierarchy
+2019-09-05 10:59:53 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 10:59:45 EDT 2019]; root of context hierarchy
+2019-09-05 10:59:53 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 8512 ms
+2019-09-05 11:00:12 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 11:00:12 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 11:00:12 EDT 2019]; root of context hierarchy
+2019-09-05 11:00:13 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 11:00:18 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 11:00:20 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 11:00:12 EDT 2019]; root of context hierarchy
+2019-09-05 11:00:20 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 11:00:12 EDT 2019]; root of context hierarchy
+2019-09-05 11:00:21 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 8809 ms
+2019-09-05 11:00:29 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 11:00:30 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 11:00:30 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 11:00:31 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 11:00:32 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 11:00:33 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 11:00:33 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 11:00:33 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 11:00:33 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 11:00:36 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 11:00:41 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 11:00:41 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 11:00:41 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 11:00:41 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 11:00:41 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 11:00:46 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 14:11:35 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 14:11:35 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 14:11:35 EDT 2019]; root of context hierarchy
+2019-09-05 14:11:36 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 14:11:41 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 14:11:43 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 14:11:35 EDT 2019]; root of context hierarchy
+2019-09-05 14:11:44 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 14:11:35 EDT 2019]; root of context hierarchy
+2019-09-05 14:11:44 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 9356 ms
+2019-09-05 14:11:55 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 14:11:56 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 14:11:56 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 14:11:57 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 14:11:58 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 14:11:59 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 14:11:59 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 14:11:59 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 14:11:59 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 14:12:02 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 14:12:06 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 14:12:06 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 14:12:06 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 14:12:06 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 14:12:06 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 14:12:12 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 14:14:30 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 14:11:35 EDT 2019]; root of context hierarchy
+2019-09-05 14:14:40 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 14:14:40 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 14:14:40 EDT 2019]; root of context hierarchy
+2019-09-05 14:14:41 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 14:14:45 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 14:14:47 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 14:14:40 EDT 2019]; root of context hierarchy
+2019-09-05 14:14:48 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 14:14:40 EDT 2019]; root of context hierarchy
+2019-09-05 14:14:48 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 8164 ms
+2019-09-05 14:33:16 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:33:21 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:33:32 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:33:50 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:33:50 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2019-09-05 14:33:51 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2019-09-05 14:33:51 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-05 14:33:52 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-05 14:33:53 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-09-05 14:33:54 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL]
+2019-09-05 14:33:54 INFO  pooling:135 - HHH10001001: Connection properties: {user=Thetraveller, password=****}
+2019-09-05 14:33:54 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2019-09-05 14:33:54 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-09-05 14:33:56 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-05 14:34:01 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 14:34:01 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 14:34:01 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 14:34:01 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 14:34:01 WARN  deprecation:87 - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2019-09-05 14:34:02 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:34:05 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-05 14:35:07 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:35:20 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:36:05 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:36:48 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:37:24 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:37:34 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:38:08 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:43:36 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:43:41 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:45:37 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 14:49:05 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 15:08:04 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 15:08:46 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 15:09:02 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 15:09:16 WARN  DefaultHandlerExceptionResolver:189 - Resolved exception caused by handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2019-09-05 15:09:38 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 14:14:40 EDT 2019]; root of context hierarchy
+2019-09-05 15:10:03 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 15:10:04 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 15:10:04 EDT 2019]; root of context hierarchy
+2019-09-05 15:10:04 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 15:10:09 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)
+2019-09-05 15:10:11 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 15:10:04 EDT 2019]; root of context hierarchy
+2019-09-05 15:10:12 INFO  RequestMappingHandlerAdapter:557 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 15:10:04 EDT 2019]; root of context hierarchy
+2019-09-05 15:10:12 INFO  DispatcherServlet:508 - FrameworkServlet 'DispatcherServlet': initialization completed in 8921 ms
+2019-09-05 15:10:31 INFO  XmlWebApplicationContext:985 - Closing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 15:10:04 EDT 2019]; root of context hierarchy
+2019-09-05 15:10:41 INFO  DispatcherServlet:489 - FrameworkServlet 'DispatcherServlet': initialization started
+2019-09-05 15:10:41 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'DispatcherServlet-servlet': startup date [Thu Sep 05 15:10:41 EDT 2019]; root of context hierarchy
+2019-09-05 15:10:42 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/{id}],methods=[GET]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.getCustomer(java.lang.Integer)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer/string],methods=[POST]}" onto public java.lang.String com.revature.service.CustomerController.addCustomer(java.lang.String)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/customer],methods=[POST]}" onto public com.revature.beans.Customers com.revature.service.CustomerController.addCustomer(com.revature.beans.Customers)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/{id}],methods=[GET]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.getCustomer(java.lang.Integer)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee/string],methods=[POST]}" onto public java.lang.String com.revature.service.EmployeeController.addCustomer(java.lang.String)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/employee],methods=[POST]}" onto public com.revature.beans.Employee com.revature.service.EmployeeController.addCustomer(com.revature.beans.Employee)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/{id}],methods=[GET]}" onto public java.util.Set<com.revature.beans.Locations> com.revature.service.LocationController.getLocationbyCustomer(java.lang.Integer)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location/string],methods=[POST]}" onto public java.lang.String com.revature.service.LocationController.addLocation(java.lang.String)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/location],methods=[POST]}" onto public com.revature.beans.Locations com.revature.service.LocationController.addLocation(com.revature.beans.Locations)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/login],methods=[POST]}" onto public com.revature.beans.User com.revature.service.LoginController.login(java.lang.String,java.lang.String)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[GET]}" onto public java.util.Set<com.revature.beans.Menu> com.revature.service.MenuController.getMenu()
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/{id}],methods=[GET]}" onto public com.revature.beans.Menu com.revature.service.MenuController.getMenu(java.lang.Integer)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu],methods=[POST]}" onto public com.revature.beans.Menu com.revature.service.MenuController.addMenu(com.revature.beans.Menu)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/menu/string],methods=[POST]}" onto public java.lang.String com.revature.service.MenuController.addMenu(java.lang.String)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[POST]}" onto public com.revature.beans.Stock com.revature.service.StockController.addStock(com.revature.beans.Stock)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/string],methods=[POST]}" onto public java.lang.String com.revature.service.StockController.addStock(java.lang.String)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock],methods=[GET]}" onto public java.util.Set<com.revature.beans.Stock> com.revature.service.StockController.getStock()
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/stock/{id}],methods=[GET]}" onto public com.revature.beans.Stock com.revature.service.StockController.getStock(java.lang.Integer)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[GET]}" onto public java.util.Set<com.revature.beans.ItemTransaction> com.revature.service.TransactionController.getAllTransactions()
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction],methods=[POST]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.addTransaction(com.revature.beans.ItemTransaction)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/string],methods=[POST]}" onto public java.lang.String com.revature.service.TransactionController.addTransaction(java.lang.String)
+2019-09-05 15:10:46 INFO  RequestMappingHandlerMapping:544 - Mapped "{[/transaction/{id}],methods=[GET]}" onto public com.revature.beans.ItemTransaction com.revature.service.TransactionController.getStock(java.lang.Integer)

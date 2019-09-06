@@ -23,6 +23,9 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { NewStockComponent } from './new-stock/new-stock.component';
 import { NewMenuComponent } from './new-menu/new-menu.component';
 import { EditMenuComponent } from './edit-menu/edit-menu.component';
+import { CartService } from './cart.service';
+
+import { PendingTransactionsComponent } from './pending-transactions/pending-transactions.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,7 @@ import { EditMenuComponent } from './edit-menu/edit-menu.component';
     NewStockComponent,
     NewMenuComponent,
     EditMenuComponent
+    PendingTransactionsComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,8 @@ import { EditMenuComponent } from './edit-menu/edit-menu.component';
   ],
   providers: [
     UrlService,
-    UserService
+    UserService,
+    CartService
   ],
   bootstrap: [AppComponent]
 })

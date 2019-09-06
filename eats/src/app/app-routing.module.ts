@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
@@ -13,6 +13,7 @@ import {AccountInfoComponent } from './account-info/account-info.component';
 import { NewStockComponent } from './new-stock/new-stock.component';
 import { NewMenuComponent } from './new-menu/new-menu.component';
 import { EditMenuComponent } from './edit-menu/edit-menu.component';
+import { PendingTransactionsComponent } from './pending-transactions/pending-transactions.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
   {
     path: 'new-menu',
     component: NewMenuComponent
+  },
+  {
+    path: 'pending-orders',
+    component: PendingTransactionsComponent
   }
 ];
 
