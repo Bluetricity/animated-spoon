@@ -13,26 +13,27 @@ import org.springframework.stereotype.Component;
 
 import com.revature.beans.Transactionitems;
 import com.revature.beans.Stock;
+import com.revature.beans.Stock_menu;
 import com.revature.util.HibernateUtil;
 import com.revature.util.LogUtil;
 
 @Component
-public class TaIOracle implements TaIDAO{ 
+public class SaMOracle implements SaMDAO{ 
 	@Autowired  
 	private HibernateUtil hu;
 	
 	@Override
-	public int addTaI(Transactionitems TaI) {
+	public int addSaM(Stock_menu SaM) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(TaI);
+			i = (Integer) s.save(SaM);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
-			LogUtil.logException(e, TaIOracle.class);
+			LogUtil.logException(e, SaMOracle.class);
 		} finally {
 			s.close();
 		}
@@ -41,55 +42,44 @@ public class TaIOracle implements TaIDAO{
 	}
 
 	@Override
-	public Set<Transactionitems> getTaI() {
+	public Set<Stock_menu> getSaM() {
 		Session s = hu.getSession();
-		String query = "from Transactionitems";
-		Query<Transactionitems> q = s.createQuery(query, Transactionitems.class);
-		List<Transactionitems> ret = q.list();
+		String query = "from Stock_menu";
+		Query<Stock_menu> q = s.createQuery(query, Stock_menu.class);
+		List<Stock_menu> ret = q.list();
 		s.close();
-		return new HashSet<Transactionitems>(ret);
+		return new HashSet<Stock_menu>(ret);
 	}
 	
 	@Override
-	public Set<Transactionitems> getTaIbyT(Integer T) {
-		Session s = hu.getSession();
-		String query = "from Transactionitems where TID = :id";
-		Query<Transactionitems> q = s.createQuery(query, Transactionitems.class);
-		q.setParameter("id", T);
-		List<Transactionitems> ret = q.list();
-		s.close();
-		return new HashSet<Transactionitems>(ret);
-	}
-	
-	@Override
-	public void deleteTaI(Transactionitems TaI) {
+	public void deleteSaM(Stock_menu SaM) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(TaI.getComposid());
+			s.delete(SaM.getComposid());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
-			LogUtil.logException(e, TaIOracle.class);
+			LogUtil.logException(e, SaMOracle.class);
 		} finally {
 			s.close();
 		}
 	} 
 
 	@Override
-	public void updateTaI(Transactionitems TaI) {
+	public void updateSaM(Stock_menu SaM) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(TaI.getComposid());
+			s.update(SaM.getComposid());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
-			LogUtil.logException(e, TaIOracle.class);
+			LogUtil.logException(e, SaMOracle.class);
 		} finally {
 			s.close();
 		}

@@ -9,17 +9,21 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Embeddable
-public class JoinStockandMenuID implements Serializable {
+public class Stock_menuID implements Serializable {
 	
+	@ManyToOne
+	@JoinColumn(name="SID")
 	private Stock SID;
 	
+	@ManyToOne
+	@JoinColumn(name="MID")
 	private Menu MID;
 
-	public JoinStockandMenuID() {
+	public Stock_menuID() {
 		super();
 	}
 
-	public JoinStockandMenuID(Stock sID, Menu mID) {
+	public Stock_menuID(Stock sID, Menu mID) {
 		super();
 		SID = sID;
 		MID = mID;
@@ -55,7 +59,7 @@ public class JoinStockandMenuID implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		JoinStockandMenuID other = (JoinStockandMenuID) obj;
+		Stock_menuID other = (Stock_menuID) obj;
 		if (MID == null) {
 			if (other.MID != null)
 				return false;

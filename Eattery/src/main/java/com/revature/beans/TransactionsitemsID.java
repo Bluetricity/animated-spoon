@@ -11,27 +11,31 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Embeddable
-public class JoinTransactionandItemsID implements Serializable {
+public class TransactionsitemsID implements Serializable {
 	private static final long serialVersionUID = 7403175775238654822L;
-	@Column(name="TID")
-	private Integer TID;
-	@Column(name="MID")
-	private Integer MID;
+	
+	@ManyToOne
+	@JoinColumn(name="TID")
+	private ItemTransaction TID;
+	
+	@ManyToOne
+	@JoinColumn(name="MID")
+	private Menu MID;
 
-	public JoinTransactionandItemsID() {
+	public TransactionsitemsID() {
 		super();
 	}
 
-	public Integer getTID() {
+	public ItemTransaction getTID() {
 		return TID;
 	}
-	public void setTID(Integer sID) {
+	public void setTID(ItemTransaction sID) {
 		TID = sID;
 	}
-	public Integer getMID() {
+	public Menu getMID() {
 		return MID;
 	}
-	public void setMID(Integer mID) {
+	public void setMID(Menu mID) {
 		MID = mID;
 	}
 
@@ -52,7 +56,7 @@ public class JoinTransactionandItemsID implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		JoinTransactionandItemsID other = (JoinTransactionandItemsID) obj;
+		TransactionsitemsID other = (TransactionsitemsID) obj;
 		if (MID == null) {
 			if (other.MID != null)
 				return false;
