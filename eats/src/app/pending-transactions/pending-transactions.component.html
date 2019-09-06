@@ -27,7 +27,8 @@
                     <th>Contact Info</th>
                     <th>Payment Type</th>
                     <th>Status</th>
-                    <th>Update</th>
+                    <th>Accept</th>
+                    <th>Reject</th>
                 </tr>
                 <tr *ngFor="let c of currTransactions">
                     <td>{{c.tid}}</td>
@@ -36,7 +37,8 @@
                     <td>{{c.cid.contactinfo}}</td>
                     <td>{{c.payment_TYPE}}</td>
                     <td>{{c.status}}</td>
-                    <td><button type="submit" class=" btn btn-info" id="testbtn">dummy</button></td>
+                    <td><button type="submit" name="acc" class=" btn btn-success" id="{{c.tid}}" (click)=accCurrRow(c)>dummy</button></td>
+                    <td><button type="submit" class=" btn btn-danger" id="denybtn" (click)=denCurrRow(c)>dummy</button></td>
                 </tr>
             </table>
         </div>
@@ -47,5 +49,6 @@
         <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
     </div>
     <!-- Come back to later if possible-->
+    
 </body>
 </html>

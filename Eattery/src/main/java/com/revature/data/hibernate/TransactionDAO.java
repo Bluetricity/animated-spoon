@@ -15,5 +15,5 @@ public interface TransactionDAO {
 	
 	public void deleteItemTransaction(ItemTransaction IT);
 	
-	public void updateItemTransaction(ItemTransaction IT);   
+	public ItemTransaction updateItemTransaction(ItemTransaction IT);   
 }
