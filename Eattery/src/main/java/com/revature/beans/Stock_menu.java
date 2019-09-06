@@ -9,54 +9,41 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "STOCK_MENU")
-public class JoinStockandMenu {
+public class Stock_menu {
 	@EmbeddedId
-	JoinStockandMenuID composid; 
+	Stock_menuID composid; 
+	Double amount;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="TID", insertable=false, updatable=false)
-	private ItemTransaction TID;
-	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="MID", insertable=false, updatable=false)
-	private Menu MID;
-	
-	Double Amount;
-	
-	public JoinStockandMenu() {
+	public Stock_menu() {
 		super();
 	}
 	
-	public JoinStockandMenu(JoinStockandMenuID composid, Double amount) {
+	public Stock_menu(Stock_menuID composid, Double amount) {
 		super();
 		this.composid = composid;
-		Amount = amount;
+		amount = amount;
 	}
 
-	public ItemTransaction getTID() {
-		return TID;
+	public Stock_menuID getComposid() {
+		return composid;
 	}
-	public void setTID(ItemTransaction tID) {
-		TID = tID;
+
+	public void setComposid(Stock_menuID composid) {
+		this.composid = composid;
 	}
-	public Menu getMID() {
-		return MID;
-	}
-	public void setMID(Menu mID) {
-		MID = mID;
-	}
+
 	public Double getAmount() {
-		return Amount;
+		return amount;
 	}
 	public void setAmount(Double amount) {
-		Amount = amount;
+		amount = amount;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Amount == null) ? 0 : Amount.hashCode());
+		result = prime * result + ((amount == null) ? 0 : amount.hashCode());
 		result = prime * result + ((composid == null) ? 0 : composid.hashCode());
 		return result;
 	}
@@ -69,11 +56,11 @@ public class JoinStockandMenu {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		JoinStockandMenu other = (JoinStockandMenu) obj;
-		if (Amount == null) {
-			if (other.Amount != null)
+		Stock_menu other = (Stock_menu) obj;
+		if (amount == null) {
+			if (other.amount != null)
 				return false;
-		} else if (!Amount.equals(other.Amount))
+		} else if (!amount.equals(other.amount))
 			return false;
 		if (composid == null) {
 			if (other.composid != null)
@@ -85,7 +72,7 @@ public class JoinStockandMenu {
 
 	@Override
 	public String toString() {
-		return "JoinStockandMenu [composid=" + composid + ", Amount=" + Amount + "]";
+		return "JoinStockandMenu [composid=" + composid + ", Amount=" + amount + "]";
 	}
 	
 	

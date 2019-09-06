@@ -18,21 +18,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.beans.Employee;
 import com.revature.beans.Transactionitems;
 import com.revature.beans.Menu;
+import com.revature.beans.Stock_menu;
 import com.revature.data.hibernate.MenuOracle;
-import com.revature.data.hibernate.TaIOracle;
+import com.revature.data.hibernate.SaMOracle;
 import com.revature.data.hibernate.EmployeeDAO;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
-@RequestMapping(value="/TaI")
-public class TaIController {
+@RequestMapping(value="/SaM")
+public class SaMController {
 
 	@Autowired
-	private TaIOracle TIO;
+	private SaMOracle SMO;
 	
 	@GetMapping
-	public Set<Transactionitems> getMenuCust(){	
-		return TIO.getTaI();
+	public Set<Stock_menu> getMenuCust(){	
+		return SMO.getSaM();
 	}
 	
 	@GetMapping(value="{id}")
@@ -43,9 +44,9 @@ public class TaIController {
 	}
 	
 	@PostMapping
-	public Transactionitems addMenu (@RequestBody Transactionitems TaI) {
-		TIO.addTaI(TaI);
-		return TaI;
+	public Stock_menu addMenu (@RequestBody Stock_menu SaM) {
+		SMO.addSaM(SaM);
+		return SaM;
 
 	}
 	
