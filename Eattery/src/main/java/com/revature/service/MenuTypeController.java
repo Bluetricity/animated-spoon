@@ -12,46 +12,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import com.revature.beans.Employee;
-import com.revature.beans.Stock;
-import com.revature.data.hibernate.StockOracle;
-import com.revature.data.hibernate.EmployeeDAO;
+import com.revature.beans.Menu_Type;
+import com.revature.data.hibernate.MenuTypeOracle;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
-@RequestMapping(value="/stock")
-public class StockController {
-
+@RequestMapping(value="/Menu_Type")
+public class MenuTypeController {
 	@Autowired
-	private StockOracle CO;
-
+	private MenuTypeOracle CO;
+	
 	@GetMapping
-	public Set<Stock> getStock () {
-		//Stock in = (Stock) ac.getBean("Stocks");
-		return CO.getStock();//CO.getStock (id);
-
+	public Set<Menu_Type> getMenuTypes(){
+		return CO.getMenuTypes();
 	}
 	
 	@GetMapping(value="{id}")
-	public Stock getStock (@PathVariable Integer id) {
-		return CO.getStock(id);//CO.getStock (id);
-
+	public Menu_Type getMenuType(@PathVariable Integer id) {
+		return CO.getMenuType(id);
 	}
 	
 	@PostMapping
-	public Stock addStock (@RequestBody Stock g) {
-		System.out.println(g);
-		CO.addStock(g);
-		return g;
-
+	public Menu_Type addMenuType (@RequestBody Menu_Type mt) {
+		System.out.println(mt);
+		CO.addMenuType(mt);
+		return mt;
 	}
+	
 	@PostMapping(value="/string")
-	public String addStock (@RequestBody String g) {
-		System.out.println(g);
+	public String addMenuType(@RequestBody String mt) {
+		System.out.println(mt);
 		
-		return g;
-
+		return mt;
 	}
-
 }

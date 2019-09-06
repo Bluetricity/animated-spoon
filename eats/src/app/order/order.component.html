@@ -22,15 +22,18 @@
                 <th>Meal Name</th>
                 <th>Price</th>
             </tr>
-            <!-- <tr *ngFor="let m of currMenu">
+            <tr *ngFor="let m of orderup">
                 <td>{{m.mealname}}</td>    
                 <td>${{m.price}}</td>
-            </tr> -->
+            </tr>
         </table>
         <br>
         <div class="formgroup">
             <label for="b_location">Choose your delivery location.</label>
-            <select class="form-control" id="b_location"></select>
+            <select id="locations">
+                <option *ngFor="let A of areas">{{A.address}}</option>
+            </select>
+            <!-- <select class="form-control" id="b_location"></select> -->
             <ul id="locationSelect"></ul>
         </div>
         <br>
@@ -39,7 +42,7 @@
             <input calss="form-control simple-order" type="text" id="b_payment" />
         </div>
         <br>
-        <button type="submit" class="btn btn-primary" id="submitbtn">Pay</button>
-        <button type="submit" class="btn btn-danger" id="backbtn">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="submitbtn" (click)=makeOrder()>Pay</button>
+        <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Cancel</button>
     </div>
 </body>

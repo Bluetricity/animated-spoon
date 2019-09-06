@@ -4,7 +4,7 @@
 	<session-factory>
 		<!-- JDBC SET UP -->
 		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
-		<property name="hibernate.connection.url">jdbc:oracle:thin:@jul22-1907.ctp1juge3cot.us-east-2.rds.amazonaws.com:1521:ORCL</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@testserver.cagr8fb730kj.us-east-2.rds.amazonaws.com:1521:ORCL</property>
 		<property name="hibernate.connection.username">Thetraveller</property>
 		<property name="hibernate.connection.password">Kobolds7</property>
 		
@@ -27,6 +27,14 @@
 		<mapping class="com.revature.beans.Menu"/>
 		<mapping class="com.revature.beans.Stock"/>
 		<mapping class="com.revature.beans.ItemTransaction"/> 
+		<mapping class="com.revature.beans.Menu_Type"/>
+		<mapping class="com.revature.beans.ItemTransaction"/>
+		<mapping class="com.revature.beans.Transactionitems"/> 
+		<mapping class="com.revature.beans.TransactionsitemsID"/> 
+		<mapping class="com.revature.beans.Stock_menu"/> 
+		<mapping class="com.revature.beans.Stock_menuID"/> 
+		
+
 		
 	</session-factory>
 </hibernate-configuration>

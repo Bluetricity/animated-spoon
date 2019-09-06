@@ -26,6 +26,8 @@ import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { CartService } from './cart.service';
 
 import { PendingTransactionsComponent } from './pending-transactions/pending-transactions.component';
+import { MenuTypesComponent } from './menu-types/menu-types.component';
+import { NewMenuTypeComponent } from './new-menu-type/new-menu-type.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { PendingTransactionsComponent } from './pending-transactions/pending-tra
     NewStockComponent,
     NewMenuComponent,
     EditMenuComponent,
-    PendingTransactionsComponent
+    PendingTransactionsComponent,
+    MenuTypesComponent,
+    NewMenuTypeComponent
   ],
   imports: [
     BrowserModule,
