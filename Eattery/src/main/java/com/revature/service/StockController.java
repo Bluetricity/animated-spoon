@@ -39,7 +39,6 @@ public class StockController {
 
 	}
 	
-	//Currently not working
 	@PostMapping
 	public Stock addStock (@RequestBody Stock g) {
 		System.out.println(g);

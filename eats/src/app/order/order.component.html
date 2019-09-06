@@ -42,7 +42,7 @@
             <input calss="form-control simple-order" type="text" id="b_payment" />
         </div>
         <br>
-        <button type="submit" class="btn btn-primary" id="submitbtn">Pay</button>
-        <button type="submit" class="btn btn-danger" id="backbtn">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="submitbtn" (click)=makeOrder()>Pay</button>
+        <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Cancel</button>
     </div>
 </body>

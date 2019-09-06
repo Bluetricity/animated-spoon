@@ -23,38 +23,39 @@ export class MenuItemsComponent implements OnInit {
   public getMenu: Menu;
   public currMenu: Menu[];
   createService: any;
-  
-  constructor(private cart: CartService, private menu: MenuServiceService, public session: SessionStorageService, private router: Router) { }
+
+  constructor(private cart: CartService, private menu: MenuServiceService, public session: SessionStorageService,
+              private router: Router) { }
 
   ngOnInit() {
     this.menu.getMenuCust().subscribe((data: Menu[]) => {
-     
+
       this.currMenu = data;
-      this.currMenu.sort(function(a,b) {return a.mid - b.mid});
+      this.currMenu.sort( (a, b) => a.mid - b.mid);
     });
 
     console.log(this.currMenu);
-    
+
 
   }
 
-  addtoCart($event:any){
-    let mid: number = $event.target.value;
+  addtoCart($event: any ) {
+    const mid: number = $event.target.value;
     console.log(mid);
-    let ann: Menu = this.currMenu[mid-1];
-    
+    const ann: Menu = this.currMenu[mid - 1];
+
     console.log(ann);
-    
+
     this.cart.addtoCart(ann);
 
     this.cart.displayCart();
   }
 
-  toOrder(){
-    let OrderUp = this.cart.sendCart();
+  toOrder() {
+    const OrderUp = this.cart.sendCart();
     console.log(OrderUp);
     const StringCart = JSON.stringify(OrderUp);
-    this.session.set('Cart',StringCart);
+    this.session.set('Cart', StringCart);
 
     console.log(this.session.get('Cart'));
 

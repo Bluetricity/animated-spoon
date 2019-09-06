@@ -60,9 +60,6 @@ public class TransactionController {
 		return g;
 
 	}
-//	@PutMapping(value="{id}")
-//	public ItemTransaction updateTransaction{
-//		
-//	}
+	
 	
 }

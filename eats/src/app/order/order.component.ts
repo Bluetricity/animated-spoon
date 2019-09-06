@@ -18,20 +18,33 @@ export class OrderComponent implements OnInit {
   public storeduser: Currentuser;
   public areas: Location[];
 
-  constructor(private cart: CartService, public session: SessionStorageService, private router: Router, private Locate: LocationService ) {  }
+  constructor(private cart: CartService, public session: SessionStorageService,
+              private router: Router, private Locate: LocationService ) {  }
 
   ngOnInit() {
     this.storeduser = JSON.parse(this.session.get('User'));
 
     this.Locate.getCustomerLocation(this.storeduser.cust.cid).subscribe(
-      (resp : Location[]) => {
+      (resp: Location[]) => {
         this.areas = resp;
-      } 
+      }
     );
 
-    
+
     this.cart.displayCart();
     this.orderup = JSON.parse(this.session.get('Cart'));
   }
 
+  makeOrder() {
+
+    // First of all, I need to make a transaction
+
+
+    // Then I need to log the orders.
+
+  }
+
+  backToHome() {
+
+  }
 }
