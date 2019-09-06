@@ -14,25 +14,29 @@ export class CartService {
   // private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   public itemList: Menu[] = [];
 
-  constructor() {  
-    
+  constructor() {
+
   }
 
-  addtoCart(menin: Menu){
+  addtoCart(menin: Menu) {
     this.itemList.push(menin);
   }
 
-  removefromCart(){
+  removefromCart() {
 
   }
 
-  displayCart(){
+  displayCart() {
     console.log(this.itemList);
+  }
+
+  sendCart(): Menu[] {
+    return this.itemList;
   }
     // getCustMenu(): Observable<Menu[]>{
     //   return this.http.get(this.appUrl, {withCredentials: true}).pipe(
     //     map( resp => resp as Menu[])
     //   );
-    // } 
- 
+    // }
+
 }
