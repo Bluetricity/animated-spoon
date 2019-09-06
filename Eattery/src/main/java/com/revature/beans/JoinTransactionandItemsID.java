@@ -2,38 +2,36 @@ package com.revature.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Embeddable
 public class JoinTransactionandItemsID implements Serializable {
-	//TODO Change
-	@Column( name = "SID")
-	private Stock SID;
-	
-	@Column( name = "MID")
-	private Menu MID;
+	private static final long serialVersionUID = 7403175775238654822L;
+	@Column(name="TID")
+	private Integer TID;
+	@Column(name="MID")
+	private Integer MID;
 
 	public JoinTransactionandItemsID() {
 		super();
 	}
 
-	public JoinTransactionandItemsID(Stock sID, Menu mID) {
-		super();
-		SID = sID;
-		MID = mID;
+	public Integer getTID() {
+		return TID;
 	}
-
-	public Stock getSID() {
-		return SID;
+	public void setTID(Integer sID) {
+		TID = sID;
 	}
-	public void setSID(Stock sID) {
-		SID = sID;
-	}
-	public Menu getMID() {
+	public Integer getMID() {
 		return MID;
 	}
-	public void setMID(Menu mID) {
+	public void setMID(Integer mID) {
 		MID = mID;
 	}
 
@@ -42,7 +40,7 @@ public class JoinTransactionandItemsID implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((MID == null) ? 0 : MID.hashCode());
-		result = prime * result + ((SID == null) ? 0 : SID.hashCode());
+		result = prime * result + ((TID == null) ? 0 : TID.hashCode());
 		return result;
 	}
 
@@ -60,17 +58,17 @@ public class JoinTransactionandItemsID implements Serializable {
 				return false;
 		} else if (!MID.equals(other.MID))
 			return false;
-		if (SID == null) {
-			if (other.SID != null)
+		if (TID == null) {
+			if (other.TID != null)
 				return false;
-		} else if (!SID.equals(other.SID))
+		} else if (!TID.equals(other.TID))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "JoinStockandMenu [SID=" + SID + ", MID=" + MID + "]";
+		return "JoinTransactionandMenu [TID=" + TID + ", MID=" + MID + "]";
 	}
 	
 	

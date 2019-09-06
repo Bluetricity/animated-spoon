@@ -41,7 +41,17 @@ public class TaIOracle implements TaIDAO{
 	}
 
 	@Override
-	public Set<JoinTransactionandItems> getStockbyT(Integer T) {
+	public Set<JoinTransactionandItems> getTaI() {
+		Session s = hu.getSession();
+		String query = "from TRANSACTIONITEMS";
+		Query<JoinTransactionandItems> q = s.createQuery(query, JoinTransactionandItems.class);
+		List<JoinTransactionandItems> ret = q.list();
+		s.close();
+		return new HashSet<JoinTransactionandItems>(ret);
+	}
+	
+	@Override
+	public Set<JoinTransactionandItems> getTaIbyT(Integer T) {
 		Session s = hu.getSession();
 		String query = "from TRANSACTIONITEMS where TID = :id";
 		Query<JoinTransactionandItems> q = s.createQuery(query, JoinTransactionandItems.class);

@@ -2,48 +2,56 @@ package com.revature.beans;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "STOCK_MENU")
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity(name = "JoinTransactionandItems")
+@Table(name = "transactionitems")
+@JsonIgnoreProperties(value= {"SID", "MID"})
 public class JoinTransactionandItems {
-	//TODO Change
+
 	@EmbeddedId
 	JoinStockandMenuID composid; 
-	Double Amount;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="TID", insertable=false, updatable=false)
+	private ItemTransaction TID;
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="MID", insertable=false, updatable=false)
+	private Menu MID;
+	Double quantity;
 	
 	public JoinTransactionandItems() {
 		super();
 	}
-	
-	public JoinTransactionandItems(JoinStockandMenuID composid, Double amount) {
+	public JoinTransactionandItems(JoinStockandMenuID composid, Double qUANITY) {
 		super();
 		this.composid = composid;
-		Amount = amount;
+		quantity = qUANITY;
 	}
-
 	public JoinStockandMenuID getComposid() {
 		return composid;
 	}
 	public void setComposid(JoinStockandMenuID composid) {
 		this.composid = composid;
 	}
-	public Double getAmount() {
-		return Amount;
+	public Double getquantity() {
+		return quantity;
 	}
-	public void setAmount(Double amount) {
-		Amount = amount;
+	public void setquantity(Double qUANITY) {
+		quantity = qUANITY;
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Amount == null) ? 0 : Amount.hashCode());
+		result = prime * result + ((quantity == null) ? 0 : quantity.hashCode());
 		result = prime * result + ((composid == null) ? 0 : composid.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -53,10 +61,10 @@ public class JoinTransactionandItems {
 		if (getClass() != obj.getClass())
 			return false;
 		JoinTransactionandItems other = (JoinTransactionandItems) obj;
-		if (Amount == null) {
-			if (other.Amount != null)
+		if (quantity == null) {
+			if (other.quantity != null)
 				return false;
-		} else if (!Amount.equals(other.Amount))
+		} else if (!quantity.equals(other.quantity))
 			return false;
 		if (composid == null) {
 			if (other.composid != null)
@@ -65,11 +73,14 @@ public class JoinTransactionandItems {
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
-		return "JoinStockandMenu [composid=" + composid + ", Amount=" + Amount + "]";
+		return "JoinTransactionandItems [composid=" + composid + ", quantity=" + quantity + "]";
 	}
+	
+	
+	
+	
 	
 	
 }

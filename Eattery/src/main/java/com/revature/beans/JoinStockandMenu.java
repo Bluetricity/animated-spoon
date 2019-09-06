@@ -2,6 +2,9 @@ package com.revature.beans;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -9,6 +12,14 @@ import javax.persistence.Table;
 public class JoinStockandMenu {
 	@EmbeddedId
 	JoinStockandMenuID composid; 
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="TID", insertable=false, updatable=false)
+	private ItemTransaction TID;
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="MID", insertable=false, updatable=false)
+	private Menu MID;
 	
 	Double Amount;
 	
@@ -22,11 +33,17 @@ public class JoinStockandMenu {
 		Amount = amount;
 	}
 
-	public JoinStockandMenuID getComposid() {
-		return composid;
+	public ItemTransaction getTID() {
+		return TID;
 	}
-	public void setComposid(JoinStockandMenuID composid) {
-		this.composid = composid;
+	public void setTID(ItemTransaction tID) {
+		TID = tID;
+	}
+	public Menu getMID() {
+		return MID;
+	}
+	public void setMID(Menu mID) {
+		MID = mID;
 	}
 	public Double getAmount() {
 		return Amount;

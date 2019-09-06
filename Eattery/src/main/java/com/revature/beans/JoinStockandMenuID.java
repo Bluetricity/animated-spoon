@@ -11,12 +11,8 @@ import javax.persistence.OneToMany;
 @Embeddable
 public class JoinStockandMenuID implements Serializable {
 	
-	@OneToMany
-	@JoinColumn(name = "SID")
 	private Stock SID;
 	
-	@OneToMany
-	@JoinColumn(name = "MID")
 	private Menu MID;
 
 	public JoinStockandMenuID() {

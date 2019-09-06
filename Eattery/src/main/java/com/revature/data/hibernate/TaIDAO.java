@@ -8,7 +8,9 @@ import com.revature.beans.Stock;
 public interface TaIDAO {
 	public int addTaI(JoinTransactionandItems TaI);
 
-	public Set<JoinTransactionandItems> getStockbyT(Integer T);
+	public Set<JoinTransactionandItems> getTaI();
+	
+	public Set<JoinTransactionandItems> getTaIbyT(Integer T);
 	
 	public void deleteTaI(JoinTransactionandItems TaI);
 	
