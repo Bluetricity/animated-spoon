@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from '../shared/menu';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MenuServiceService } from '../menu-service.service';
+
 
 
 @Component({
@@ -23,17 +24,27 @@ export class EmployeeMenuComponent implements OnInit {
   public currMenu: Menu[];
 
   constructor(private createService: MenuServiceService,
-    private router: Router) { }
+              private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.createService.getMenuEmp().subscribe((data: Menu[]) => {
       this.currMenu = data;
+      console.log(this.currMenu);
     });
   }
-  backToHome(){
+
+  backToHome() {
     this.router.navigate(['home']);
   }
-  addNewMenuItem(){
+
+  addNewMenuItem() {
     this.router.navigate(['new-menu']);
+  }
+
+  removeMenu(m: Menu): void {
+    this.createService.removeMenu(m).subscribe( data => {
+      this.currMenu.filter( i => i !== m );
+    });
+    window.location.reload();
   }
 }

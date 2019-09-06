@@ -90,7 +90,7 @@ public class MenuOracle implements MenuDAO{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(menu.getMID());
+			s.delete(menu);
 			t.commit();
 		} catch(Exception e) { 
 			if(t != null)

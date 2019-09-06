@@ -15,8 +15,8 @@ export class CustomerService {
 
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
-  create(username: string, password: string, name: string, contactInfo: string): Observable<Currentuser>{
-    const obj = {username:username, password: password, name: name, contactinfo: contactInfo};
+  create(username: string, password: string, name: string, contactInfo: string): Observable<Currentuser> {
+    const obj = {username, password, name, contactinfo: contactInfo};
     const body = JSON.stringify(obj);
     return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
       map( resp => {
@@ -24,5 +24,5 @@ export class CustomerService {
         return newUser;
       }));
   }
-  
+
 }

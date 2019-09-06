@@ -28,4 +28,8 @@ export class NavBarComponent implements OnInit {
     return this.userService.logout();
   }
 
+  createAccount() {
+    this.route.navigate(['create-account']);
+  }
+
 }

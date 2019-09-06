@@ -6,12 +6,15 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -33,10 +36,10 @@ public class MenuController {
 		return CO.getMenubyAvailQuantity();
 	}
 	
-	@GetMapping(value="{id}")
-	public Menu getMenu (@PathVariable Integer id) {
+	@GetMapping(value="{mid}")
+	public Menu getMenu (@PathVariable Integer mid) {
 //		Menu in = (Menu) ac.getBean("Menus");
-		return null;//CO.getMenu (in);
+		return CO.getMenu(mid);//CO.getMenu (in);
 
 	}
 	
@@ -57,9 +60,13 @@ public class MenuController {
 		System.out.println(g);
 		
 		return g;
-
 	}
-	
-	
 
+	@DeleteMapping(value= {"{mid}"})
+	public ResponseEntity<Void> deleteMenu(@PathVariable Integer mid) {
+		if(CO.getMenu(mid) == null)
+			return ResponseEntity.status(405).build();
+		CO.deleteMenu(CO.getMenu(mid));
+		return ResponseEntity.noContent().build();
+	}
 }

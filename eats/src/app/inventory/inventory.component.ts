@@ -22,33 +22,33 @@ export class InventoryComponent implements OnInit {
   public getStock: Stock;
   public currStock: Stock[];
 
-  //@Input() stock: Stock;
+  // @Input() stock: Stock;
 
-  Inv: any = sampleData
+  Inv: any = sampleData;
   stocks: Stock[];
 
   constructor(private createService: GetStockService,
-    private router: Router) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.createService.make().subscribe((data: Stock[]) => {
       this.stocks = data;
     });
   }
-  backToHome(){
+  backToHome() {
     this.router.navigate(['home']);
   }
-  addNewItem(){
+  addNewItem() {
     this.router.navigate(['new-stock']);
   }
-  getItem(){
+  getItem() {
     // this.createService.make(this.ingredient,this.quantity).subscribe(
     //   resp =>{
     //     this.getStock = resp;
     //   }
     // )
     this.createService.make().subscribe(stock => this.currStock = stock);
-    
+
 
   }
 }

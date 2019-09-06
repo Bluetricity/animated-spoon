@@ -18,22 +18,22 @@ export class CreateAccountComponent implements OnInit {
   public loggedUser: Currentuser;
 
   constructor(private createService: CustomerService,
-    private router: Router,
-    private userService: UserService) { }
+              private router: Router,
+              private userService: UserService) { }
 
   ngOnInit() {
   }
-  submit(){
-    if(this.username !== null && this.password !== null && this.name !== null && this.contactInfo !== null){
+  submit() {
+    if (this.username !== null && this.password !== null && this.name !== null && this.contactInfo !== null) {
       this.createService.create(this.username.trim(), this.password.trim(), this.name.trim(), this.contactInfo.trim()).subscribe(
-        resp =>{
+        resp => {
           this.loggedUser = resp;
           this.userService.login(this.username, this.password);
           this.router.navigate(['account-info']);
         });
     }
   }
-  returnTo(){
+  returnTo() {
     this.router.navigate(['home']);
   }
 }

@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <img src="assets/pp.gif" width="50" height="50">
     <a class="navbar-brand" routerLink='/'>! GALAXY EATS !</a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <div class="navbar-collapse collapse show" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li *ngIf="!isEmployee()&&!isCustomer()" class="nav-item">
                 <a>
@@ -15,7 +16,7 @@
                 <a class="nav-link" routerLink="/stock">Stock</a>
             </li>
             <li *ngIf="isCustomer()" class="nav-item ">
-                <a class="nav-link " routerLink="order">Order</a>
+                <a class="nav-link " routerLink="menu-items">Menu</a>
             </li>
             <li *ngIf="isCustomer()" class="nav-item ">
                 <a class="nav-link " routerLink="account-info">Account</a>
@@ -23,13 +24,21 @@
             <li *ngIf="isCustomer()||isEmployee()">
                 <button class="btn btn-danger" (click)="logout()">Logout</button>
             </li>
-            <li *ngIf="!isCustomer&&!isEmployee" class="nav-item">
-                <button class="btn btn-primary" (click)=createAccount()>Create Account</button>
+            <!-- <li *ngIf="!isCustomer()&&!isEmployee()" class="nav-item">
+                <button class="btn ca" (click)=createAccount()>Create Account</button>
+            </li> -->
+            <li *ngIf="!isEmployee()&&!isCustomer()" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">New Customer?</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" (click)=createAccount()>Create Account</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" routerLink="menu-items">View Menu</a>
+                </div>
             </li>
         </ul>
     </div>
-    <!-- <app-login></app-login> -->
-    <!-- <button class="navbar-toggler collapsed " type="button " data-toggle="collapse " data-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
-        <span class="navbar-toggler-icon "></span>
-    </button> -->
+
 </nav>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
