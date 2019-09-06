@@ -29,6 +29,10 @@ export class CartService {
   displayCart(){
     console.log(this.itemList);
   }
+
+  sendCart(): Menu[] {
+    return this.itemList;
+  }  
     // getCustMenu(): Observable<Menu[]>{
     //   return this.http.get(this.appUrl, {withCredentials: true}).pipe(
     //     map( resp => resp as Menu[])

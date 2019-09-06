@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MenuServiceService } from '../menu-service.service';
 import { CartService } from '../cart.service';
+import {SessionStorageService} from 'angular-web-storage';
 
 @Component({
   selector: 'app-menu-items',
@@ -23,7 +24,7 @@ export class MenuItemsComponent implements OnInit {
   public currMenu: Menu[];
   createService: any;
   
-  constructor(private cart: CartService, private menu: MenuServiceService) { }
+  constructor(private cart: CartService, private menu: MenuServiceService, public session: SessionStorageService, private router: Router) { }
 
   ngOnInit() {
     this.menu.getMenuCust().subscribe((data: Menu[]) => {
@@ -47,5 +48,17 @@ export class MenuItemsComponent implements OnInit {
     this.cart.addtoCart(ann);
 
     this.cart.displayCart();
+  }
+
+  toOrder(){
+    let OrderUp = this.cart.sendCart();
+    console.log(OrderUp);
+    const StringCart = JSON.stringify(OrderUp);
+    this.session.set('Cart',StringCart);
+
+    console.log(this.session.get('Cart'));
+
+
+    this.router.navigate(['order']);
   }
 }
