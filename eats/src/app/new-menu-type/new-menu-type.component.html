@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Add New Menu Item</title>
+</head>
+
+<body>
+    <h1 style="text-align: center">Add new Menu Type here</h1>
+    <br>
+    <div class="container">
+        <div class="formgroup">
+            <label for="MenuItem">Menu Type</label>
+            <input class="form-control simple-create" type="text" id="MenuItem" [(ngModel)]="menuName" />
+            <br>
+        </div>
+        <button class="btn btn-success" (click)=addNewMenuType()>Submit</button>
+        <div class="float-right">
+            <button class="btn btn-danger" (click)=goBack()>Go Back</button>
+        </div>
+    </div>
+</body>
+
+</html>

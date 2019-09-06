@@ -20,6 +20,7 @@ export class PendingTransactionsComponent implements OnInit {
   public cid: number;
   public payment_type: string;
   public status: number;
+  public currStatus: number;
   public currTransactions: CurrentTransactions[];
   public selectedTransaction: CurrentTransactions;
 
@@ -53,7 +54,7 @@ export class PendingTransactionsComponent implements OnInit {
     console.log(selectedItem);
 
     selectedItem.status=2;
-    
+
     this.createService.updateTransactions(selectedItem).subscribe(resp => {
       this.selectedTransaction = resp;
     })

@@ -13,6 +13,8 @@ import {AccountInfoComponent } from './account-info/account-info.component';
 import { NewStockComponent } from './new-stock/new-stock.component';
 import { NewMenuComponent } from './new-menu/new-menu.component';
 import { PendingTransactionsComponent } from './pending-transactions/pending-transactions.component';
+import { MenuTypesComponent } from './menu-types/menu-types.component';
+import { NewMenuTypeComponent } from './new-menu-type/new-menu-type.component';
 
 const routes: Routes = [
   {
@@ -77,6 +79,14 @@ const routes: Routes = [
   {
     path: 'pending-orders',
     component: PendingTransactionsComponent
+  },
+  {
+    path: 'menu-types',
+    component: MenuTypesComponent
+  },
+  {
+    path: 'new-menu-type',
+    component: NewMenuTypeComponent
   }
 ];
 
