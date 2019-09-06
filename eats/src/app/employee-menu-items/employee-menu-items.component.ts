@@ -32,24 +32,19 @@ export class EmployeeMenuComponent implements OnInit {
       console.log(this.currMenu);
     });
   }
+
   backToHome() {
     this.router.navigate(['home']);
   }
+
   addNewMenuItem() {
     this.router.navigate(['new-menu']);
   }
-  // editMenu(menuItem: any) {
-  //   console.log(menuItem);
-  //   console.log(menuItem.mid);
-  //   this.createService.removeMenu(menuItem).subscribe(resp => {
-  //     // this.getMenu = resp;
-  //     this.currMenu.splice(this.currMenu.indexOf(menuItem), 1);
-  //     this.currMenu.push(menuItem);
-  //   })
-  // }
 
   removeMenu(m: Menu): void {
-    this.currMenu.splice(this.currMenu.indexOf(m), 1);
-    this.currMenu.push(m);
+    this.createService.removeMenu(m).subscribe( data => {
+      this.currMenu.filter( i => i !== m );
+    });
+    window.location.reload();
   }
 }
