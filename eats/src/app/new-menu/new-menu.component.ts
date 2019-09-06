@@ -33,7 +33,7 @@ export class NewMenuComponent implements OnInit {
           this.newMenuItem = resp;
         }
       );
-    // this.router.navigate(['stock']);
+    this.goBack();
     }
   }
   goBack(){
