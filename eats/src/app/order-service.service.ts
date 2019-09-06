@@ -19,4 +19,18 @@ export class OrderServiceService {
       map( resp => resp as CurrentTransactions[])
     );
   }
+  updateTransactions(transaction: CurrentTransactions): Observable<CurrentTransactions>{
+    const url = 'http://localhost:8080/Eattery/transaction/'+transaction.tid;
+    const body = JSON.stringify(transaction);
+    return this.http.put(url, body, {headers: this.headers, withCredentials: true}).pipe(
+      map( resp => resp as CurrentTransactions)
+    );
+  }  
+  // updateTransactions(transaction: CurrentTransactions): Observable<CurrentTransactions>{
+  //   const url = 'http://localhost:8080/Eattery/transaction/'+transaction.tid;
+  //   const body = JSON.stringify(transaction);
+  //   return this.http.patch(url, body, {headers: this.headers, withCredentials: true}).pipe(
+  //     map( resp => resp as CurrentTransactions)
+  //   );
+  // }
 }

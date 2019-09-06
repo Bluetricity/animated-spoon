@@ -21,6 +21,7 @@ export class PendingTransactionsComponent implements OnInit {
   public payment_type: string;
   public status: number;
   public currTransactions: CurrentTransactions[];
+  public selectedTransaction: CurrentTransactions;
 
   constructor(private createService: OrderServiceService,
     private router: Router) { }
@@ -32,5 +33,29 @@ export class PendingTransactionsComponent implements OnInit {
   }
   backToHome(){
     this.router.navigate(['home']);
+  }
+  accCurrRow(selectedItem: any){
+    console.log(selectedItem);
+    console.log(selectedItem.tid);
+    console.log(selectedItem.cid);
+    console.log(selectedItem.payment_TYPE);
+    console.log(selectedItem.status);
+    console.log();
+    selectedItem.status=1;
+    this.status=1;
+    this.createService.updateTransactions(selectedItem).subscribe(resp => {
+      this.selectedTransaction = resp;
+    });
+    // this.selectedTransaction.tid = selectedItem.tid;
+    // console.log(this.selectedTransaction);
+  }
+  denCurrRow(selectedItem: any){
+    console.log(selectedItem);
+
+    selectedItem.status=2;
+    
+    this.createService.updateTransactions(selectedItem).subscribe(resp => {
+      this.selectedTransaction = resp;
+    })
   }
 }
