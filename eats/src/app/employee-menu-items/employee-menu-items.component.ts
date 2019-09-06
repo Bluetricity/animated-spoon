@@ -37,7 +37,8 @@ export class EmployeeMenuComponent implements OnInit {
     this.router.navigate(['new-menu']);
   }
 
-  removeMenuItem() {
-    this.mealname
+  removeMenu(m: Menu) {
+    this.currMenu.splice(this.currMenu.indexOf(m), 1);
+    this.currMenu.push(m);
   }
 }

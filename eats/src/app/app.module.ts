@@ -44,7 +44,7 @@ import { PendingTransactionsComponent } from './pending-transactions/pending-tra
     InventoryComponent,
     NewStockComponent,
     NewMenuComponent,
-    EditMenuComponent
+    EditMenuComponent,
     PendingTransactionsComponent
   ],
   imports: [

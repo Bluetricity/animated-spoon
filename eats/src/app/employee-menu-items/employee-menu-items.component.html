@@ -29,7 +29,8 @@
                     <td>{{m.mealname}}</td>
                     <td>{{m.desc}}</td>
                     <td>${{m.price}}</td>
-                    <td></td>
+                    <!-- <td></td> -->
+                    <td><button type="destroy" class="btn btn-danger" (click)=removeMenu(m)>Delete Dish</button></td>
                     <!-- <td><button type="submit" class=" btn btn-info" id="testbtn">Add to cart</button></td> -->
                 </tr>
             </table>
