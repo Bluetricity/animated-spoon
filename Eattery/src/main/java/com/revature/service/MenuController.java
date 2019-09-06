@@ -6,6 +6,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,10 +36,10 @@ public class MenuController {
 		return CO.getMenubyAvailQuantity();
 	}
 	
-	@GetMapping(value="{id}")
-	public Menu getMenu (@PathVariable Integer id) {
+	@GetMapping(value="{mid}")
+	public Menu getMenu (@PathVariable Integer mid) {
 //		Menu in = (Menu) ac.getBean("Menus");
-		return null;//CO.getMenu (in);
+		return CO.getMenu(mid);//CO.getMenu (in);
 
 	}
 	
@@ -62,8 +63,10 @@ public class MenuController {
 	}
 
 	@DeleteMapping(value= {"{mid}"})
-	public void deleteMenu(@PathVariable Menu menu) {
-		System.out.println(menu);
-		CO.deleteMenu(menu);
+	public ResponseEntity<Void> deleteMenu(@PathVariable Integer mid) {
+		if(CO.getMenu(mid) == null)
+			return ResponseEntity.status(405).build();
+		CO.deleteMenu(CO.getMenu(mid));
+		return ResponseEntity.noContent().build();
 	}
 }
