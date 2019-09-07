@@ -1,10 +1,14 @@
 package com.revature.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -15,7 +19,8 @@ public class Menu {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="bob")
 	@SequenceGenerator(name="bob", sequenceName="menu_seq", allocationSize=1)
 	Integer MID;
-	@Column(name="MTID")
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name="MTID")
 	Menu_Type MTID;
 	@Column(name="MEALNAME")
 	String mealname;
