@@ -28,7 +28,9 @@ export class MenuItemsComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.menu.getMenuCust().subscribe((data: Menu[]) => {
+    console.log(JSON.parse(this.session.get('Choice')));
+    const mtid = JSON.parse(this.session.get('Choice'));
+    this.menu.getMenuCust(mtid).subscribe((data: Menu[]) => {
 
       this.currMenu = data;
       this.currMenu.sort( (a, b) => a.mid - b.mid);

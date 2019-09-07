@@ -16,6 +16,7 @@ import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { PendingTransactionsComponent } from './pending-transactions/pending-transactions.component';
 import { MenuTypesComponent } from './menu-types/menu-types.component';
 import { NewMenuTypeComponent } from './new-menu-type/new-menu-type.component';
+import { MenuChoiceComponent} from './menu-choice/menu-choice.component';
 
 const routes: Routes = [
   {
@@ -92,6 +93,10 @@ const routes: Routes = [
   {
     path: 'new-menu-type',
     component: NewMenuTypeComponent
+  },
+  {
+    path: 'menu-choice',
+    component: MenuChoiceComponent
   }
 ];
 
