@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import com.revature.beans.Locations;
 import com.revature.beans.Menu;
+import com.revature.beans.Menu_Type;
 import com.revature.beans.Stock;
 import com.revature.util.HibernateUtil;
 import com.revature.util.LogUtil;
@@ -83,7 +84,21 @@ public class MenuOracle implements MenuDAO{
 		return new HashSet<Menu>(ret);
 	}
 	
-
+	@Override
+	public Set<Menu> getMenuByMenuType(Menu_Type mt){
+		Session s = hu.getSession();
+		
+		String query = "SELECT * FROM (SELECT MID, COUNT(MID) as ReadyIngedients " + 
+				"FROM (SELECT * FROM STOCK_MENU NATURAL JOIN STOCK " + 
+				"WHERE AMOUNT <= QUANTITY_STORED) GROUP BY MID) Natural join " + 
+				"(SELECT MID, COUNT(MID) AS NumofIngedients FROM Stock_Menu GROUP BY MID) " +
+				"NATURAL JOIN MENU Where ReadyIngedients = NumofIngedients AND MTID =:in";
+		Query<Menu> q = s.createNativeQuery(query, Menu.class);
+		q.setParameter("in", mt.getMTID());
+		List<Menu> ret = q.getResultList();
+		s.close();
+		return new HashSet<Menu>(ret);
+	}
 	@Override
 	public void deleteMenu(Menu menu) {
 		Session s = hu.getSession();
