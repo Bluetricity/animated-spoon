@@ -28,6 +28,7 @@ import { CartService } from './cart.service';
 import { PendingTransactionsComponent } from './pending-transactions/pending-transactions.component';
 import { MenuTypesComponent } from './menu-types/menu-types.component';
 import { NewMenuTypeComponent } from './new-menu-type/new-menu-type.component';
+import { MenuChoiceComponent } from './menu-choice/menu-choice.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { NewMenuTypeComponent } from './new-menu-type/new-menu-type.component';
     EditMenuComponent,
     PendingTransactionsComponent,
     MenuTypesComponent,
-    NewMenuTypeComponent
+    NewMenuTypeComponent,
+    MenuChoiceComponent
   ],
   imports: [
     BrowserModule,
