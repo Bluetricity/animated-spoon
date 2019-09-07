@@ -41,6 +41,38 @@ public class Menu_Type {
 	}
 	@Override
 	public String toString() {
-		return "Menu_Name [MTID=" + MTID +", Menu_Name="+menu_name ;
+		return "Menu_Name [MTID=" + MTID +", Menu_Name="+ menu_name + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((MTID == null) ? 0 : MTID.hashCode());
+		result = prime * result + ((menu_name == null) ? 0 : menu_name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Menu_Type other = (Menu_Type) obj;
+		if (MTID == null) {
+			if (other.MTID != null)
+				return false;
+		} else if (!MTID.equals(other.MTID))
+			return false;
+		if (menu_name == null) {
+			if (other.menu_name != null)
+				return false;
+		} else if (!menu_name.equals(other.menu_name))
+			return false;
+		return true;
+	}
+	
 }

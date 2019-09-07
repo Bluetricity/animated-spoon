@@ -15,12 +15,15 @@ public class Menu {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="bob")
 	@SequenceGenerator(name="bob", sequenceName="menu_seq", allocationSize=1)
 	Integer MID;
+	@Column(name="MTID")
+	Menu_Type MTID;
 	@Column(name="MEALNAME")
 	String mealname;
 	@Column(name="PRICE")
 	Double price;
 	@Column(name="DESCRIPTION")
 	String desc;
+	
 	
 	public Menu() {
 		super();
@@ -40,6 +43,12 @@ public class Menu {
 	}
 	public void setMID(Integer mID) {
 		MID = mID;
+	}
+	public Menu_Type getMTID() {
+		return MTID;
+	}
+	public void setMTID(Menu_Type mTID) {
+		MTID = mTID;
 	}
 	public String getMealname() {
 		return mealname;
@@ -65,6 +74,7 @@ public class Menu {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((MID == null) ? 0 : MID.hashCode());
+		result = prime * result + ((MTID == null) ? 0 : MTID.hashCode());
 		result = prime * result + ((desc == null) ? 0 : desc.hashCode());
 		result = prime * result + ((mealname == null) ? 0 : mealname.hashCode());
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
@@ -84,6 +94,11 @@ public class Menu {
 			if (other.MID != null)
 				return false;
 		} else if (!MID.equals(other.MID))
+			return false;
+		if (MTID == null) {
+			if (other.MTID != null)
+				return false;
+		} else if (!MTID.equals(other.MTID))
 			return false;
 		if (desc == null) {
 			if (other.desc != null)
@@ -105,8 +120,8 @@ public class Menu {
 
 	@Override
 	public String toString() {
-		return "Menu [MID=" + MID + ", mealname=" + mealname + ", price=" + price + ", desc="+ desc +"]";
-	}
-	
+		return "Menu [MID=" + MID + ", MTID=" + MTID + ", mealname=" + mealname + ", price=" + price + ", desc=" + desc
+				+ "]";
+	}	
 	
 }
