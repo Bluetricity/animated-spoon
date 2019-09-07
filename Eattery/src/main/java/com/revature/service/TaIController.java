@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.revature.beans.Employee;
-import com.revature.beans.JoinTransactionandItems;
+import com.revature.beans.Transactionitems;
 import com.revature.beans.Menu;
 import com.revature.data.hibernate.MenuOracle;
 import com.revature.data.hibernate.TaIOracle;
@@ -31,7 +31,7 @@ public class TaIController {
 	private TaIOracle TIO;
 	
 	@GetMapping
-	public Set<JoinTransactionandItems> getMenuCust(){	
+	public Set<Transactionitems> getMenuCust(){	
 		return TIO.getTaI();
 	}
 	
@@ -43,7 +43,7 @@ public class TaIController {
 	}
 	
 	@PostMapping
-	public JoinTransactionandItems addMenu (@RequestBody JoinTransactionandItems TaI) {
+	public Transactionitems addMenu (@RequestBody Transactionitems TaI) {
 		TIO.addTaI(TaI);
 		return TaI;
 

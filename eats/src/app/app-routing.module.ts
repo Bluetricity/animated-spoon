@@ -12,6 +12,7 @@ import { StockComponent } from './stock/stock.component';
 import {AccountInfoComponent } from './account-info/account-info.component';
 import { NewStockComponent } from './new-stock/new-stock.component';
 import { NewMenuComponent } from './new-menu/new-menu.component';
+import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { PendingTransactionsComponent } from './pending-transactions/pending-transactions.component';
 import { MenuTypesComponent } from './menu-types/menu-types.component';
 import { NewMenuTypeComponent } from './new-menu-type/new-menu-type.component';
@@ -67,6 +68,10 @@ const routes: Routes = [
   {
     path: 'account-info',
     component: AccountInfoComponent
+  },
+  {
+    path: 'edit-menu',
+    component: EditMenuComponent
   },
   {
     path: 'new-stock',

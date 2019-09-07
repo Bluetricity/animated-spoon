@@ -20,6 +20,11 @@ export class MenuServiceService {
     );
   }
 
+  getMenuItem(mid: number): Observable<Menu> {
+    const url: string = this.appUrl + '/' + mid;
+    return this.http.get(url, {withCredentials: true}).pipe(
+      map(resp => resp as Menu));
+  }
   getMenuEmp(): Observable<Menu[]> {
     return this.http.get(this.appUrl + '/all', {withCredentials: true}).pipe(
       map( resp => resp as Menu[])
@@ -36,4 +41,13 @@ export class MenuServiceService {
       })
     );
   }
+
+  removeMenu(menu: Menu): Observable<void> {
+    const url = 'http://localhost:8080/Eattery/menu/' + menu.mid;
+    const body = JSON.stringify(menu);
+    return this.http.delete(url, {headers: this.headers, withCredentials: true} ).pipe(
+      map(resp => null)
+    );
+  }
+
 }
