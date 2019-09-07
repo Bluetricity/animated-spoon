@@ -12,14 +12,18 @@ import { Menu } from './shared/menu';
 export class CartService {
   // private appUrl = this.caUrl.getUrl() + '/menu/';
   // private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-  public itemList: Menu[] = [];
+  public itemList = new Map();
 
   constructor() {
 
   }
 
   addtoCart(menin: Menu) {
-    this.itemList.push(menin);
+    if (this.itemList.has(menin)) {
+      this.itemList.set(menin, this.itemList.get(menin) + 1);
+    } else {
+      this.itemList.set(menin, 1);
+    }
   }
 
   removefromCart() {
@@ -30,13 +34,7 @@ export class CartService {
     console.log(this.itemList);
   }
 
-  sendCart(): Menu[] {
+  sendCart(): Map<Menu, number> {
     return this.itemList;
   }
-    // getCustMenu(): Observable<Menu[]>{
-    //   return this.http.get(this.appUrl, {withCredentials: true}).pipe(
-    //     map( resp => resp as Menu[])
-    //   );
-    // }
-
 }

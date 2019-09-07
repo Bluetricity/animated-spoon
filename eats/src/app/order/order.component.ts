@@ -14,9 +14,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-  public orderup: Menu[];
+  public orderup: Map<Menu, number>;
   public storeduser: Currentuser;
   public areas: Location[];
+  public bPayment: string;
 
   constructor(private cart: CartService, public session: SessionStorageService,
               private router: Router, private Locate: LocationService ) {  }
@@ -30,14 +31,21 @@ export class OrderComponent implements OnInit {
       }
     );
 
+    console.log(this.storeduser);
 
-    this.cart.displayCart();
-    this.orderup = JSON.parse(this.session.get('Cart'));
+    this.orderup = this.cart.itemList;
+
+    console.log(this.orderup);
+    // this.orderup = JSON.parse(this.session.get('Cart'));
   }
 
   makeOrder() {
 
     // First of all, I need to make a transaction
+    // console.log( this.storeduser );
+    console.log( this.storeduser );
+    console.log( this.bPayment );
+    console.log( 0 );
 
 
     // Then I need to log the orders.
