@@ -7,16 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Menu Select</title>
 </head>
 
 <body>
     <h1>Which Star System Beckons You Today?</h1>
-    <div class="conttainer">
-        <div class = "table-wrapper-scroll-y my-custom-scrollbar fixed-header">
+    <div class="container">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar fixed-header">
             <table class="table">
                 <br>
                 <tr>
@@ -27,20 +26,21 @@
                 </tr>
                 <tr *ngFor="let m of currMenu">
                     <td>{{m.mealname}}</td>
-                    <td>{{m.desc}}</td> 
+                    <td>{{m.desc}}</td>
                     <td>${{m.price}}</td>
-                    <td><button type="submit" class="btn btn-primary" (click) = addtoCart($event) [value]=m.mid>Submit</button></td>
+                    <td><button type="submit" class="btn btn-primary" (click)=addtoCart($event) [value]=m.mid>Submit</button></td>
                 </tr>
             </table>
         </div>
     </div>
     <br>
     <!---->
-    <button type="submit" class=" btn btn-success" (click) = toOrder($event) id="cartbtn">Continue to cart</button>
-    
-    <div class="float-right">
+    <div>
+        <button type="submit" class=" btn btn-success" (click)=toOrder($event) id="cartbtn">Continue to cart</button>
         <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
     </div>
+    <br>
     <!-- Come back to later if possible-->
 </body>
+
 </html>

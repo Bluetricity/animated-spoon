@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <img src="assets/pp.gif" width="50" height="50">
-    <a class="navbar-brand" routerLink='/'>! GALAXY EATS !</a>
+    <a class="navbar-brand" routerLink='/'>Here's What We Got!</a>
 
     <div class="navbar-collapse collapse show" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -10,19 +10,25 @@
                 </a>
             </li>
             <li *ngIf="isEmployee()" class="nav-item">
-                <a class="nav-link" routerLink="/manager">Edit Menu</a>
+                <a class="nav-link" routerLink="employee-menu-items">Edit Menu Items</a>
             </li>
             <li *ngIf="isEmployee()" class="nav-item">
-                <a class="nav-link" routerLink="/stock">Stock</a>
+                <a class="nav-link" routerLink="stock">Manage Stock</a>
+            </li>
+            <li *ngIf="isEmployee()" class="nav-item">
+                <a class="nav-link" routerLink="menu-types">Edit Menus</a>
+            </li>
+            <li *ngIf="isEmployee()" class="nav-item ">
+                <a class="nav-link " routerLink="pending-orders">Pending Orders</a>
             </li>
             <li *ngIf="isCustomer()" class="nav-item ">
-                <a class="nav-link " routerLink="menu-items">Menu</a>
+                <a class="nav-link " routerLink="menu-items">View Menu</a>
             </li>
             <li *ngIf="isCustomer()" class="nav-item ">
                 <a class="nav-link " routerLink="account-info">Account</a>
             </li>
             <li *ngIf="isCustomer()||isEmployee()">
-                <button class="btn btn-danger" (click)="logout()">Logout</button>
+                <button class="btn btn-danger logout" id="logout" (click)="logout()">Logout</button>
             </li>
             <!-- <li *ngIf="!isCustomer()&&!isEmployee()" class="nav-item">
                 <button class="btn ca" (click)=createAccount()>Create Account</button>
