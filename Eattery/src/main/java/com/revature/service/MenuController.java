@@ -41,7 +41,14 @@ public class MenuController {
 	public Set<Menu> getMenuByMenuType (@PathVariable Integer id) {
 		Menu_Type mt = new Menu_Type();
 		mt.setMTID(id);
-		return CO.getMenuByMenuType(mt);
+		Set<Menu> ret = CO.getMenuByMenuType(mt);
+		if(id != 1) {
+			Menu_Type mt2 = new Menu_Type();
+			mt2.setMTID(1);
+			Set<Menu> base = CO.getMenuByMenuType(mt2);
+			ret.addAll(base);
+		}
+		return ret;
 	}
 	
 	@GetMapping(value="/all")
