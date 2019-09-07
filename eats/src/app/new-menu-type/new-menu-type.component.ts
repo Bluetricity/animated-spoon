@@ -28,7 +28,7 @@ export class NewMenuTypeComponent implements OnInit {
       }
     );
   }
-  backToHome(){
-    this.router.navigate(['home']);
+  goBack(){
+    this.router.navigate(['menu-types']);
   }
 }

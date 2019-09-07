@@ -4,6 +4,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 import com.revature.beans.Menu_Type;
 import com.revature.data.hibernate.MenuTypeOracle;
 
@@ -44,5 +45,14 @@ public class MenuTypeController {
 		System.out.println(mt);
 		
 		return mt;
+	}
+	
+	@DeleteMapping(value="{id}")
+	public ResponseEntity<Menu_Type> deleteMenuType(@PathVariable Integer id){
+		if(CO.getMenuType(id)==null) {
+			return ResponseEntity.status(405).build();
+		}
+		CO.deleteMenuType(CO.getMenuType(id));
+		return ResponseEntity.noContent().build();
 	}
 }
