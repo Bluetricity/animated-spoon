@@ -71,7 +71,8 @@ create table ItemTransaction (
     TID number(20) primary key,
     CID number(20) not null,
     Payment_type varchar2(30) not null,
-    Status number(1,0) not null
+    Status number(1,0) not null,
+    constraint fk_customer_user foreign key (CID) references Customers(CID)
 );
 
 create table TransactionItems (

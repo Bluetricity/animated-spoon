@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Employee;
 import com.revature.beans.Menu;
+import com.revature.beans.Menu_Type;
 import com.revature.data.hibernate.MenuOracle;
 import com.revature.data.hibernate.EmployeeDAO;
 
@@ -34,9 +35,10 @@ public class MenuController {
 	}
 	
 	@GetMapping(value="{id}")
-	public Menu getMenu (@PathVariable Integer id) {
-//		Menu in = (Menu) ac.getBean("Menus");
-		return null;//CO.getMenu (in);
+	public Set<Menu> getMenuByMenuType (@PathVariable Integer id) {
+		Menu_Type mt = new Menu_Type();
+		mt.setMTID(id);
+		return CO.getMenuByMenuType(mt);
 
 	}
 	
