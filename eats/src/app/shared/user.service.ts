@@ -27,12 +27,15 @@ export class UserService {
       const body = `username=${username}&password=${password}`;
       return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
         map( resp => {
+          console.log(resp);
           const user: Currentuser = resp as Currentuser;
+          console.log(user);
           if (user) {
             this.employee = user.emp;
             this.customer = user.cust;
           }
           this.session.set('User', JSON.stringify(user));
+          console.log(JSON.parse(this.session.get('User')));
           return user;
         })
       );

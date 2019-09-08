@@ -80,7 +80,7 @@ public class StockOracle implements StockDAO{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(st.getSID());
+			s.update(st);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
