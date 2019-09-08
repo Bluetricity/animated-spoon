@@ -14,6 +14,9 @@ export class NavBarComponent implements OnInit {
   constructor(public route: Router, private userService: UserService) { }
 
   ngOnInit() {
+    if(this.isEmployee() == false && this.isCustomer() == false){
+      this.route.navigate(['home']);
+    }
   }
 
   isEmployee(): boolean {
