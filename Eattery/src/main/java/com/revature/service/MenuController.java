@@ -22,6 +22,8 @@ import com.revature.beans.Employee;
 import com.revature.beans.Menu;
 import com.revature.beans.Menu_Type;
 import com.revature.data.hibernate.MenuOracle;
+import com.revature.data.hibernate.SaMOracle;
+import com.revature.data.hibernate.TaIOracle;
 import com.revature.data.hibernate.EmployeeDAO;
 
 @RestController
@@ -31,6 +33,12 @@ public class MenuController {
 
 	@Autowired
 	private MenuOracle CO;
+	
+	@Autowired
+	private TaIOracle TAIO;
+	
+	@Autowired
+	private SaMOracle SAMO;
 	
 	@GetMapping
 	public Set<Menu> getMenuCust(){	
@@ -78,9 +86,13 @@ public class MenuController {
 
 	@DeleteMapping(value= {"{mid}"})
 	public ResponseEntity<Void> deleteMenu(@PathVariable Integer mid) {
-		if(CO.getMenu(mid) == null)
+		Menu deleter = CO.getMenu(mid);
+		System.out.println(mid + " " + deleter);
+		if(deleter == null)
 			return ResponseEntity.status(405).build();
-		CO.deleteMenu(CO.getMenu(mid));
+		//TAIO.deleteTaIbyMID(deleter);
+		//SAMO.deleteSaMbyMID(deleter);
+		CO.deleteMenu(deleter);
 		return ResponseEntity.noContent().build();
 	}
 }

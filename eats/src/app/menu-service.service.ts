@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Menu } from './shared/menu';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { MenuTypes } from './shared/menu-types';
 
 @Injectable({
   providedIn: 'root'
@@ -41,8 +42,8 @@ export class MenuServiceService {
     );
   }
 
-  addMenu(mealname: string, price: number, desc: string): Observable<Menu> {
-    const obj = { mealname, price , desc };
+  addMenu(mtid:MenuTypes, mealname: string, price: number, desc: string): Observable<Menu> {
+    const obj = { mtid, mealname, price , desc };
     const body = JSON.stringify(obj);
     return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
       map(resp => {

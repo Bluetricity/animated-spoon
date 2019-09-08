@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.revature.beans.Transactionitems;
+import com.revature.beans.Menu;
 import com.revature.beans.Stock;
 import com.revature.util.HibernateUtil;
 import com.revature.util.LogUtil;
@@ -22,13 +23,12 @@ public class TaIOracle implements TaIDAO{
 	private HibernateUtil hu;
 	
 	@Override
-	public int addTaI(Transactionitems TaI) {
+	public void addTaI(Transactionitems TaI) {
 		Session s = hu.getSession();
 		Transaction t = null;
-		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(TaI);
+			s.save(TaI);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -36,8 +36,6 @@ public class TaIOracle implements TaIDAO{
 		} finally {
 			s.close();
 		}
-		return i;
-
 	}
 
 	@Override
@@ -67,7 +65,7 @@ public class TaIOracle implements TaIDAO{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(TaI.getComposid());
+			s.delete(TaI.gettaiid());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -79,12 +77,32 @@ public class TaIOracle implements TaIDAO{
 	} 
 
 	@Override
+	public void deleteTaIbyMID(Menu mid) {
+		Session s = hu.getSession();
+		Transaction t = null;
+		try{
+			t = s.beginTransaction();
+			String query = "delete from Transactionitems where MID = :name";
+			Query q = s.createQuery(query);
+			q.setParameter("name", mid.getMID());
+			q.executeUpdate();
+			t.commit();
+		} catch(Exception e) {
+			if(t != null)
+				t.rollback();
+			LogUtil.logException(e, TaIOracle.class);
+		} finally {
+			s.close();
+		}
+	} 
+	
+	@Override
 	public void updateTaI(Transactionitems TaI) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(TaI.getComposid());
+			s.update(TaI.gettaiid());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

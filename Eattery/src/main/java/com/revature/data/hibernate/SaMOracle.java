@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.revature.beans.Transactionitems;
+import com.revature.beans.Menu;
 import com.revature.beans.Stock;
 import com.revature.beans.Stock_menu;
 import com.revature.util.HibernateUtil;
@@ -68,6 +69,25 @@ public class SaMOracle implements SaMDAO{
 		}
 	} 
 
+	public void deleteSaMbyMID(Menu mid) {
+		Session s = hu.getSession();
+		Transaction t = null;
+		try{
+			t = s.beginTransaction();
+			String query = "delete from Stock_menu where MID = :name";
+			Query q = s.createQuery(query);
+			q.setParameter("name", mid.getMID());
+			q.executeUpdate();
+			t.commit();
+		} catch(Exception e) {
+			if(t != null)
+				t.rollback();
+			LogUtil.logException(e, TaIOracle.class);
+		} finally {
+			s.close();
+		}
+	}
+	
 	@Override
 	public void updateSaM(Stock_menu SaM) {
 		Session s = hu.getSession();
@@ -83,6 +103,17 @@ public class SaMOracle implements SaMDAO{
 		} finally {
 			s.close();
 		}
+	}
+
+	@Override
+	public Set<Stock_menu> getSaMbyMID(Integer mid) {
+		Session s = hu.getSession();
+		String query = "from Stock_menu where MID = :name";
+		Query<Stock_menu> q = s.createQuery(query, Stock_menu.class);
+		q.setParameter("name", mid);
+		List<Stock_menu> ret = q.list();
+		s.close();
+		return new HashSet<Stock_menu>(ret);
 	}
 
 
