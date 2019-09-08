@@ -84,8 +84,8 @@ public class MenuController {
 		System.out.println(mid + " " + deleter);
 		if(deleter == null)
 			return ResponseEntity.status(405).build();
-		TAIO.deleteTaIbyMID(deleter);
-		SAMO.deleteSaMbyMID(deleter);
+		//TAIO.deleteTaIbyMID(deleter);
+		//SAMO.deleteSaMbyMID(deleter);
 		CO.deleteMenu(deleter);
 		return ResponseEntity.noContent().build();
 	}

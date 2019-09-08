@@ -58,7 +58,7 @@ public class SaMOracle implements SaMDAO{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(SaM.getComposid());
+			s.delete(SaM);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -94,7 +94,7 @@ public class SaMOracle implements SaMDAO{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(SaM.getComposid());
+			s.update(SaM);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -103,6 +103,17 @@ public class SaMOracle implements SaMDAO{
 		} finally {
 			s.close();
 		}
+	}
+
+	@Override
+	public Set<Stock_menu> getSaMbyMID(Integer mid) {
+		Session s = hu.getSession();
+		String query = "from Stock_menu where MID = :name";
+		Query<Stock_menu> q = s.createQuery(query, Stock_menu.class);
+		q.setParameter("name", mid);
+		List<Stock_menu> ret = q.list();
+		s.close();
+		return new HashSet<Stock_menu>(ret);
 	}
 
 

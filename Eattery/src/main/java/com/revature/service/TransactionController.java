@@ -14,10 +14,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PutMapping;
 
-import com.revature.beans.Employee;
 import com.revature.beans.ItemTransaction;
-import com.revature.data.hibernate.EmployeeDAO;
 import com.revature.data.hibernate.TransactionItemsOracle;
+import com.revature.beans.Stock;
+import com.revature.beans.Transactionitems;
+import com.revature.beans.Stock_menu;
+import com.revature.beans.Stock_menuID;
+import com.revature.beans.TransactionsitemsID;
+import com.revature.data.hibernate.SaMOracle;
+import com.revature.data.hibernate.StockOracle;
+import com.revature.data.hibernate.TaIOracle;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
@@ -26,6 +32,15 @@ public class TransactionController {
 
 	@Autowired
 	private TransactionItemsOracle CO;
+	
+	@Autowired
+	private StockOracle SO;
+	
+	@Autowired
+	private SaMOracle SMO;
+	
+	@Autowired
+	private TaIOracle TIO;
 
 //	public ApplicationContext ac;
 	
@@ -65,10 +80,32 @@ public class TransactionController {
 	}
 	@PutMapping(value="{id}")
 	public ResponseEntity<ItemTransaction> updateTransaction(@PathVariable Integer id, @RequestBody ItemTransaction it){
+		Set<Transactionitems> tSet;
+		Set<Stock_menu> smSet;
+		Stock targetStock;
+		Double quantity;
+		Double amount;
+		Double currentQuantity;
+		Double newQuantity;
 		if(CO.getItemTransaction(id) == null) {
 			return ResponseEntity.status(405).body(null);
 		}
-		return ResponseEntity.ok(CO.updateItemTransaction(it));
+		CO.updateItemTransaction(it);
+		tSet = TIO.getTaIbyT(id);
+		for(Transactionitems tItem: tSet) {
+			smSet = SMO.getSaMbyMID(tItem.gettaiid().getMID().getMID());
+			for(Stock_menu smItem: smSet) {
+				targetStock = SO.getStock(smItem.getsamid().getSID().getSID());
+				quantity = tItem.getquanity();
+				amount = smItem.getAmount();
+				currentQuantity = targetStock.getQuantity();
+				newQuantity = (double) currentQuantity - (quantity * amount);
+				targetStock.setQuantity(newQuantity);
+				SO.updateStock(targetStock);
+			}
+		}
+		return ResponseEntity.ok(CO.getItemTransaction(id));
+		
 	}
 //	@PutMapping("/{tid}")
 //	public ItemTransaction updateTransaction(@PathVariable Integer id, @RequestBody ItemTransaction i) {

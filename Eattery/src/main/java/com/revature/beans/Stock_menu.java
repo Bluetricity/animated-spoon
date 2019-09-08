@@ -11,25 +11,25 @@ import javax.persistence.Table;
 @Table(name = "STOCK_MENU")
 public class Stock_menu {
 	@EmbeddedId
-	Stock_menuID composid; 
+	Stock_menuID samid; 
 	Double amount;
 	
 	public Stock_menu() {
 		super();
 	}
 	
-	public Stock_menu(Stock_menuID composid, Double amount) {
+	public Stock_menu(Stock_menuID samid, Double amount) {
 		super();
-		this.composid = composid;
+		this.samid = samid;
 		amount = amount;
 	}
 
-	public Stock_menuID getComposid() {
-		return composid;
+	public Stock_menuID getsamid() {
+		return samid;
 	}
 
-	public void setComposid(Stock_menuID composid) {
-		this.composid = composid;
+	public void setsamid(Stock_menuID samid) {
+		this.samid = samid;
 	}
 
 	public Double getAmount() {
@@ -44,7 +44,7 @@ public class Stock_menu {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((amount == null) ? 0 : amount.hashCode());
-		result = prime * result + ((composid == null) ? 0 : composid.hashCode());
+		result = prime * result + ((samid == null) ? 0 : samid.hashCode());
 		return result;
 	}
 
@@ -62,17 +62,17 @@ public class Stock_menu {
 				return false;
 		} else if (!amount.equals(other.amount))
 			return false;
-		if (composid == null) {
-			if (other.composid != null)
+		if (samid == null) {
+			if (other.samid != null)
 				return false;
-		} else if (!composid.equals(other.composid))
+		} else if (!samid.equals(other.samid))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "JoinStockandMenu [composid=" + composid + ", Amount=" + amount + "]";
+		return "JoinStockandMenu [samid=" + samid + ", Amount=" + amount + "]";
 	}
 	
 	
