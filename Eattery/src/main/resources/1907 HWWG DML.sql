@@ -54,9 +54,13 @@ values(menu_seq.nextval, 1, 'mashed potatoes', 4.99, 'potatoes, but mashed');
 insert into menu(mid, mtid, mealname, price, description)
 values(menu_seq.nextval, 1, 'mac and cheese', 6.99, 'poor mac and his friend cheese. we knew them well');
 insert into menu(mid, mtid, mealname, price, description)
-values(menu_seq.nextval, 1, 'fish', 10.99, 'lol idk what kind');
+values(menu_seq.nextval, 2, 'fish', 10.99, 'lol idk what kind');
 insert into menu(mid, mtid, mealname, price, description)
-values(menu_seq.nextval, 1, 'lobster', 15.99, 'bruh');
+values(menu_seq.nextval, 3, 'lobster', 15.99, 'bruh');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 4, 'pumpkin spice', 15.99, 'AAAAAAAAAAAA');
+insert into menu(mid, mtid, mealname, price, description)
+values(menu_seq.nextval, 5, 'test', 15.99, 'bruh');
 
 --stock
 insert into stock (sid, INGREDIENT_NAME, QUANTITY_STORED)

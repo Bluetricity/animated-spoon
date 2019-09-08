@@ -3,6 +3,7 @@ import { Menu } from '../shared/menu';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MenuServiceService } from '../menu-service.service';
+import { MenuTypes } from '../shared/menu-types';
 
 
 
@@ -18,6 +19,7 @@ export class EmployeeMenuComponent implements OnInit {
   test: string[];
 
   public mealname: string;
+  public mtid: MenuTypes;
   public desc: string;
   public price: number;
   public getMenu: Menu;
