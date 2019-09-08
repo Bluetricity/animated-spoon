@@ -18,6 +18,9 @@ export class NavBarComponent implements OnInit {
               private session: SessionStorageService) { }
 
   ngOnInit() {
+    if(this.isEmployee() == false && this.isCustomer() == false){
+      this.route.navigate(['home']);
+    }
   }
 
   isloggedUser() {

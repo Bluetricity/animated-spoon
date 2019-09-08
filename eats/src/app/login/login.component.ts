@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Currentuser } from '../shared/currentuser';
 import { UserService } from '../shared/user.service';
 import { SessionStorageService } from 'angular-web-storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   public username: string;
   public password: string;
 
-  constructor(private userService: UserService, public session: SessionStorageService) { }
+  constructor(private userService: UserService, public session: SessionStorageService, private router: Router) { }
 
   ngOnInit() {
     this.userService.login(null, null).subscribe(
@@ -37,6 +38,10 @@ export class LoginComponent implements OnInit {
   }
 
   logout() {
+    // this.router.navigate(['home']);
+
     this.userService.logout();
+    this.router.navigate(['home']);
+    window.location.reload();
   }
 }
