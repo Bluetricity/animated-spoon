@@ -31,6 +31,42 @@
             <input class="form-control simple-create" type="number" id="price" [(ngModel)]="price" />
             <br>
         </div>
+        <div class="formgroup">
+            <label for="ingredient1">Ingredient 1.</label>
+            <select id="ingredient1" [(ngModel)]="ingredient1">
+                <option *ngFor="let I of ingredients" [(ngValue)]="I">{{I.ingredient}}</option>
+            </select>
+            <ul id="ingredient1Select"></ul>
+        </div>
+        <div class="formgroup">
+            <label for="amount1">Amount</label>
+            <input class="form-control simple-create" type="number" id="amount1" [(ngModel)]="amount1" />
+            <br>
+        </div>
+        <div class="formgroup">
+            <label for="ingredient2">Ingredient 2.</label>
+            <select id="ingredient2" [(ngModel)]="ingredient2">
+                <option *ngFor="let I of ingredients" [(ngValue)]="I">{{I.ingredient}}</option>
+            </select>
+            <ul id="ingredient2Select"></ul>
+        </div>
+        <div class="formgroup">
+            <label for="amount1">Amount</label>
+            <input class="form-control simple-create" type="number" id="amount2" [(ngModel)]="amount2" />
+            <br>
+        </div>
+        <div class="formgroup">
+            <label for="ingredient3">Ingredient 3.</label>
+            <select id="ingredient3" [(ngModel)]="ingredient3">
+                <option *ngFor="let I of ingredients" [(ngValue)]="I">{{I.ingredient}}</option>
+            </select>
+            <ul id="ingredient3Select"></ul>
+        </div>
+        <div class="formgroup">
+            <label for="amount3">Amount</label>
+            <input class="form-control simple-create" type="number" id="amount3" [(ngModel)]="amount3" />
+            <br>
+        </div>
         <button class="btn btn-success" (click)=addMenuItem()>Submit</button>
         <div class="float-right">
             <button class="btn btn-danger" (click)=goBack()>Go Back</button>
