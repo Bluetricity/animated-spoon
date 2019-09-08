@@ -14,23 +14,23 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Transactionitems {
 
 	@EmbeddedId
-	TransactionsitemsID composid; 
+	TransactionsitemsID taiid; 
 	Double quanity;
 	
 	public Transactionitems() {
 		super();
 	}
-	public Transactionitems(TransactionsitemsID composid, Double qUANITY) {
+	public Transactionitems(TransactionsitemsID taiid, Double qUANITY) {
 		super();
-		this.composid = composid;
+		this.taiid = taiid;
 		quanity = qUANITY;
 	}
 	
-	public TransactionsitemsID getComposid() {
-		return composid;
+	public TransactionsitemsID gettaiid() {
+		return taiid;
 	}
-	public void setComposid(TransactionsitemsID composid) {
-		this.composid = composid;
+	public void settaiid(TransactionsitemsID taiid) {
+		this.taiid = taiid;
 	}
 	public Double getquanity() {
 		return quanity;
@@ -43,7 +43,7 @@ public class Transactionitems {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((quanity == null) ? 0 : quanity.hashCode());
-		result = prime * result + ((composid == null) ? 0 : composid.hashCode());
+		result = prime * result + ((taiid == null) ? 0 : taiid.hashCode());
 		return result;
 	}
 	@Override
@@ -60,16 +60,16 @@ public class Transactionitems {
 				return false;
 		} else if (!quanity.equals(other.quanity))
 			return false;
-		if (composid == null) {
-			if (other.composid != null)
+		if (taiid == null) {
+			if (other.taiid != null)
 				return false;
-		} else if (!composid.equals(other.composid))
+		} else if (!taiid.equals(other.taiid))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "JoinTransactionandItems [composid=" + composid + ", quanity=" + quanity + "]";
+		return "JoinTransactionandItems [taiid=" + taiid + ", quanity=" + quanity + "]";
 	}
 	
 	

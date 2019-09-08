@@ -16,6 +16,8 @@ import javax.persistence.Table;
 @Table
 public class ItemTransaction {
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="bob")
+	@SequenceGenerator(name="bob", sequenceName="transaction_seq", allocationSize=1)
 	Integer TID;
 	@ManyToOne (fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="CID")

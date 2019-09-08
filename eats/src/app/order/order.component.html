@@ -21,10 +21,12 @@
             <tr>
                 <th>Meal Name</th>
                 <th>Price</th>
+                <th>Quantity</th>
             </tr>
-            <tr *ngFor="let m of orderup">
+            <tr *ngFor="let m of orderup.keys()">
                 <td>{{m.mealname}}</td>    
                 <td>${{m.price}}</td>
+                <td>{{orderup.get(m)}}</td>
             </tr>
         </table>
         <br>
@@ -39,7 +41,7 @@
         <br>
         <div class="formgroup">
             <label for="b_payment">Enter your payment information:</label>
-            <input calss="form-control simple-order" type="text" id="b_payment" />
+            <input class="form-control simple-order" type="text" id="bPayment" [(ngModel)]="bPayment" />
         </div>
         <br>
         <button type="submit" class="btn btn-primary" id="submitbtn" (click)=makeOrder()>Pay</button>

@@ -51,6 +51,8 @@ public class TransactionController {
 	public ItemTransaction addTransaction (@RequestBody ItemTransaction g) {
 		System.out.println(g);
 		CO.addItemTransaction(g);
+		
+		System.out.println(g);
 		return g;
 
 	}
