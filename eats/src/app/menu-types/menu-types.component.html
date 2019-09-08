@@ -21,18 +21,19 @@
             <tr>
                 <th>Menu Type ID</th>
                 <th>Menu Name</th>
-                <th>Edit Menu</th>
+                <th>Remove</th>
             </tr>
             <tr *ngFor="let m of MenuTypes">
                 <td>{{m.mtid}}</td>
                 <td>{{m.menuName}}</td>
-                <td><button type="submit" class="btn btn-success" id="addbtn" (click)=editMenuType($event) [value]=m.mtid>Edit Menu</button></td>
+                <td><button type="submit" class=" btn btn-danger" id="delbtn" (click)=delMenu(m)>Delete</button></td>
             </tr>
         </table>
         <button type="submit" class="btn btn-success" id="addbtn" (click)=addMenuType()>Add New Menu Type</button>
         <div class="float-right">
             <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
         </div>
+    </div>
     </div>
     <br>
 </body>

@@ -1,4 +1,4 @@
 export class MenuTypes {
-    MTID: number;
+    mtid: number;
     menuName: string;
 }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 import com.revature.beans.Menu_Type;
 import com.revature.data.hibernate.MenuTypeOracle;
 
@@ -48,10 +48,11 @@ public class MenuTypeController {
 		return mt;
 	}
 	
-	@DeleteMapping(value= {"{id}"})
-	public ResponseEntity<Void> deleteMenu(@PathVariable Integer id) {
-		if(CO.getMenuType(id) == null)
+	@DeleteMapping(value="{id}")
+	public ResponseEntity<Menu_Type> deleteMenuType(@PathVariable Integer id){
+		if(CO.getMenuType(id)==null) {
 			return ResponseEntity.status(405).build();
+		}
 		CO.deleteMenuType(CO.getMenuType(id));
 		return ResponseEntity.noContent().build();
 	}
