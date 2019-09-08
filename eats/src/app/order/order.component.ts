@@ -7,6 +7,9 @@ import {Currentuser} from '../shared/currentuser';
 import {LocationService} from '../location.service';
 import {Location} from '../location';
 import { Observable } from 'rxjs';
+import { AddStockService } from '../add-stock.service';
+import { AddTransactionService } from '../add-transaction.service';
+import { CurrentTransactions } from '../shared/current-transactions';
 
 @Component({
   selector: 'app-order',
@@ -18,9 +21,10 @@ export class OrderComponent implements OnInit {
   public storeduser: Currentuser;
   public areas: Location[];
   public bPayment: string;
+  public newStock: CurrentTransactions;
 
   constructor(private cart: CartService, public session: SessionStorageService,
-              private router: Router, private Locate: LocationService ) {  }
+              private router: Router, private Locate: LocationService, private createService: AddTransactionService) {  }
 
   ngOnInit() {
     this.storeduser = JSON.parse(this.session.get('User'));
@@ -43,10 +47,19 @@ export class OrderComponent implements OnInit {
 
     // First of all, I need to make a transaction
     // console.log( this.storeduser );
-    console.log( this.storeduser );
+    console.log( this.storeduser.cust );
     console.log( this.bPayment );
     console.log( 0 );
-
+    if(this.bPayment == null ){
+      window.alert("reeee");
+    } else {
+      this.createService.create(this.storeduser.cust, this.bPayment, 0).subscribe(
+        resp => {
+          this.newStock = resp;
+        }
+      );
+    // this.router.navigate(['stock']);
+    }
 
     // Then I need to log the orders.
 
