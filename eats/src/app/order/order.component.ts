@@ -10,6 +10,10 @@ import { Observable } from 'rxjs';
 import { AddStockService } from '../add-stock.service';
 import { AddTransactionService } from '../add-transaction.service';
 import { CurrentTransactions } from '../shared/current-transactions';
+import { AddTAIService } from '../add-tai.service';
+import { Taiid } from '../shared/taiid';
+import { Tai } from '../shared/tai';
+import { reject } from 'q';
 
 @Component({
   selector: 'app-order',
@@ -22,9 +26,11 @@ export class OrderComponent implements OnInit {
   public areas: Location[];
   public bPayment: string;
   public newStock: CurrentTransactions;
+  public tida: Tai;
 
   constructor(private cart: CartService, public session: SessionStorageService,
-              private router: Router, private Locate: LocationService, private createService: AddTransactionService) {  }
+              private router: Router, private Locate: LocationService, private createService: AddTransactionService, 
+              private createOrders: AddTAIService) {  }
 
   ngOnInit() {
     this.storeduser = JSON.parse(this.session.get('User'));
@@ -53,12 +59,25 @@ export class OrderComponent implements OnInit {
     if(this.bPayment == null ){
       window.alert("reeee");
     } else {
-      this.createService.create(this.storeduser.cust, this.bPayment, 0).subscribe(
+
+       this.createService.create(this.storeduser.cust, this.bPayment, 0).subscribe(
         resp => {
           this.newStock = resp;
+
+          for (const m of this.orderup.keys()) {
+            const comkey: Taiid = {mid: m, tid: this.newStock};
+            this.createOrders.create(comkey, this.orderup.get(m)).subscribe(
+              resp2 => {
+                this.tida = resp2;
+              }
+            );
+          }
+
         }
       );
-    // this.router.navigate(['stock']);
+
+
+
     }
 
     // Then I need to log the orders.

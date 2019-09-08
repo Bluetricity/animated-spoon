@@ -19,24 +19,16 @@ export class AddTransactionService {
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
   create(cid: Customer, PAYMENT_TYPE: string, status: number): Observable<CurrentTransactions> {
-    const transer: CurrentTransactions = {cid, payment_type: PAYMENT_TYPE, status, tid: null};
+    const transer: CurrentTransactions = {cid, payment_TYPE: PAYMENT_TYPE, status, tid: null};
 
 //    const obj = {cid: cid, payment_type: PAYMENT_TYPE, status: status};
     const body = JSON.stringify(transer);
     return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
       map(resp => {
         const newStock: CurrentTransactions = resp as CurrentTransactions;
+        console.log(newStock);
         return newStock;
       })
     );
-    // return this.http.post<Stock>(this.appUrl, body, { headers: new HttpHeaders({
-    //   'Content-Type': 'application/json'
-    //   }) 
-    // }).pipe(
-    //   map(resp => {
-    //     const newStock: Stock = resp as Stock;
-    //     return newStock;
-    //   })
-    // );
   }
 }

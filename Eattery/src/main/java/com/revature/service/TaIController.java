@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.beans.Employee;
 import com.revature.beans.Transactionitems;
 import com.revature.beans.Menu;
+import com.revature.beans.Stock_menu;
 import com.revature.data.hibernate.MenuOracle;
 import com.revature.data.hibernate.TaIOracle;
 import com.revature.data.hibernate.EmployeeDAO;

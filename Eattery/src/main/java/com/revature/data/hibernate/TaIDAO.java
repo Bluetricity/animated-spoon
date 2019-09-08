@@ -6,7 +6,7 @@ import com.revature.beans.Transactionitems;
 import com.revature.beans.Stock;
 
 public interface TaIDAO {
-	public int addTaI(Transactionitems TaI);
+	public void addTaI(Transactionitems TaI);
 
 	public Set<Transactionitems> getTaI();
 	

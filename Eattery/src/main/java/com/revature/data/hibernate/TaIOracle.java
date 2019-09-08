@@ -22,13 +22,12 @@ public class TaIOracle implements TaIDAO{
 	private HibernateUtil hu;
 	
 	@Override
-	public int addTaI(Transactionitems TaI) {
+	public void addTaI(Transactionitems TaI) {
 		Session s = hu.getSession();
 		Transaction t = null;
-		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(TaI);
+			s.save(TaI);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -36,8 +35,6 @@ public class TaIOracle implements TaIDAO{
 		} finally {
 			s.close();
 		}
-		return i;
-
 	}
 
 	@Override
