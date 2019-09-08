@@ -22,12 +22,12 @@
                 <a class="nav-link " routerLink="pending-orders">Pending Orders</a>
             </li>
             <li *ngIf="isCustomer()" class="nav-item ">
-                <a class="nav-link " routerLink="menu-items">View Menu</a>
+                <a class="nav-link " routerLink="menu-choice">Choose Menu</a>
             </li>
             <li *ngIf="isCustomer()" class="nav-item ">
                 <a class="nav-link " routerLink="account-info">Account</a>
             </li>
-            <li *ngIf="isCustomer()||isEmployee()">
+            <li *ngIf="isCustomer() || isEmployee()">
                 <button class="btn btn-danger logout" id="logout" (click)="logout()">Logout</button>
             </li>
             <!-- <li *ngIf="!isCustomer()&&!isEmployee()" class="nav-item">

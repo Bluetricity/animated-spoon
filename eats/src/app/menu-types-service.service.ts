@@ -14,13 +14,20 @@ export class MenuTypesServiceService {
 
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
-  getMenuTypes(): Observable<MenuTypes[]>{
+  getMenuTypes(): Observable<MenuTypes[]> {
     return this.http.get(this.appUrl, {withCredentials: true}).pipe(
       map(resp => resp as MenuTypes[])
     );
   }
-  addMenuType(MTID: number, menuName: string): Observable<MenuTypes>{
-    const obj={MTID:MTID, menuName:menuName};
+
+  getMenu(mtid: number): Observable<MenuTypes> {
+    const url: string = this.appUrl + '/' + mtid;
+    return this.http.get(url, {withCredentials: true}).pipe(
+      map(resp => resp as MenuTypes));
+  }
+
+  addMenuType(MTID: number, menuName: string): Observable<MenuTypes> {
+    const obj = {MTID, menuName};
     const body = JSON.stringify(obj);
     return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
       map(resp => {
@@ -29,7 +36,8 @@ export class MenuTypesServiceService {
       })
     );
   }
-  delMenuType(currMenu: MenuTypes): Observable <MenuTypes>{
+
+  delMenuType(currMenu: MenuTypes): Observable <MenuTypes> {
     const url = 'http://localhost:8080/Eattery/Menu_Type/' + currMenu.mtid;
     const body = JSON.stringify(currMenu);
     return this.http.delete(url, {headers: this.headers, withCredentials: true}).pipe(
