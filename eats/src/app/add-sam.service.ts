@@ -26,4 +26,11 @@ export class AddSAMService {
       })
     );
   }
+
+  getCurrentInv(): Observable<SAM[]> {
+    const newUrl = this.appUrl;
+    console.log(newUrl);
+    return this.http.get(newUrl, {withCredentials: true}).pipe(
+      map( resp => resp as SAM[]));
+  }
 }

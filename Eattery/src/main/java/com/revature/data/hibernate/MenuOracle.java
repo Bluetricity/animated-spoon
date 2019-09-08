@@ -135,7 +135,6 @@ public class MenuOracle implements MenuDAO{
 
 	@Override
 	public Set<Menu> getMenu() {
-		// TODO Auto-generated method stub
 		Session s = hu.getSession();
 		String query = "from Menu";
 		Query<Menu> q = s.createQuery(query, Menu.class);

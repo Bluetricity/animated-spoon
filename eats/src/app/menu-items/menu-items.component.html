@@ -28,7 +28,7 @@
                     <td>{{m.mealname}}</td>
                     <td>{{m.desc}}</td>
                     <td>${{m.price}}</td>
-                    <td><button type="submit" class="btn btn-primary" (click)=addtoCart($event) [value]=m.mid>Submit</button></td>
+                    <td><button type="submit" class="btn btn-primary" (click)=addtoCart($event) [value]=m.mid id="B{{m.mid}}">Submit</button></td>
                 </tr>
             </table>
         </div>

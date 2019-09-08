@@ -21,14 +21,14 @@ public class Stock_menu {
 	public Stock_menu(Stock_menuID samid, Double amount) {
 		super();
 		this.samid = samid;
-		amount = amount;
+		this.amount = amount;
 	}
 
 	public Stock_menuID getsamid() {
 		return samid;
 	}
 
-	public void setsamid(Stock_menuID samid) {
+	public void setSamid(Stock_menuID samid) {
 		this.samid = samid;
 	}
 
