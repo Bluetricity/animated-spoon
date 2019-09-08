@@ -51,10 +51,16 @@ public class MenuController {
 		return ret;
 	}
 	
-	@GetMapping(value="/all")
-	public Set<Menu> getMenuEmp(){
-		return CO.getMenu();
+	@GetMapping(value="/all") 
+	public Set<Menu> getMenuEmp() {
+		return CO.getAll();
 	}
+	
+	@GetMapping(value="/emp/{id}")
+	public Set<Menu> getMenuEmp(@PathVariable Integer id){
+		return CO.getMenuEmp(id);
+	}
+	
 	
 	@PostMapping
 	public Menu addMenu (@RequestBody Menu g) {

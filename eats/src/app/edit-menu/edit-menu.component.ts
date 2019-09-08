@@ -30,8 +30,9 @@ export class EditMenuComponent implements OnInit {
     console.log(JSON.parse(this.session.get('menuType')));
     const mtid = JSON.parse(this.session.get('menuType'));
     console.log(mtid);
-    this.menu.getMenuCust(mtid).subscribe((data: Menu[]) => {
+    this.menu.getMenuType(mtid).subscribe((data: Menu[]) => {
       this.currMenu = data;
+      console.log(this.currMenu);
       this.currMenu.sort( (a, b) => a.mid - b.mid);
     });
     console.log(this.currMenu);

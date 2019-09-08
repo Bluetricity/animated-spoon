@@ -15,7 +15,9 @@ public interface MenuDAO {
 	
 	public Set<Menu> getMenubyAvailQuantity();
 	
-	public Set<Menu> getMenu();
+	public Set<Menu> getMenuEmp(Integer mid);
+	
+	public Set<Menu> getAll();
 	
 	public void deleteMenu(Menu menu);
 	

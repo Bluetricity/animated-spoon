@@ -25,8 +25,18 @@ export class MenuServiceService {
     return this.http.get(url, {withCredentials: true}).pipe(
       map(resp => resp as Menu));
   }
+
   getMenuEmp(): Observable<Menu[]> {
     return this.http.get(this.appUrl + '/all', {withCredentials: true}).pipe(
+      map( resp => resp as Menu[])
+    );
+  }
+
+  getMenuType(mtid: number): Observable<Menu[]> {
+    // const body = JSON.stringify(mtid);
+    // console.log(mtid);
+    const url = this.appUrl + '/emp/';
+    return this.http.get(url + mtid, {withCredentials: true}).pipe(
       map( resp => resp as Menu[])
     );
   }

@@ -36,12 +36,21 @@ export class MenuTypesComponent implements OnInit {
   addMenuType() {
     this.router.navigate(['new-menu-type']);
   }
-  delMenu(selectedItem: any){
+
+  editMenuType($event: any) {
+    const mtid: number = $event.target.value;
+    console.log(mtid);
+    this.session.set('menuType', JSON.stringify(mtid));
+    this.router.navigate(['edit-menu']);
+  }
+
+  delMenu(selectedItem: any) {
     console.log(selectedItem);
     console.log(selectedItem.mtid);
 
     this.createService.delMenuType(selectedItem).subscribe (resp => {
       this.selectedMenuType = resp;
     });
+    window.location.reload();
   }
 }

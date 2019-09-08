@@ -27,7 +27,7 @@
             <li *ngIf="isCustomer()" class="nav-item ">
                 <a class="nav-link " routerLink="account-info">Account</a>
             </li>
-            <li *ngIf="isCustomer()||isEmployee()">
+            <li *ngIf="isCustomer() || isEmployee()">
                 <button class="btn btn-danger logout" id="logout" (click)="logout()">Logout</button>
             </li>
             <!-- <li *ngIf="!isCustomer()&&!isEmployee()" class="nav-item">

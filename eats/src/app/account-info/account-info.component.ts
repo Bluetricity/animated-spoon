@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {SessionStorageService} from 'angular-web-storage';
 import { Router } from '@angular/router';
 import {Currentuser} from '../shared/currentuser';
-import {LocationService} from '../location.service'
+import {LocationService} from '../location.service';
 import {Location} from '../location';
 import { Observable } from 'rxjs';
 
@@ -37,10 +37,9 @@ export class AccountInfoComponent implements OnInit {
         this.Locations = resp;
       }
     );
-    
   }
 
-  submit(){
+  submit() {
     console.log("Clicked");
     this.locationService.addNewLocation(this.loggedUser.cust, this.newLocation).subscribe((resp: Location) => {
       this.addedLocation = resp;
