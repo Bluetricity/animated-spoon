@@ -19,7 +19,7 @@ public class Menu {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="bob")
 	@SequenceGenerator(name="bob", sequenceName="menu_seq", allocationSize=1)
 	Integer MID;
-	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="MTID")
 	Menu_Type MTID;
 	@Column(name="MEALNAME")
