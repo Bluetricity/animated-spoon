@@ -42,9 +42,9 @@ public class MenuTypeOracle implements MenuTypeDAO{
 	@Override
 	public Set<Menu_Type> getMenuTypes() {
 		Session s = hu.getSession();
-		String query = "from Menu_Type";
-		Query<Menu_Type> q = s.createQuery(query, Menu_Type.class);
-		List<Menu_Type> ret = q.list();
+		String query = "select * from Menu_Type";
+		Query<Menu_Type> q = s.createNativeQuery(query, Menu_Type.class);
+		List<Menu_Type> ret = q.getResultList();
 		s.close();
 		return new HashSet<Menu_Type>(ret);
 	}
@@ -63,7 +63,7 @@ public class MenuTypeOracle implements MenuTypeDAO{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(mt.getMTID());
+			s.delete(mt);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

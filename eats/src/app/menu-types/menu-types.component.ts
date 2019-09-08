@@ -19,6 +19,7 @@ export class MenuTypesComponent implements OnInit {
   public Menu_Type: string;
   public MenuTypes: MenuTypes[];
   public newMenuItem: MenuTypes;
+  public selectedMenuType: MenuTypes;
 
   constructor(private createService: MenuTypesServiceService,
     private router: Router) { }
@@ -38,5 +39,13 @@ export class MenuTypesComponent implements OnInit {
     //   }
     // );
     this.router.navigate(['new-menu-type']);
+  }
+  delMenu(selectedItem: any){
+    console.log(selectedItem);
+    console.log(selectedItem.mtid);
+
+    this.createService.delMenuType(selectedItem).subscribe (resp => {
+      this.selectedMenuType = resp;
+    });
   }
 }

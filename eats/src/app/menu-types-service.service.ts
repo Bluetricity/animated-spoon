@@ -29,4 +29,11 @@ export class MenuTypesServiceService {
       })
     );
   }
+  delMenuType(currMenu: MenuTypes): Observable <MenuTypes>{
+    const url = 'http://localhost:8080/Eattery/Menu_Type/' + currMenu.mtid;
+    const body = JSON.stringify(currMenu);
+    return this.http.delete(url, {headers: this.headers, withCredentials: true}).pipe(
+      map( resp => null)
+    );
+  }
 }
