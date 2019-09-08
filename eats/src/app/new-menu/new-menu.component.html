@@ -22,6 +22,14 @@
             <br>
         </div>
         <div class="formgroup">
+            <label for="menuType">Menu Type</label>
+            <select class="form-control" id="menu" (change)="getMenu($event)">
+                    <option selected="true">Choose a Menu</option>
+                <!-- <option *ngFor="let mt of MenuTypes" id="test" value={{mt.mtid}} >{{mt.menuName}}</option> -->
+                <option *ngFor="let mt of MenuTypes" id="test" value={{mt.mtid}} >{{mt.menuName}}</option>
+            </select>
+        </div>
+        <div class="formgroup">
                 <label for="MenuItem">Description</label>
                 <input class="form-control simple-create" type="text" id="Description" [(ngModel)]="desc" />
                 <br>

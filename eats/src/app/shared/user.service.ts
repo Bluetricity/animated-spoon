@@ -7,6 +7,7 @@ import { Currentuser } from './currentuser';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {SessionStorage, SessionStorageService} from 'angular-web-storage';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class UserService {
   private employee: Employee;
   private customer: Customer;
 
-  constructor(private url: UrlService, private http: HttpClient, public session: SessionStorageService) { }
+  constructor(private url: UrlService, private http: HttpClient, public session: SessionStorageService, 
+    private router: Router) { }
 
   login(username: string, password: string): Observable<Currentuser> {
     // console.log(this.appUrl);
@@ -55,6 +57,7 @@ export class UserService {
 
   logout()  {
     this.session.remove('User');
+    // this.router.navigate(['home']);
     window.location.reload();
   }
   getCustomer(): Customer {

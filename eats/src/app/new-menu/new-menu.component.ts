@@ -6,6 +6,8 @@ import { Stock } from '../shared/stock';
 import { GetStockService } from '../get-stock.service';
 import { StockMenu } from '../stock-menu';
 import { StockMenuServiceService } from '../stock-menu-service.service';
+import { MenuTypesServiceService } from '../menu-types-service.service';
+import { MenuTypes } from '../shared/menu-types';
 
 @Component({
   selector: 'app-new-menu',
@@ -17,7 +19,13 @@ export class NewMenuComponent implements OnInit {
   public mealname: string;
   public price: number;
   public desc: string;
+  public mtid: number;
+  public tempString: string;
+  public tempInt: number;
+  public t: Menu;
+  public test: MenuTypes;
   public newMenuItem: Menu;
+  public MenuTypes: MenuTypes[];
   public amount1: number;
   public amount2: number;
   public amount3: number;
@@ -29,16 +37,34 @@ export class NewMenuComponent implements OnInit {
   public newSaM2: StockMenu;
   public newSaM3: StockMenu;
 
-  constructor(private createService: MenuServiceService, private stockService: GetStockService,
-    private stockAndMeunService: StockMenuServiceService,private router: Router) { }
+  constructor(private createService: MenuServiceService,
+    private stockService: GetStockService,
+    private createService2: MenuTypesServiceService,
+    private stockAndMeunService: StockMenuServiceService,
+    private router: Router) { }
 
   ngOnInit() {
     this.stockService.make().subscribe((resp: Stock[]) => {
       console.log(resp);
       this.ingredients = resp;
     });
+    this.createService2.getMenuTypes().subscribe((data: MenuTypes[]) => {
+      this.MenuTypes = data;
+    });
   }
+
   addMenuItem(){
+    // console.log(this.mtid);
+    // console.log(JSON.stringify(this.mtid));
+    // console.log(MenuTypes.find(({mtid}) => mtid === 'winter'));
+    console.log(JSON.stringify("temp string is: "+this.tempString));
+    console.log(JSON.stringify("temp int is: "+this.tempInt));
+    console.log(this.MenuTypes.find(({menuName}) => menuName === JSON.stringify(this.tempString)));
+    console.log(this.MenuTypes.find(({mtid}) => mtid === Number(this.tempInt)));
+    this.test=this.MenuTypes.find(({mtid}) => mtid === Number(this.tempInt));
+    console.log(this.test);
+    // console.log(this.mtid);
+    // console.log("test: "+(document.getElementById("test")).value);
     console.log(this.mealname);
     console.log(this.desc);
     console.log(this.price);
@@ -49,7 +75,7 @@ export class NewMenuComponent implements OnInit {
       window.alert("reeee");
     }
     else{
-      this.createService.addMenu(this.mealname,this.price,this.desc).subscribe(
+      this.createService.addMenu(this.test,this.mealname,this.price,this.desc).subscribe(
         resp =>{
           this.newMenuItem = resp;
           if(this.ingredient1 != null && this.amount1 != null){
@@ -80,5 +106,13 @@ export class NewMenuComponent implements OnInit {
   }
   goBack(){
     this.router.navigate(['employee-menu-items']);
+  }
+  getMenu(event: any){
+    // console.log(this.mtid);
+    this.mtid=event.target.value;
+    this.tempString=event.target.value;
+    this.tempInt=event.target.value;
+    this.t=event.target.value;
+    console.log(this.t);
   }
 }
