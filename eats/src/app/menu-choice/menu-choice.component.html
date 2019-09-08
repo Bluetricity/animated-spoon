@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Required meta tags -->
+
+<head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Choose A Menu!</title>
-    </head>
+</head>
 
-    <body>
-        <h1>Menus</h1>
-        <div class="container">
-            <div class="table-wrapper-scroll-y my-custom-scrollbar fixed-header"></div>
-                <table class = "table">
-                    <br>
-                    <tr>
-                        <th>Menu Name</th>
-                    </tr>
-                    <tr *ngFor="let m of MenuTypes">
-                        <td>{{m.menuName}}</td>
-                        <td><button type="submit" class="btn btn-success" id="addbtn" (click)=setMenuChoice($event) [value]=m.mtid>This One!</button></td>
-                    </tr>
-                </table>
-                <div class="float-right">
-                    <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
-                </div>
+<body>
+    <h1>Menus</h1>
+    <div class="container">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar fixed-header"></div>
+        <table class="table">
+            <br>
+            <tr>
+                <th>Menu Name</th>
+            </tr>
+            <tr *ngFor="let m of MenuTypes">
+                <td>{{m.menuName}}</td>
+                <td><button type="submit" class="btn btn-success" id="addbtn" (click)=setMenuChoice($event) [value]=m.mtid>This One!</button></td>
+            </tr>
+        </table>
+        <div class="float-right">
+            <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
         </div>
-    </body>
+    </div>
+    <br>
+</body>
+
 </html>

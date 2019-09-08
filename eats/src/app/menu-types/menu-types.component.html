@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Required meta tags -->
+
+<head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Menu Types</title>
-    </head>
+</head>
 
-    <body>
-        <h1>Menu Types</h1>
-        <div class="container">
-            <div class="table-wrapper-scroll-y my-custom-scrollbar fixed-header"></div>
-                <table class = "table">
-                    <br>
-                    <tr>
-                        <th>Menu Type ID</th>
-                        <th>Menu Name</th>
-                    </tr>
-                    <tr *ngFor="let m of MenuTypes">
-                        <td>{{m.mtid}}</td>
-                        <td>{{m.menuName}}</td>
-                    </tr>
-                </table>
-                <button type="submit" class="btn btn-success" id="addbtn" (click)=addMenuType()>Add New Menu Type</button>
-                <div class="float-right">
-                    <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
-                </div>
+<body>
+    <h1>Menu Types</h1>
+    <div class="container">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar fixed-header"></div>
+        <table class="table">
+            <br>
+            <tr>
+                <th>Menu Type ID</th>
+                <th>Menu Name</th>
+                <th>Edit Menu</th>
+            </tr>
+            <tr *ngFor="let m of MenuTypes">
+                <td>{{m.mtid}}</td>
+                <td>{{m.menuName}}</td>
+                <td><button type="submit" class="btn btn-success" id="addbtn" (click)=editMenuType($event) [value]=m.mtid>Edit Menu</button></td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-success" id="addbtn" (click)=addMenuType()>Add New Menu Type</button>
+        <div class="float-right">
+            <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
         </div>
-    </body>
+    </div>
+    <br>
+</body>
+
 </html>

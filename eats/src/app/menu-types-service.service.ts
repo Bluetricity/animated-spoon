@@ -19,6 +19,13 @@ export class MenuTypesServiceService {
       map(resp => resp as MenuTypes[])
     );
   }
+
+  getMenu(mtid: number): Observable<MenuTypes> {
+    const url: string = this.appUrl + '/' + mtid;
+    return this.http.get(url, {withCredentials: true}).pipe(
+      map(resp => resp as MenuTypes));
+  }
+
   addMenuType(MTID: number, menuName: string): Observable<MenuTypes>{
     const obj={MTID:MTID, menuName:menuName};
     const body = JSON.stringify(obj);

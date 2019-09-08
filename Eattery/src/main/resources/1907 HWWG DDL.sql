@@ -41,7 +41,7 @@ create table Menu (
     MealName varchar2(40),
     Price number(15),
     Description varchar2(100),
-    constraint fk_Menu_type foreign key (MTID) references Menu_Type(MTID)
+    constraint fk_Menu_type foreign key (MTID) references Menu_Type(MTID) on delete cascade
 );
 
 create table Stock_Menu (
@@ -80,7 +80,8 @@ create table TransactionItems (
     MID number(20) not null,
     Quanity number(5,2),
     constraint fk_item_transaction foreign key (TID) references ItemTransaction(TID),
-    constraint fk_item_menuitem foreign key (MID) references Menu(MID)
+    constraint fk_item_menuitem foreign key (MID) references Menu(MID) on delete cascade
+    --giving an error about child record but on delete cascade remove everything so needs something else
 );
 
 create sequence employee_seq;
