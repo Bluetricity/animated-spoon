@@ -64,4 +64,8 @@ export class MenuItemsComponent implements OnInit {
 
     this.router.navigate(['order']);
   }
+
+  backToHome() {
+    this.router.navigate(['home']);
+  }
 }

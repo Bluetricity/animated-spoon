@@ -29,7 +29,7 @@ export class OrderComponent implements OnInit {
   public tida: Tai;
 
   constructor(private cart: CartService, public session: SessionStorageService,
-              private router: Router, private Locate: LocationService, private createService: AddTransactionService, 
+              private router: Router, private Locate: LocationService, private createService: AddTransactionService,
               private createOrders: AddTAIService) {  }
 
   ngOnInit() {
@@ -53,11 +53,8 @@ export class OrderComponent implements OnInit {
 
     // First of all, I need to make a transaction
     // console.log( this.storeduser );
-    console.log( this.storeduser.cust );
-    console.log( this.bPayment );
-    console.log( 0 );
-    if(this.bPayment == null ){
-      window.alert("reeee");
+    if (this.bPayment == null && this.orderup.size === 0) {
+      window.alert( 'reeee' );
     } else {
 
        this.createService.create(this.storeduser.cust, this.bPayment, 0).subscribe(
@@ -85,6 +82,7 @@ export class OrderComponent implements OnInit {
   }
 
   backToHome() {
-
+    this.cart.clearCart();
+    this.router.navigate(['menu-items']);
   }
 }
