@@ -85,6 +85,6 @@ export class OrderComponent implements OnInit {
   }
 
   backToHome() {
-
+    this.router.navigate(['menu-items']);
   }
 }
