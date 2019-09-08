@@ -26,10 +26,16 @@ export class CreateAccountComponent implements OnInit {
   submit() {
     if (this.username !== null && this.password !== null && this.name !== null && this.contactInfo !== null) {
       this.createService.create(this.username.trim(), this.password.trim(), this.name.trim(), this.contactInfo.trim()).subscribe(
-        resp => {
+        (resp: Currentuser) => {
+          console.log(resp);
           this.loggedUser = resp;
-          this.userService.login(this.username, this.password);
-          this.router.navigate(['account-info']);
+          console.log(this.loggedUser)
+          this.userService.login(this.username.trim(), this.password.trim()).subscribe(resp =>
+            {
+              this.router.navigate(['account-info']);
+            }
+          );
+          
         });
     }
   }

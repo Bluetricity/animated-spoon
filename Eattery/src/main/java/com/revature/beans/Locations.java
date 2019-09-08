@@ -22,7 +22,7 @@ public class Locations {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="bob")
 	@SequenceGenerator(name="bob", sequenceName="location_seq", allocationSize=1)
 	Integer LID;
-	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="cid")
 	Customers cid;
 	String Address;

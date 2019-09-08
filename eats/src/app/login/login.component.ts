@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Currentuser } from '../shared/currentuser';
 import { UserService } from '../shared/user.service';
-// import { Session } from 'inspector';
 import { SessionStorageService } from 'angular-web-storage';
 import { Router } from '@angular/router';
 
@@ -26,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.username !== null && this.password !== null) {
+    if (this.username !== null && this.password !== null || this.username !== undefined) {
       this.userService.login(this.username, this.password).subscribe(
         resp => {
           this.loggedUser = resp;

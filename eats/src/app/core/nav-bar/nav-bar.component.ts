@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/user.service';
+import {Currentuser} from 'src/app/shared/currentuser';
+import {SessionStorageService} from 'angular-web-storage';
 import { HomeComponent } from 'src/app/core/home/home.component';
 
 @Component({
@@ -10,13 +12,21 @@ import { HomeComponent } from 'src/app/core/home/home.component';
 })
 export class NavBarComponent implements OnInit {
   title = 'Galaxy Eats';
+  public loggedUser: Currentuser;
 
-  constructor(public route: Router, private userService: UserService) { }
+  constructor(public route: Router, private userService: UserService,
+              private session: SessionStorageService) { }
 
   ngOnInit() {
     if(this.isEmployee() == false && this.isCustomer() == false){
       this.route.navigate(['home']);
     }
+  }
+
+  isloggedUser() {
+    this.loggedUser = JSON.parse(this.session.get('User'));
+    console.log(this.loggedUser);
+    return this.loggedUser;
   }
 
   isEmployee(): boolean {

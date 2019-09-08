@@ -11,6 +11,8 @@ public interface SaMDAO {
 	public int addSaM(Stock_menu SaM);
 
 	public Set<Stock_menu> getSaM();
+	
+	public Set<Stock_menu> getSaMbyMID(Integer mid);
 		
 	public void deleteSaM(Stock_menu SaM);
 	

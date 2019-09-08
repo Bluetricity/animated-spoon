@@ -14,16 +14,13 @@
     </ul>
 </ng-container>
 
-<ng-template #display>
+<ng-template #employee>
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <div *ngIf="loggedUser.employee">
                 <span>Welcome {{loggedUser.emp.name}}!</span>
             </div>
         </li>
-        <!-- <li class="nav-item">
-            <button class="btn btn-danger" (click)="logout()">Logout</button>
-        </li> -->
     </ul>
 </ng-template>
 <ng-template #customer>

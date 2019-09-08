@@ -105,6 +105,17 @@ public class SaMOracle implements SaMDAO{
 		}
 	}
 
+	@Override
+	public Set<Stock_menu> getSaMbyMID(Integer mid) {
+		Session s = hu.getSession();
+		String query = "from Stock_menu where MID = :name";
+		Query<Stock_menu> q = s.createQuery(query, Stock_menu.class);
+		q.setParameter("name", mid);
+		List<Stock_menu> ret = q.list();
+		s.close();
+		return new HashSet<Stock_menu>(ret);
+	}
+
 
 	
 	
