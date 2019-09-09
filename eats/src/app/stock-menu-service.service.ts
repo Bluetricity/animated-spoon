@@ -20,12 +20,10 @@ export class StockMenuServiceService {
 
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
-  addNewSandM(amount: number, ingredient: Stock, menuItem: Menu): Observable<StockMenu>{
-    this.compositeId.mid = menuItem;
-    this.compositeId.sid = ingredient;
-    this.newSandM.composid = this.compositeId;
-    this.newSandM.amount = amount;
-    const body = JSON.stringify(this.newSandM);
+  addNewSandM(amount: number, compositeId: Composid): Observable<StockMenu>{
+    const obj = {composid: compositeId, amount: amount}
+    console.log(obj);
+    const body = JSON.stringify(obj);
     return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
       map(resp => {
         const newStockMenu: StockMenu = resp as StockMenu;

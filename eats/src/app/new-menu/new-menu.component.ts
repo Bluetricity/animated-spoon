@@ -8,6 +8,8 @@ import { StockMenu } from '../stock-menu';
 import { StockMenuServiceService } from '../stock-menu-service.service';
 import { MenuTypesServiceService } from '../menu-types-service.service';
 import { MenuTypes } from '../shared/menu-types';
+import { Composid} from '../composid';
+import { CompileShallowModuleMetadata } from '@angular/compiler';
 
 @Component({
   selector: 'app-new-menu',
@@ -36,6 +38,9 @@ export class NewMenuComponent implements OnInit {
   public newSaM1: StockMenu;
   public newSaM2: StockMenu;
   public newSaM3: StockMenu;
+  public compo1: Composid = new Composid();
+  public compo2: Composid = new Composid();
+  public compo3: Composid = new Composid();
 
   constructor(private createService: MenuServiceService,
     private stockService: GetStockService,
@@ -61,7 +66,7 @@ export class NewMenuComponent implements OnInit {
     console.log(JSON.stringify("temp int is: "+this.tempInt));
     console.log(this.MenuTypes.find(({menuName}) => menuName === JSON.stringify(this.tempString)));
     console.log(this.MenuTypes.find(({mtid}) => mtid === Number(this.tempInt)));
-    this.test=this.MenuTypes.find(({mtid}) => mtid === Number(this.tempInt));
+    //this.test=this.MenuTypes.find(({mtid}) => mtid === Number(this.tempInt));
     console.log(this.test);
     // console.log(this.mtid);
     // console.log("test: "+(document.getElementById("test")).value);
@@ -79,29 +84,41 @@ export class NewMenuComponent implements OnInit {
         resp =>{
           this.newMenuItem = resp;
           if(this.ingredient1 != null && this.amount1 != null){
-            this.stockAndMeunService.addNewSandM(this.amount1, this.ingredient1, this.newMenuItem).subscribe(
+            this.compo1.mid = this.newMenuItem;
+            this.compo1.sid = this.ingredient1;
+            console.log(this.compo1);
+            this.stockAndMeunService.addNewSandM(this.amount1, this.compo1).subscribe(
               (resp: StockMenu) => {
+                console.log(resp);
                 this.newSaM1 = resp;
               }
             );
           }
           if(this.ingredient2 != null && this.amount2 != null){
-            this.stockAndMeunService.addNewSandM(this.amount2, this.ingredient2, this.newMenuItem).subscribe(
+            this.compo2.mid = this.newMenuItem;
+            this.compo2.sid = this.ingredient1;
+            console.log(this.compo2);
+            this.stockAndMeunService.addNewSandM(this.amount2, this.compo2).subscribe(
               (resp: StockMenu) => {
+                console.log(resp);
                 this.newSaM2 = resp;
               }
             );
           }
           if(this.ingredient3 != null && this.amount3 != null){
-            this.stockAndMeunService.addNewSandM(this.amount3, this.ingredient3, this.newMenuItem).subscribe(
+            this.compo3.mid = this.newMenuItem;
+            this.compo3.sid = this.ingredient1;
+            console.log(this.compo3);
+            this.stockAndMeunService.addNewSandM(this.amount3, this.compo3).subscribe(
               (resp: StockMenu) => {
+                console.log(resp);
                 this.newSaM3 = resp;
               }
             );
           }
+          //this.goBack();
         }
       );
-    this.goBack();
     }
   }
   goBack(){
