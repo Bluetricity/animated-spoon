@@ -28,8 +28,8 @@
                 <tr *ngFor="let m of currMenu; let i = count">
                     <td>{{m.mealname}}</td>
                     <td>{{m.desc}}</td>
-                    <td>${{m.price}}</td>
-                    <td><button type="submit" class="btn btn-primary" (click)=addtoCart($event);addNum(m) [value]=m.mid>+</button></td>
+                    <td>${{m.price}}</td
+                    <td><button type="submit" class="btn btn-primary" (click)=addtoCart($event) [value]=m.mid id="B{{m.mid}}">+</button></td>
                     <td id={{m.mid}}>0</td>
                 </tr>
             </table>

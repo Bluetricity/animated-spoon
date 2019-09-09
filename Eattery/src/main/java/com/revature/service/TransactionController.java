@@ -95,7 +95,7 @@ public class TransactionController {
 		for(Transactionitems tItem: tSet) {
 			smSet = SMO.getSaMbyMID(tItem.gettaiid().getMID().getMID());
 			for(Stock_menu smItem: smSet) {
-				targetStock = SO.getStock(smItem.getComposid().getSID().getSID());
+				targetStock = SO.getStock(smItem.getsamid().getSID().getSID());
 				quantity = tItem.getquanity();
 				amount = smItem.getAmount();
 				currentQuantity = targetStock.getQuantity();

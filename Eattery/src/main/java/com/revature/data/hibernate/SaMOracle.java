@@ -58,7 +58,7 @@ public class SaMOracle implements SaMDAO{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(SaM.getComposid());
+			s.delete(SaM);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -94,7 +94,7 @@ public class SaMOracle implements SaMDAO{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(SaM.getComposid());
+			s.update(SaM);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

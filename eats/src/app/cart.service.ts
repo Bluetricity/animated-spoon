@@ -26,8 +26,8 @@ export class CartService {
     }
   }
 
-  removefromCart() {
-
+  clearCart() {
+    this.itemList.clear();
   }
 
   displayCart() {

@@ -30,18 +30,18 @@ create table Stock (
     Quantity_Stored number(10,2)
 );
 
-create table Menu_Type (
-    MTID number(20) primary key,
-    Menu_name varchar2(30) not null
-);
-
 create table Menu (
     MID number(20) primary key,
     MTID number(20) not null,
     MealName varchar2(40),
     Price number(15),
-    Description varchar2(100),
+	Description varchar2(100),
     constraint fk_Menu_type foreign key (MTID) references Menu_Type(MTID) on delete cascade
+);
+
+create table Menu_Type (
+    MTID number(20) primary key,
+    Menu_name varchar2(30) not null
 );
 
 create table Stock_Menu (
