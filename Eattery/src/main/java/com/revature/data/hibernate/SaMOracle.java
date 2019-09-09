@@ -24,13 +24,12 @@ public class SaMOracle implements SaMDAO{
 	private HibernateUtil hu;
 	
 	@Override
-	public int addSaM(Stock_menu SaM) {
+	public void addSaM(Stock_menu SaM) {
 		Session s = hu.getSession();
 		Transaction t = null;
-		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(SaM);
+			s.save(SaM);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -38,7 +37,7 @@ public class SaMOracle implements SaMDAO{
 		} finally {
 			s.close();
 		}
-		return i;
+		return;
 
 	}
 
@@ -58,7 +57,7 @@ public class SaMOracle implements SaMDAO{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(SaM.getComposid());
+			s.delete(SaM);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -94,7 +93,7 @@ public class SaMOracle implements SaMDAO{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(SaM.getComposid());
+			s.update(SaM);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

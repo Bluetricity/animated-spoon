@@ -134,6 +134,7 @@ public class MenuOracle implements MenuDAO{
 	}
 
 	@Override
+
 	public Set<Menu> getMenuEmp(Integer mtid) {
 		Session s = hu.getSession();
 		String query = "from Menu where mtid = :mtid";

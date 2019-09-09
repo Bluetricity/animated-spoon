@@ -39,7 +39,10 @@ export class LoginComponent implements OnInit {
   }
 
   logout() {
+    // this.router.navigate(['home']);
+
     this.userService.logout();
     this.router.navigate(['home']);
+    window.location.reload();
   }
 }

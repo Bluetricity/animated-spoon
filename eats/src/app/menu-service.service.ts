@@ -16,7 +16,7 @@ export class MenuServiceService {
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
   getMenuCust(mtid: number): Observable<Menu[]> {
-    return this.http.get(this.appUrl + '/' + mtid, {withCredentials: true}).pipe(
+    return this.http.get(this.appUrl + '/all', {withCredentials: true}).pipe(
       map( resp => resp as Menu[])
     );
   }
@@ -43,7 +43,7 @@ export class MenuServiceService {
   }
 
   addMenu(mtid:MenuTypes, mealname: string, price: number, desc: string): Observable<Menu> {
-    const obj = { mtid, mealname, price , desc };
+    const obj = { mtid, mealname, price, desc};
     const body = JSON.stringify(obj);
     return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
       map(resp => {

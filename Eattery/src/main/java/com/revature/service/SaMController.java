@@ -45,6 +45,8 @@ public class SaMController {
 	
 	@PostMapping
 	public Stock_menu addMenu (@RequestBody Stock_menu SaM) {
+		System.out.println(SaM);
+		System.out.println("Hello");
 		SMO.addSaM(SaM);
 		return SaM;
 
