@@ -8,7 +8,7 @@ import com.revature.beans.Stock;
 import com.revature.beans.Stock_menu;
 
 public interface SaMDAO {
-	public int addSaM(Stock_menu SaM);
+	public void addSaM(Stock_menu SaM);
 
 	public Set<Stock_menu> getSaM();
 	

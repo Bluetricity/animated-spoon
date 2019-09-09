@@ -84,8 +84,8 @@ export class NewMenuComponent implements OnInit {
         resp =>{
           this.newMenuItem = resp;
           if(this.ingredient1 != null && this.amount1 != null){
-            this.compo1.mid = this.newMenuItem;
             this.compo1.sid = this.ingredient1;
+            this.compo1.mid = this.newMenuItem;
             console.log(this.compo1);
             this.stockAndMeunService.addNewSandM(this.amount1, this.compo1).subscribe(
               (resp: StockMenu) => {
@@ -95,8 +95,8 @@ export class NewMenuComponent implements OnInit {
             );
           }
           if(this.ingredient2 != null && this.amount2 != null){
-            this.compo2.mid = this.newMenuItem;
             this.compo2.sid = this.ingredient1;
+            this.compo2.mid = this.newMenuItem;
             console.log(this.compo2);
             this.stockAndMeunService.addNewSandM(this.amount2, this.compo2).subscribe(
               (resp: StockMenu) => {
@@ -106,8 +106,8 @@ export class NewMenuComponent implements OnInit {
             );
           }
           if(this.ingredient3 != null && this.amount3 != null){
-            this.compo3.mid = this.newMenuItem;
             this.compo3.sid = this.ingredient1;
+            this.compo3.mid = this.newMenuItem;
             console.log(this.compo3);
             this.stockAndMeunService.addNewSandM(this.amount3, this.compo3).subscribe(
               (resp: StockMenu) => {
