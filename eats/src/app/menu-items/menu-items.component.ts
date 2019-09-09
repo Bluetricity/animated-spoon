@@ -90,9 +90,9 @@ export class MenuItemsComponent implements OnInit {
 
     this.cart.displayCart();
 
-    
 
-    
+
+
   }
 
   addNum(selectedItem: any){
