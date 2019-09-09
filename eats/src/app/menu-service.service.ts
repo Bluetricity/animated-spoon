@@ -43,7 +43,7 @@ export class MenuServiceService {
   }
 
   addMenu(mtid:MenuTypes, mealname: string, price: number, desc: string): Observable<Menu> {
-    const obj = { mtid, mealname, price , desc };
+    const obj = { mtid, mealname, price, desc};
     const body = JSON.stringify(obj);
     return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
       map(resp => {
