@@ -11,6 +11,15 @@ body {
     margin: auto!important;
 }
 
+.order {
+    width: 100%;
+    text-align: center;
+}
+
+table {
+    text-align: center;
+}
+
 .orders {
     /* height: 70%; */
     width: 70%;

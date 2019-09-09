@@ -22,10 +22,13 @@
                 <a class="nav-link " routerLink="pending-orders">Pending Orders</a>
             </li>
             <li *ngIf="isCustomer()" class="nav-item ">
+                <a class="nav-link " routerLink="account-info">Account</a>
+            </li>
+            <li *ngIf="isCustomer()" class="nav-item ">
                 <a class="nav-link " routerLink="menu-choice">Choose Menu</a>
             </li>
             <li *ngIf="isCustomer()" class="nav-item ">
-                <a class="nav-link " routerLink="account-info">Account</a>
+                <a class="nav-link " routerLink="order">Order Summary</a>
             </li>
             <li *ngIf="isCustomer() || isEmployee()">
                 <button class="btn btn-danger logout" id="logout" (click)="logout()">Logout</button>
@@ -38,7 +41,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" (click)=createAccount()>Create Account</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" routerLink="menu-items">View Menu</a>
+                    <a class="dropdown-item" routerLink="menu-choice">View Menu</a>
                 </div>
             </li>
         </ul>

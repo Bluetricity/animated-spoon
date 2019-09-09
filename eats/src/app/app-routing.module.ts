@@ -36,11 +36,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  {
-    path: '',
-    redirectTo: '/stock',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '',
+  //   redirectTo: '/stock',
+  //   pathMatch: 'full'
+  // },
   {
     path: 'stock',
     component: StockComponent
