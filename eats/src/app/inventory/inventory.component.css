@@ -1,4 +1,4 @@
-    .my-custom-scrollbar {
+    /* .my-custom-scrollbar {
         position: relative;
         height: fit-content;
         overflow: auto;
@@ -6,6 +6,10 @@
     
     .table-wrapper-scroll-y {
         display: block;
+    } */
+    
+    .table {
+        margin-top: -3.5rem!important;
     }
     
     .addstock {

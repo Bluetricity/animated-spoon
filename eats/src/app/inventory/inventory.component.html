@@ -2,33 +2,33 @@
     <h1 style="text-align: center">Manage Galactic Ingredients</h1>
     <br>
 
-    <div class="container">
-        <div class="table-wrapper-scroll-y my-custom-scrollbar fixed-header">
-            <table class="table" id="tbl">
+    <!-- <div class="container"> -->
+    <div class="table-wrapper-scroll-y my-custom-scrollbar fixed-header">
+        <table class="table" id="tbl">
 
-                <br>
-                <tr>
-                    <!-- <TH>ID</TH> -->
-                    <th>Ingredient Name</th>
-                    <th>Ingredient Quantity</th>
-                    <th>Increase Ingredient Quantity</th>
-                </tr>
-                <!-- <tr *ngFor="let i of Inv">
+            <br>
+            <tr>
+                <!-- <TH>ID</TH> -->
+                <th>Ingredient Name</th>
+                <th>Ingredient Quantity</th>
+                <th>Increase Ingredient Quantity</th>
+            </tr>
+            <!-- <tr *ngFor="let i of Inv">
                 <td>{{i.id}}</td>
                 <td>{{i.ingredient}}</td>
                 <td>{{i.quantity}}</td>
                 <td><button type="submit" class=" btn btn-info" id="testbtn">Add more to stock</button></td>
             </tr> -->
-                <tr *ngFor="let s of stocks">
-                    <!-- <td>{{s.id}}</td> -->
-                    <td>{{s.ingredient}}</td>
-                    <td>{{s.quantity}}</td>
-                    <td><button type="submit" class=" btn btn-info" id="testbtn">Update Stock</button></td>
+            <tr *ngFor="let s of stocks">
+                <!-- <td>{{s.id}}</td> -->
+                <td>{{s.ingredient}}</td>
+                <td>{{s.quantity}}</td>
+                <td><button type="submit" class=" btn btn-info" id="testbtn">Update Stock</button></td>
 
-                </tr>
-            </table>
-        </div>
+            </tr>
+        </table>
     </div>
+    <!-- </div> -->
     <div class="addstock">
         <button type="submit" class="btn btn-success" id="addstock" (click)=addNewItem()>Add new stock item</button>
         <!-- <button type="submit" class="btn btn-success" id="addbtn" (click)=getItem()>Testing get</button> -->
