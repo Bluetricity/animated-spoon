@@ -134,7 +134,19 @@ public class MenuOracle implements MenuDAO{
 	}
 
 	@Override
-	public Set<Menu> getMenu() {
+
+	public Set<Menu> getMenuEmp(Integer mtid) {
+		Session s = hu.getSession();
+		String query = "from Menu where mtid = :mtid";
+		Query<Menu> q = s.createQuery(query, Menu.class);
+		q.setParameter("mtid", mtid);
+		List<Menu> ret = q.list();
+		s.close();
+		return new HashSet<Menu>(ret);
+	}
+
+	@Override
+	public Set<Menu> getAll() {
 		Session s = hu.getSession();
 		String query = "from Menu";
 		Query<Menu> q = s.createQuery(query, Menu.class);

@@ -18,6 +18,7 @@ export class MenuItemsComponent implements OnInit {
   poptable: Observable<any[]>;
   columns: string[];
   test: string[];
+  count: number=0;
 
   public mealname: string;
   public desc: string;
@@ -47,7 +48,7 @@ export class MenuItemsComponent implements OnInit {
 
     console.log(this.currMenu);
 
-
+    
   }
 
   addtoCart($event: any ) {
@@ -88,6 +89,19 @@ export class MenuItemsComponent implements OnInit {
     this.cart.addtoCart(ann);
 
     this.cart.displayCart();
+
+    
+
+    
+  }
+
+  addNum(selectedItem: any){
+    const mid: number = selectedItem.mid;
+    // var count: number;
+    
+    this.count=this.count+1;
+    console.log(document.getElementById(String(mid)).innerHTML);
+    document.getElementById(String(mid)).innerHTML = this.cart.peek(selectedItem);
   }
 
   toOrder() {
@@ -102,7 +116,8 @@ export class MenuItemsComponent implements OnInit {
     this.router.navigate(['order']);
   }
 
-  backToHome() {
-    this.router.navigate(['home']);
+  backToHome(){
+    this.cart.clearCart();
+    this.router.navigate(['menu-choice']);
   }
 }

@@ -1,1 +1,48 @@
-<p>edit-menu works!</p>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Menu Select</title>
+</head>
+
+<body>
+    <h1>Update {{mtid}} Menu Below</h1>
+
+    <div class="container">
+        <div class="table">
+            <table class="table">
+                <br>
+                <tr>
+                    <th>Menu Item</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Remove From Menu</th>
+                </tr>
+                <tr *ngFor="let m of currMenu">
+                    <td>{{m.mealname}}</td>
+                    <td>{{m.desc}}</td>
+                    <td>${{m.price}}</td>
+                    <td><button type="submit" class="btn btn-primary" id="{mt}" (click)=removeFromMenu(m)>Remove</button></td>
+                </tr>
+                <!-- [value]=m.mid -->
+            </table>
+        </div>
+    </div>
+    <br>
+    <!---->
+    <div>
+        <!-- <button type="submit" class=" btn btn-success" (click)=toOrder($event) id="cartbtn">Continue to cart</button> -->
+        <button type="submit" class="btn btn-danger" id="backbtn" (click)=backToHome()>Back</button>
+    </div>
+    <br>
+    <!-- Come back to later if possible-->
+</body>
+
+</html>

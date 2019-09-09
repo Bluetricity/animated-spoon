@@ -37,4 +37,8 @@ export class CartService {
   sendCart(): Map<Menu, number> {
     return this.itemList;
   }
+
+  peek(menin: Menu){
+    return this.itemList.get(menin);
+  }
 }

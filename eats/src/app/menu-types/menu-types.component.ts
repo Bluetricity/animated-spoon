@@ -3,6 +3,7 @@ import { MenuTypes } from '../shared/menu-types';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MenuTypesServiceService } from '../menu-types-service.service';
+import { SessionStorageService } from 'angular-web-storage';
 
 @Component({
   selector: 'app-menu-types',
@@ -22,30 +23,34 @@ export class MenuTypesComponent implements OnInit {
   public selectedMenuType: MenuTypes;
 
   constructor(private createService: MenuTypesServiceService,
-    private router: Router) { }
+              private router: Router, public session: SessionStorageService) { }
 
   ngOnInit() {
     this.createService.getMenuTypes().subscribe((data: MenuTypes[]) => {
       this.MenuTypes = data;
     });
   }
-  backToHome(){
+  backToHome() {
     this.router.navigate(['home']);
   }
-  addMenuType(){
-    // this.createService.addMenuType(this.MTID, this.Menu_Type).subscribe(
-    //   resp =>{
-    //     this.newMenuItem = resp;
-    //   }
-    // );
+  addMenuType() {
     this.router.navigate(['new-menu-type']);
   }
-  delMenu(selectedItem: any){
+
+  editMenuType($event: any) {
+    const mtid: number = $event.target.value;
+    console.log(mtid);
+    this.session.set('menuType', JSON.stringify(mtid));
+    this.router.navigate(['edit-menu']);
+  }
+
+  delMenu(selectedItem: any) {
     console.log(selectedItem);
     console.log(selectedItem.mtid);
 
     this.createService.delMenuType(selectedItem).subscribe (resp => {
       this.selectedMenuType = resp;
     });
+    window.location.reload();
   }
 }
