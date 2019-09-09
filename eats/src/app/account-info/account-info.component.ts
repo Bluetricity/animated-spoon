@@ -23,16 +23,16 @@ export class AccountInfoComponent implements OnInit {
   public addedLocation: Location;
 
   constructor(private locationService: LocationService,
-    public session: SessionStorageService,
-    private router: Router) { }
+              public session: SessionStorageService,
+              private router: Router) { }
 
   ngOnInit() {
-    console.log("Starting");
+    console.log('Starting');
     this.loggedUser = JSON.parse(this.session.get('User'));
     console.log(this.loggedUser);
     console.log(this.loggedUser.cust.cid);
     this.locationService.getCustomerLocation(this.loggedUser.cust.cid).subscribe(
-      (resp : Location[]) => {
+      (resp: Location[]) => {
         console.log(resp);
         this.Locations = resp;
       }
@@ -40,15 +40,16 @@ export class AccountInfoComponent implements OnInit {
   }
 
   submit() {
-    console.log("Clicked");
+    console.log('Clicked');
     this.locationService.addNewLocation(this.loggedUser.cust, this.newLocation).subscribe((resp: Location) => {
       this.addedLocation = resp;
     });
-    console.log("added" + this.loggedUser.cust + this.newLocation);
-    //this.returnTo();
+    window.location.reload();
+    console.log('added' + this.loggedUser.cust + this.newLocation);
+    // this.returnTo();
   }
 
-  returnTo(){
+  returnTo() {
     this.router.navigate(['home']);
   }
 }
