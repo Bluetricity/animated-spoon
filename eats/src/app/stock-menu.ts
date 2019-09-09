@@ -1,6 +1,6 @@
 import { Composid } from './composid';
 
 export class StockMenu {
-    composid: Composid;
+    samid: Composid;
     amount: number;
 }

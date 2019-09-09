@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { Composid} from './composid';
 import { StockMenu} from './stock-menu';
 import { Menu } from './shared/menu';
+import { SAM } from './shared/sam';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,10 @@ export class StockMenuServiceService {
   constructor(private caUrl: UrlService, private http: HttpClient) { }
 
   addNewSandM(amount: number, compositeId: Composid): Observable<StockMenu>{
-    const obj = {composid: compositeId, amount: amount}
+    const obj: SAM = {samid: compositeId, amount: amount}
     console.log(obj);
     const body = JSON.stringify(obj);
+    console.log(body);
     return this.http.post(this.appUrl, body, {headers: this.headers, withCredentials: true}).pipe(
       map(resp => {
         const newStockMenu: StockMenu = resp as StockMenu;

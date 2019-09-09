@@ -36,7 +36,7 @@ public class Stock_menu {
 		return amount;
 	}
 	public void setAmount(Double amount) {
-		amount = amount;
+		this.amount = amount;
 	}
 
 	@Override
