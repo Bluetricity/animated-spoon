@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
         }
       );
       this.loggedUser = this.session.get('User');
+      // window.location.reload();
     }
   }
 

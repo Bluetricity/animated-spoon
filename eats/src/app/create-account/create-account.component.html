@@ -18,25 +18,25 @@
     <div class="container">
         <div class="formgroup">
             <label for="username">Username:</label>
-            <input class="form-control simple-create" type="text" id="username" [(ngModel)] = "username"/>
+            <input class="form-control simple-create" type="text" id="username" [(ngModel)]="username" />
             <br>
         </div>
         <div class="formgroup">
             <label for="password">Password:</label>
-            <input class="form-control simple-create" type="text" id="password" [(ngModel)] = "password"/>
+            <input class="form-control simple-create" type="text" id="password" [(ngModel)]="password" />
             <br>
         </div>
         <div class="formgroup">
             <label for="name">Name:</label>
-            <input class="form-control simple-create" type="text" id="name" [(ngModel)] = "name"/>
+            <input class="form-control simple-create" type="text" id="name" [(ngModel)]="name" />
             <br>
         </div>
         <div class="formgroup">
             <label for="contactInfo">Contact Info:</label>
-            <input class="form-control simple-create" type="text" id="contactInfo" [(ngModel)] = "contactInfo"/>
+            <input class="form-control simple-create" type="text" id="contactInfo" [(ngModel)]="contactInfo" />
             <br>
         </div>
-        <button class="btn btn-primary" (click) = submit()>Submit</button>
-        <button class="btn btn-danger" (click) = returnTo()>Cancel</button>
+        <button class="btn btn-primary" (click)=submit()>Submit</button>
+        <button class="btn btn-danger" (click)=returnTo()>Cancel</button>
     </div>
 </body>

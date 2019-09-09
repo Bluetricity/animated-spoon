@@ -7,9 +7,8 @@
     font-size: 1.25rem!important;
     line-height: inherit!important;
     white-space: nowrap!important;
-    font-style: oblique!important;
+    /* font-style: oblique!important; */
     font-weight: bold!important;
-    font-family: cursive!important;
 }
 
 .ca {
@@ -21,11 +20,13 @@
 }
 
 .bg-primary {
-    background-color: paleturquoise!important;
+    background-color: thistle!important;
 }
 
 .navbar-dark .navbar-brand {
-    color: coral;
+    font-size: x-large!important;
+    color: #333!important;
+    font-weight: 800!important;
 }
 
 .btn-primary {

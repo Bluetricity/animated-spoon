@@ -16,7 +16,7 @@
 <body>
     <h2>You've Chosen Well. Now Pay.</h2>
     <p>**Only Altairian Dollars Accepted At This Time.**</p>
-    <div>
+    <div class="order">
         <table id="order" class="orders">
             <tr>
                 <th>Meal Name</th>
@@ -24,7 +24,7 @@
                 <th>Quantity</th>
             </tr>
             <tr *ngFor="let m of orderup.keys()">
-                <td>{{m.mealname}}</td>    
+                <td>{{m.mealname}}</td>
                 <td>${{m.price}}</td>
                 <td>{{orderup.get(m)}}</td>
             </tr>
