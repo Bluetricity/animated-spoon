@@ -15,11 +15,12 @@
 <body>
     <h1>Menus</h1>
     <div class="container">
-        <div class="table-wrapper-scroll-y my-custom-scrollbar fixed-header"></div>
-        <table class="table">
+        <div class="table"></div>
+        <table class="table table-hover table-striped">
             <br>
             <tr>
                 <th>Menu Name</th>
+                <th> </th>
             </tr>
             <tr *ngFor="let m of MenuTypes">
                 <td>{{m.menuName}}</td>
